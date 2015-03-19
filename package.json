@@ -1,0 +1,31 @@
+{
+  "name": "kssenior",
+  "version": "0.1.2",
+  "description": "Klub sportowy Senior Ligii Obrony Kraju",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "pg": "2.x",
+    "express": "~4.9.x",
+    "request": "~2.51.x",
+    "body-parser": "1.9.2",
+    "urlencode": "0.x",
+    "json-middleware": "1.x",
+    "connect-multiparty": "1.x"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@heroku.com:kssenior.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}

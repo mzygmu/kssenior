@@ -1,0 +1,7 @@
+{
+  "name": "KS-Senior LOK",
+  "description": "Klub sportowy Senior Ligii Obrony Kraju",
+  "repository": "git@heroku.com:kssenior.git",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "static"]
+}
