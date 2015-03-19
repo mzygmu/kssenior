@@ -3,7 +3,6 @@ var bodyParser = require('body-parser')
 var app = express();
 var http = require('http');
 var requestLib = require('request');
-var CronJob = require('cron').CronJob;
 
 var ev = require('./expected_tank_values_18.json');
 var frozen = require('./frozenTimes.json');
@@ -396,10 +395,6 @@ var updateClanData = function() {
   });
 };
 
-var job = new CronJob('0 0 2 * * *', function(){
-   updateClanData();
-}, null, true);
-
 requestLib.post('https://api.worldoftanks.eu/wot/encyclopedia/tanks/',
   { form: 'application_id='+application_id+'&fields=level,tank_id,short_name_i18n,type' },
   function (error, res, body) {
@@ -499,10 +494,6 @@ app.get('/updatePrivilages', function (request, response) {
   response.statusCode = 200;
   response.send();
 });
-
-var job2 = new CronJob('0 0 1 * * *', function(){     
-  updateClansPrivilages();
-}, null, true);
 
 // CREATE TABLE player_tank_stats (player_id int NOT NULL, tank_id int NOT NULL, clan_id int, frozenDate timestamp, stats numeric(6,2), battles int, win int)
 // ALTER TABLE player_tank_stats ADD CONSTRAINT unique_player_tank_stats UNIQUE (player_id, tank_id);
