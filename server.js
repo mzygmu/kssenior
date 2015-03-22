@@ -20,7 +20,7 @@ Message.findOne().exec(function(err, messageDoc) {
 });
 
 app.listen(config.port, function() {
-  console.log("Node app is running at port:" + config.port))
+  console.log("Node app is running at port:" + config.port);
 });
 
 var keyPattern = /^[a-zA-Z0-9]{16,32}$/;

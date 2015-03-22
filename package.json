@@ -1,7 +1,7 @@
 {
   "name": "kssenior",
   "version": "0.1.2",
-  "description": "Klub Sportowy Senior Ligii Obrony Kraju",
+  "description": "Klub Strzelecki \"Senior\" Ligii Obrony Kraju w Gdańsku",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

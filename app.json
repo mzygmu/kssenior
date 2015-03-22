@@ -1,6 +1,6 @@
 {
   "name": "KS-Senior LOK",
-  "description": "Klub sportowy Senior Ligii Obrony Kraju",
+  "description": "Klub Strzelecki \"Senior\" Ligii Obrony Kraju w Gdańsku",
   "repository": "git@heroku.com:kssenior.git",
   "logo": "http://node-js-sample.herokuapp.com/node.svg",
   "keywords": ["node", "express", "static"]
