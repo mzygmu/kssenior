@@ -9,8 +9,8 @@
   "private": true,
   "dependencies": {
     "toastr": "~2.1.1",
-  	"angular": "1.2.x",
-  	"angular-resource": "1.2.x",
-  	"angular-route": "1.2.x"
+  	"angular": "1.4.x",
+  	"angular-resource": "1.4.x",
+  	"angular-route": "1.4.x"
   }
 }
