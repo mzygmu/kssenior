@@ -11,14 +11,6 @@ require('./server/config/express')(app, config);
 require('./server/config/mongoose')(config);
 require('./server/config/routes')(app);
 
-// temporary
-// var messageSchema = mongoose.messageSchema({message: String});
-// var Message = mongoose.model('Message', messageSchema);
-// var mongoMessage;
-// Message.findOne().exec(function(err, messageDoc) {
-//   mongoMessage = messageDoc.message;
-// });
-
 app.listen(config.port, function() {
   console.log("Node app is running at port:" + config.port);
 });
