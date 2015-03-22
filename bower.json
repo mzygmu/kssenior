@@ -1,0 +1,16 @@
+{
+  "name": "KS Senior",
+  "version": "0.0.1",
+  "authors": [
+    "rkazmier <rkazmierowski@gmail.com>"
+  ],
+  "description": "\"KS Senior LOK\" web page",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "toastr": "~2.0.1",
+  	"angular": "1.4.x",
+  	"angular-resource": "1.4.x",
+  	"angular-route": "1.4.x"
+  }
+}
