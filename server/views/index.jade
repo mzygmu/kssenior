@@ -6,6 +6,11 @@ block main-content
       .navbar-header
         a.navbar-brand(href="/") SENIOR
           h6 Klub Srzelecki LOK w Gdańsku
+      .navbar-collapse.collapse
+        ul.nav.navbar-nav
+          li
+            a(href="/") Home
+            
   section.content
     div(ng-view)
   h2= mongoMessage

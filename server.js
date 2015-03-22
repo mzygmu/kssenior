@@ -1,8 +1,6 @@
 var express = require('express'),
   mongoose = require('mongoose');
 
-// set NODE_ENV=development
-// heroku config:set NODE_ENV=production
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var app = express();

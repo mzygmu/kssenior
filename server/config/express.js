@@ -5,7 +5,6 @@ var express = require('express'),
 
 module.exports = function(app, config) {
   function compile(str, path) {
-    console.log('STYLUS !!!!');
     return stylus(str).set('filename', path);
   }
 
