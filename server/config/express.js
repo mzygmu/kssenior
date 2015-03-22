@@ -5,6 +5,7 @@ var express = require('express'),
 
 module.exports = function(app, config) {
   function compile(str, path) {
+    console.log('STYLUS !!!!');
     return stylus(str).set('filename', path);
   }
 
@@ -12,7 +13,6 @@ module.exports = function(app, config) {
   app.set('view engine', 'jade');
   app.set('port', config.port);
 
-  app.use(express.static(config.rootPath + '/public'));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(stylus.middleware(
@@ -22,4 +22,5 @@ module.exports = function(app, config) {
     }
   ));
   app.use(logger('dev'));
+  app.use(express.static(config.rootPath + '/public'));
 }

@@ -1,0 +1,19 @@
+{
+  "name": "angular-resource",
+  "version": "1.4.0-build.3925+sha.afd0807",
+  "main": "./angular-resource.js",
+  "ignore": [],
+  "dependencies": {
+    "angular": "1.4.0-build.3925+sha.afd0807"
+  },
+  "homepage": "https://github.com/angular/bower-angular-resource",
+  "_release": "1.4.0-build.3925+sha.afd0807",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.4.0-build.3925+sha.afd0807",
+    "commit": "6c478e452a12b2772635344f64eee5379c571dda"
+  },
+  "_source": "git://github.com/angular/bower-angular-resource.git",
+  "_target": "1.4.x",
+  "_originalSource": "angular-resource"
+}
