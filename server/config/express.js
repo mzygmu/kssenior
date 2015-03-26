@@ -6,6 +6,7 @@ var express = require('express'),
     session = require('express-session'),
     passport = require('passport');
 
+
 module.exports = function(app, config) {
   function compile(str, path) {
     return stylus(str).set('filename', path);
@@ -13,12 +14,9 @@ module.exports = function(app, config) {
 
   app.set('views', config.rootPath + '/server/views');
   app.set('view engine', 'jade');
-  app.set('port', config.port);
-
   app.use(logger('dev'));
   app.use(cookieParser());
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser());
   app.use(session({secret: 'multi vision unicorns'}));
   app.use(passport.initialize());
   app.use(passport.session());
@@ -28,6 +26,5 @@ module.exports = function(app, config) {
       compile: compile
     }
   ));
-  
   app.use(express.static(config.rootPath + '/public'));
 }
