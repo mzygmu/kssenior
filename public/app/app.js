@@ -28,7 +28,12 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       .when('/courses/:id', { templateUrl: '/partials/courses/course-details',
         controller: 'mvCourseDetailCtrl'
       })
-
+      .when('/aktualnosci', { templateUrl: '/partials/pages/aktualnosci'
+      })
+      .when('/oplaty', { templateUrl: '/partials/pages/oplaty'
+      })
+      .when('/klub', { templateUrl: '/partials/pages/klub'
+      })
 });
 
 angular.module('app').run(function($rootScope, $location) {
