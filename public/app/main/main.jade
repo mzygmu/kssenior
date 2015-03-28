@@ -1,12 +1,25 @@
-.container
-  .jumbotron
-    h1 KS SENIOR LOK GDAŃSK
-    p Witam na stronie Klubu Strzeleckiego "SENIOR" Ligi Obrony Kraju w Gdańsku.
-    p 80-729 Gdańsk ul. Zawodników 1
-    p tel. 881-444-452 e-mail: klub@kssenior-gdansk.pl
+.content
+  div#logo
+    img(width=1024, src="../img/logo.jpg")
+    div.text-box#logo-text-1
+      p LUBISZ STRZELAĆ?
+    div.text-box#logo-text-2 
+      p Zadzwoń dziś!
+    div.text-box#logo-text-3 
+      p I ZACZNIJ STRZELAĆ Z NAMI!
+    div#logo-button.btn.btn-primary
+        a(href="/dolacz", role="button") DOŁĄCZ DO NAS
 
-  .row
-    .col-md-6
-      div(ng-include="'/partials/main/featured-courses'")
-    .col-md-6
-      div(ng-include="'/partials/main/new-courses'")
+.content.main
+  div.main-elem.shadow
+    img(src="../img/ammo.png", width="300")
+    div.text-box.main-elem-text
+      p Aktualności
+  div.main-elem.shadow
+    img(src="../img/Zawody.jpg", width="300")
+    div.text-box.main-elem-text
+      p Zawody
+  div.main-elem.shadow
+    img(src="../img/Oklubie.png", width="300")
+    div.text-box.main-elem-text
+      p O klubie

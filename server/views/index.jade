@@ -1,21 +1,63 @@
 extends ../includes/layout
 
 block main-content
-  .navbar.navbar-inverse.navbar-fixed-top
+  .content
+    div.senior-top.senior-logo
+      img(src="../img/logo_lok_gdansk.png")
+    div.senior-top.senior-title
+      h1 KS SENIOR LOK
+      p KLUB STRZELECKI LIGI OBRONY KRAJU W GDAŃSKU
+    div.senior-top.senior-lok
+      img(height="168", src="../img/lok_logo_www.png")
+  .navbar.navbar-inverse
     .container
-      .navbar-header
-        a.navbar-brand(href="/") KS SENIOR
-          h6 Klub Strzelecki LOK w Gdańsku
       .navbar-collapse.collapse
         ul.nav.navbar-nav
           li
-            a(href="/") Home
+            a(href="/") Aktualności 
           li
-            a(href="/courses") Courses
+            a(href="/courses") Zawody         
+          li
+            a(href="/klasy") Klasy sportowe
+          li
+            a(href="/oplaty") Opłaty
+          li
+            a(href="/klub") O klubie
+          li
+            a(href="/galeria") Galeria
+          li
+            a(href="/linki") Linki
+          li
+            a(href="/#foot") Kontakt
+          
         div(ng-include="'/partials/account/navbar-login'")
 
   section.content
     div(ng-view)
 
-  footer.container.text-center
-    p &copy; 2015 KS "Senior" LOK w Gdańsku.
+  footer.content.div-box
+    div#foot
+      div.box-elem 
+        h6.foottitle GODZINY OTWARCIA
+        p 
+          span.foottext Pn, Sr, Pt: 10.00 - 18.00
+        p 
+          span.foottext Nd: 9.00 - 14.00
+        p 
+          span.foottext Wt, Cz, So: Nieczynne
+      div.box-elem 
+        h6.foottitle ADRES
+        p 
+          span.foottext Strzelnica
+        p 
+          span.foottext ul. Zawodników 1
+        p 
+          span.foottext Gdańsk 80-729
+        p 
+          span.foottext klub@kssenior-gdansk.com
+        p 
+          span.foottext Tel: 881-444-452
+      div.box-elem 
+        h6.foottitle LOKALIZACJA
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m8!1m3!1d9301.657440974026!2d18.66766415986781!3d54.34965854257815!3m2!1i1024!2i768!4f13.1!4m7!1i0!3e0!4m3!3m2!1d54.3467007!2d18.6722847!4m0!5e0!3m2!1spl!2spl!4v1427534684402" width="100%" height="100%" frameborder="0" style="border:0"></iframe>
+    p#copy &copy; 2015 KS "Senior" LOK w Gdańsku.

@@ -1,5 +1,5 @@
 body
-  padding-top 69px
+  background-image: url("../img/bg.png");
 
 .navbar-header a.navbar-brand
   margin-top -15px
@@ -7,12 +7,179 @@ body
   h6
     color #ccc
 
+.navbar {
+  margin-bottom: 0px;
+}
+.navbar-inverse {
+  background-color: rgb(27, 27, 27);
+  border-color: rgb(27, 27, 27);
+}
+
+.div-box {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 15px 15px;
+  margin: 8px 8px;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+
+.content {
+  width: 1024px;
+  margin: 0 auto;
+  position: relative;
+}
+.content.main {
+  width: 1040px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-left: -8px;
+}
+
+.main-elem {
+  list-style: none; 
+  width: 330px;
+  height: 411px;
+  padding: 0;  
+  display: inline-block;
+  vertical-align: top;
+}
+.main-elem.shadow {
+  border: 15px solid rgb(27, 27, 27);
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  position: relative;
+  margin-right: 8px;
+  margin-left: 8px;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: rgb(27, 27, 27);
+  border-radius: 0px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 4px 0px;
+}
+div.text-box.main-elem-text {
+  font-size: 33px;
+  visibility: visible;
+  left: 0px;
+  top: 240px;
+  width: 200px;
+  height: 55px;
+  position: absolute;
+  z-index: auto;
+}
+
+#logo {
+  
+}    
+
+.text-box {
+  border: 5px solid rgb(27, 27, 27);
+  margin-right: 2px;
+  margin-left: 0px;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: rgb(27, 27, 27);
+  border-radius: 0px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 4px 0px;
+  color: #fff;
+}
+#logo-text-1 {
+  font-size: 33px;
+  visibility: visible;
+  left: 25px;
+  top: 25px;
+  width: 310px;
+  height: 55px;
+  position: absolute;
+  z-index: auto;
+}
+#logo-text-2 {
+  font-size: 33px;
+  visibility: visible;
+  left: 115px;
+  top: 115px;
+  width: 220px;
+  height: 55px;
+  position: absolute;
+  z-index: auto;
+}
+#logo-text-3 {
+  font-size: 33px;
+  visibility: visible;
+  left: 40px;
+  top: 330px;
+  width: 465px;
+  height: 55px;
+  position: absolute;
+  z-index: auto;
+}
+#logo-button {
+  border: 2px solid rgb(51, 100, 175);
+  transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+  -webkit-transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+  border-radius: 5px;
+
+  font-size: 22px;
+  visibility: visible;
+  right: 40px;
+  top: 330px;
+  width: 200px;
+  height: 55px;
+  position: absolute;
+  z-index: auto;
+}
+
+a {
+  color: #fff;
+}
+
+.senior-top {
+  display: inline-block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+.senior-top.senior-title {
+  text-align: center;
+  width: 601px;
+  color: #fff;
+}
+
+.box-elem {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 33%;
+}
+
 footer
   padding-left 15px
   padding-right 15px
-  p
-    border-top 1px solid #d7e0e2
+  text-align: left;
 
+footer 
+  p#copy
+    font: 13px 'jockey one', sans-serif;
+
+h6.foottitle    
+  line-height: 1.3em;
+  text-align: left;
+  color: rgb(51, 100, 175);
+  font: 23px/1.3em 'jockey one', sans-serif;
+
+span.foottext
+  font: 15px/1.3em enriqueta, serif;
+  
 .navbar-form
   .form-group
     margin-left 10px
@@ -29,5 +196,5 @@ footer
   top 70px
 
 .toast-success
-  background-color #13987e
+  background-color: rgb(51, 100, 175);
 
