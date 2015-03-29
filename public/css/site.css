@@ -89,7 +89,7 @@ div.text-box.main-elem-text {
   visibility: visible;
   left: 25px;
   top: 25px;
-  width: 310px;
+  width: 320px;
   height: 55px;
   position: absolute;
   z-index: auto;
@@ -99,7 +99,7 @@ div.text-box.main-elem-text {
   visibility: visible;
   left: 115px;
   top: 115px;
-  width: 220px;
+  width: 230px;
   height: 55px;
   position: absolute;
   z-index: auto;
@@ -109,7 +109,7 @@ div.text-box.main-elem-text {
   visibility: visible;
   left: 40px;
   top: 330px;
-  width: 465px;
+  width: 480px;
   height: 55px;
   position: absolute;
   z-index: auto;
@@ -123,7 +123,7 @@ div.text-box.main-elem-text {
   visibility: visible;
   right: 40px;
   top: 330px;
-  width: 200px;
+  width: 220px;
   height: 55px;
   position: absolute;
   z-index: auto;
@@ -193,7 +193,7 @@ div.news small {
 }
 .senior-top.senior-title {
   text-align: center;
-  width: 601px;
+  width: 595px;
   color: #fff;
 }
 .box-elem {
