@@ -181,6 +181,10 @@ div.news {
   border-radius: 0px;
   box-shadow: rgba(0,0,0,0.6) 0px 1px 4px 0px;
 }
+div.news div {
+  margin-right: 5px;
+  display: inline-block;
+}
 div.news small {
   font: 12px 'jockey one', sans-serif;
 }
