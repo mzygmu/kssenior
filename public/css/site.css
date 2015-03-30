@@ -1,5 +1,7 @@
 body {
   background-image: url("../img/bg.png");
+  font: 15px 'Enriqueta', serif;
+  line-height: 1.5em;
 }
 .navbar-header a.navbar-brand {
   margin-top: -15px;
@@ -42,6 +44,9 @@ body {
   padding: 0;
   display: inline-block;
   vertical-align: top;
+}
+.main-elem-text {
+  vertical-align: middle;
 }
 .main-elem.shadow {
   border: 15px solid #1b1b1b;
@@ -145,9 +150,11 @@ a {
 }
 .pic-desc h4 {
   color: #3364af;
+  font: 25px/1.2em 'Enriqueta', serif;
 }
 .pic-desc h2 {
   color: #ba2800;
+  font: 40px/1.1em 'Enriqueta', serif;
 }
 .senior-table-bg {
   width: 994px;
@@ -186,10 +193,11 @@ div.news div {
   display: inline-block;
 }
 div.news small {
-  font: 12px 'jockey one', sans-serif;
+  font: 14px 'Jockey One', sans-serif;
 }
 .senior-top {
   display: inline-block;
+  vertical-align: top;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-right: 30px;
@@ -199,6 +207,12 @@ div.news small {
   text-align: center;
   width: 595px;
   color: #fff;
+}
+.senior-top.senior-title h1 {
+  font: 75px 'Jockey One', sans-serif;
+}
+.senior-top.senior-title p {
+  font: 20px 'Jockey One', sans-serif;
 }
 .box-elem {
   list-style: none;
@@ -214,16 +228,16 @@ footer {
   text-align: left;
 }
 footer p#copy {
-  font: 13px 'jockey one', sans-serif;
+  font: 13px 'Jockey One', sans-serif;
 }
 h6.foottitle {
   line-height: 1.3em;
   text-align: left;
   color: #3364af;
-  font: 23px/1.3em 'jockey one', sans-serif;
+  font: 23px/1.3em 'Jockey One', sans-serif;
 }
 span.foottext {
-  font: 15px/1.3em enriqueta, serif;
+  font: 15px/1.3em 'Enriqueta', serif;
 }
 .navbar-form .form-group {
   margin-left: 10px;
