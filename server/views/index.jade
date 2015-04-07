@@ -10,33 +10,31 @@ block main-content
         p KLUB STRZELECKI LIGI OBRONY KRAJU W GDAŃSKU
       div.senior-top.senior-lok
         img(height="168", src="../img/lok_logo_www.png")
-  .navbar.navbar-inverse
-    .container
-      .navbar-collapse.collapse
-        ul.nav.navbar-nav
-          li
-            a(href="/aktualnosci") Aktualności 
-          li
-            a(href="/zawody") Zawody  
-          <!--
-          li
-            a(href="/courses") Courses   -->     
-          <!--
-          li
-            a(href="/klasy") Klasy sportowe -->
-          li
-            a(href="/oplaty") Opłaty
-          li
-            a(href="/klub") O klubie
-          <!--
-          li
-            a(href="/galeria") Galeria
-          li
-            a(href="/linki") Linki -->
-          li
-            a(href="/#/#foot") Kontakt
-          
-        <!--div(ng-include="'/partials/account/navbar-login'")-->
+  .content.menu
+    ul
+      li
+        a(href="/aktualnosci") Aktualności 
+      li
+        a(href="/zawody") Zawody  
+      <!--
+      li
+        a(href="/courses") Courses   -->     
+      <!--
+      li
+        a(href="/klasy") Klasy sportowe -->
+      li
+        a(href="/oplaty") Opłaty
+      li
+        a(href="/klub") O klubie
+      <!--
+      li
+        a(href="/galeria") Galeria
+      li
+        a(href="/linki") Linki -->
+      li
+        a(href="/#/#foot") Kontakt
+        
+      <!--div(ng-include="'/partials/account/navbar-login'")-->
 
   section.content
     div(ng-view)
