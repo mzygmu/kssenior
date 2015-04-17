@@ -1,11 +1,11 @@
-angular.module('app').controller('mvNavBarLoginCtrl', function($scope, $modalInstance, $http, mvIdentity, mvNotifier, mvAuth, $location) {
-  $scope.identity = mvIdentity;
+angular.module('app').controller('mvNavBarLoginCtrl', function($scope, $modalInstance, $http, mvNotifier, mvAuth, $location) {
+  
   $scope.signin = function(username, password) {
     mvAuth.authenticateUser(username, password).then(function(success) {
       if(success) {
-        mvNotifier.notify('You have successfully signed in!');
+        mvNotifier.notify('Logowanie się powiodło!');
       } else {
-        mvNotifier.notify('Username/Password combination incorrect');
+        mvNotifier.error('Nazwa użytkownika lub hasło jest nieprawidłowe');
       }
       $modalInstance.close();
     });
@@ -15,7 +15,7 @@ angular.module('app').controller('mvNavBarLoginCtrl', function($scope, $modalIns
     mvAuth.logoutUser().then(function() {
       $scope.username = "";
       $scope.password = "";
-      mvNotifier.notify('You have successfully signed out!');
+      mvNotifier.notify('Wylogowanie się powiodło!');
       $location.path('/');
     })
   }

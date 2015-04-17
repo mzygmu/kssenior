@@ -1,6 +1,8 @@
-angular.module('app').controller('loginModalCtrl', function ($scope, $modal, $log) {
+angular.module('app').controller('loginModalCtrl', function ($scope, $modal, $log, mvIdentity) {
 
   $scope.openLoginWindow = function() {
+
+    $scope.identity = mvIdentity;
 
     var modalInstance = $modal.open({
       templateUrl: '/partials/account/loginModalContent',

@@ -35,7 +35,7 @@ block main-content
           a(href="/linki") Linki -->
         li
           a(href="/#/#foot") Kontakt
-    div.menu-right(ng-controller='loginModalCtrl')
+    div.menu-right(ng-controller='loginModalCtrl') 
       button(ng-click='openSignUpWindow()', ng-if="!identity.isAuthenticated()") Rejestracja
       button(ng-click='openLoginWindow()', ng-if="!identity.isAuthenticated()") Zaloguj
       ul.nav.navbar-nav.navbar-right(ng-if="identity.isAuthenticated()")
@@ -45,11 +45,11 @@ block main-content
             b.caret
           ul.dropdown-menu
             li(ng-show="identity.currentUser.isAdmin()")
-              a(href="/admin/users") User Admin
+              a(href="/admin/users") Admininstracja
             li
-              a(href="/profile") Profile
+              a(href="/profile") Profil
             li
-              a(href="", ng-click="signout()") Sign Out
+              a(href="", ng-click="signout()") Wyloguj
 
   section.content
     div(ng-view)  
