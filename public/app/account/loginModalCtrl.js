@@ -1,34 +1,18 @@
-angular.module('app').controller('loginModalCtrl', function ($scope, $modal, $log, mvIdentity) {
+angular.module('app').controller('loginModalCtrl', function ($scope, $modalInstance, $log, mvAuth, mvNotifier) {
 
-  $scope.openLoginWindow = function() {
-
-    $scope.identity = mvIdentity;
-
-    var modalInstance = $modal.open({
-      templateUrl: '/partials/account/loginModalContent',
-      controller: 'mvNavBarLoginCtrl'
+  $scope.signin = function(username, password) {
+    mvAuth.authenticateUser(username, password).then(function(success) {
+      if(success) {
+        mvNotifier.notify('Logowanie się powiodło!');
+      } else {
+        mvNotifier.error('Nazwa użytkownika lub hasło jest nieprawidłowe');
+      }
+      $modalInstance.close();
     });
+  }
 
-    modalInstance.result.then(function () {
-
-    }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
-    });
-
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
   };
 
-  $scope.openSignUpWindow = function() {
-
-    var modalInstance = $modal.open({
-      templateUrl: '/partials/account/signup',
-      controller: 'mvSignupCtrl'
-    });
-
-    modalInstance.result.then(function () {
-
-    }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
-    });
-
-  };
 });

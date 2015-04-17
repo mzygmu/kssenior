@@ -35,7 +35,7 @@ block main-content
           a(href="/linki") Linki -->
         li
           a(href="/#/#foot") Kontakt
-    div.menu-right(ng-controller='loginModalCtrl') 
+    div.menu-right(ng-controller='mvNavBarLoginCtrl') 
       button(ng-click='openSignUpWindow()', ng-if="!identity.isAuthenticated()") Rejestracja
       button(ng-click='openLoginWindow()', ng-if="!identity.isAuthenticated()") Zaloguj
       ul.nav.navbar-nav.navbar-right(ng-if="identity.isAuthenticated()")
