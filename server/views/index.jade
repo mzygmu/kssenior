@@ -10,34 +10,49 @@ block main-content
         p KLUB STRZELECKI LIGI OBRONY KRAJU W GDAŃSKU
       div.senior-top.senior-lok
         img(height="168", src="../img/lok_logo_www.png")
+
   .content.menu
-    ul
-      li
-        a(href="/aktualnosci") Aktualności 
-      li
-        a(href="/zawody") Zawody  
-      <!--
-      li
-        a(href="/courses") Courses   -->     
-      <!--
-      li
-        a(href="/klasy") Klasy sportowe -->
-      li
-        a(href="/oplaty") Opłaty
-      li
-        a(href="/klub") O klubie
-      <!--
-      li
-        a(href="/galeria") Galeria
-      li
-        a(href="/linki") Linki -->
-      li
-        a(href="/#/#foot") Kontakt
-        
-      <!--div(ng-include="'/partials/account/navbar-login'")-->
+    div.menu-left
+      ul
+        li
+          a(href="/aktualnosci") Aktualności 
+        li
+          a(href="/zawody") Zawody  
+        <!--
+        li
+          a(href="/courses") Courses   -->     
+        <!--
+        li
+          a(href="/klasy") Klasy sportowe -->
+        li
+          a(href="/oplaty") Opłaty
+        li
+          a(href="/klub") O klubie
+        <!--
+        li
+          a(href="/galeria") Galeria
+        li
+          a(href="/linki") Linki -->
+        li
+          a(href="/#/#foot") Kontakt
+    div.menu-right(ng-controller='loginModalCtrl')
+      button(ng-click='openSignUpWindow()', ng-if="!identity.isAuthenticated()") Rejestracja
+      button(ng-click='openLoginWindow()', ng-if="!identity.isAuthenticated()") Zaloguj
+      ul.nav.navbar-nav.navbar-right(ng-if="identity.isAuthenticated()")
+        li.dropdown
+          a.dropdown-toggle(href="", data-toggle="dropdown")
+            | {{identity.currentUser.firstName + " " + identity.currentUser.lastName}}
+            b.caret
+          ul.dropdown-menu
+            li(ng-show="identity.currentUser.isAdmin()")
+              a(href="/admin/users") User Admin
+            li
+              a(href="/profile") Profile
+            li
+              a(href="", ng-click="signout()") Sign Out
 
   section.content
-    div(ng-view)
+    div(ng-view)  
 
   footer.content.div-box
     div#foot
