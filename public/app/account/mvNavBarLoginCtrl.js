@@ -7,7 +7,7 @@ angular.module('app').controller('mvNavBarLoginCtrl', function($scope, $http, mv
       $scope.username = "";
       $scope.password = "";
       mvNotifier.notify('Wylogowanie się powiodło!');
-      //$location.path('/');
+      $location.path('/');
     })
   }
 
