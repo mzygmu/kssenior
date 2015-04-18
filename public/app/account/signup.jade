@@ -1,26 +1,27 @@
-div.modal-header
-  h3.modal-title Twoje dane
+div.base-panel
+  div.modal-header
+    h3.modal-title Twoje dane
 
-div.modal-body
-  form.form-horizontal(name="signupForm")
-    fieldset
-      .form-group
-        label.col-md-2.control-label(for="email") E-mail
-        .col-md-10
-          input.form-control(name="email", type="email", placeholder="Email", ng-model="email", required)
-      .form-group
-        label.col-md-2.control-label(for="password") Hasło
-        .col-md-10
-          input.form-control(name="password", type="password", placeholder="Hasło", ng-model="password", required)
-      .form-group
-        label.col-md-2.control-label(for="fname") Imię
-        .col-md-10
-          input.form-control(name="fname", type="text", placeholder="Imię", ng-model="fname", required)
-      .form-group
-        label.col-md-2.control-label(for="lname") Nazwisko
-        .col-md-10
-          input.form-control(name="lname", type="text", placeholder="Nazwisko", ng-model="lname", required)
+  div.modal-body
+    form.form-horizontal(name="signupForm")
+      fieldset
+        .form-group
+          label.col-md-2.control-label(for="email") E-mail
+          .col-md-10
+            input.form-control(name="email", type="email", placeholder="Email", ng-model="email", required)
+        .form-group
+          label.col-md-2.control-label(for="password") Hasło
+          .col-md-10
+            input.form-control(name="password", type="password", placeholder="Hasło", ng-model="password", required)
+        .form-group
+          label.col-md-2.control-label(for="fname") Imię
+          .col-md-10
+            input.form-control(name="fname", type="text", placeholder="Imię", ng-model="fname", required)
+        .form-group
+          label.col-md-2.control-label(for="lname") Nazwisko
+          .col-md-10
+            input.form-control(name="lname", type="text", placeholder="Nazwisko", ng-model="lname", required)
 
-div.modal-footer
-  button.btn.btn-primary(ng-click='signup()', ng-disabled="signupForm.$invalid") Wprowadź 
-  button.btn.btn-warning(ng-click='cancel()') Anuluj
+  div.modal-footer
+    button.btn.btn-primary(ng-click='signup()', ng-disabled="signupForm.$invalid") Wprowadź 
+    button.btn.btn-warning(ng-click='cancel()') Anuluj

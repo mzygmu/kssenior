@@ -1,12 +1,13 @@
-div.modal-header
-  h3.modal-title Zaloguj się
+div.base-panel
+  div.modal-header
+    h3.modal-title Zaloguj się
 
-div.modal-body
-  div.form-group
-    input.form-control(placeholder='E-mail', ng-model='username')
-  div.form-group
-    input.form-control(type='password', placeholder='Hasło', ng-model='password')
+  div.modal-body
+    div.form-group
+      input.form-control(placeholder='E-mail', ng-model='username')
+    div.form-group
+      input.form-control(type='password', placeholder='Hasło', ng-model='password')
 
-div.modal-footer
-  button.btn.btn-primary(ng-click='signin(username, password)') Zaloguj 
-  button.btn.btn-warning(ng-click='cancel()') Anuluj
+  div.modal-footer
+    button.btn.btn-primary(ng-click='signin(username, password)') Zaloguj 
+    button.btn.btn-warning(ng-click='cancel()') Anuluj
