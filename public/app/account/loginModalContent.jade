@@ -1,12 +1,18 @@
-div.base-panel
+div.base-panel.modal-panel
   div.modal-header
     h3.modal-title Zaloguj się
 
   div.modal-body
-    div.form-group
-      input.form-control(placeholder='E-mail', ng-model='username')
-    div.form-group
-      input.form-control(type='password', placeholder='Hasło', ng-model='password')
+    form.form-horizontal(name="signupForm")
+      fieldset
+        .form-group
+          label.col-md-2.control-label(for="email") E-mail
+          .col-md-10
+            input.form-control(name="email", type="email", placeholder="E-mail", ng-model="username", required)
+        .form-group
+          label.col-md-2.control-label(for="password") Hasło
+          .col-md-10
+            input.form-control(name="password", type="password", placeholder="Hasło", ng-model="password", required)
 
   div.modal-footer
     button.btn.btn-primary(ng-click='signin(username, password)') Zaloguj 
