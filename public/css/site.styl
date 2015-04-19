@@ -325,8 +325,10 @@ div.menu-right a {
   padding-right: 0px;
   padding-top: 0px;
 }
-div.menu-right a:hover, div.menu-right a:activ {
+
+div.menu-right > ul > li.dropdown > a:hover, div.menu-right > ul > li.dropdown > a:focus {
   background-color: #000;
+  text-decoration: none;
 }
 div.menu-right a > b.caret {
   border-top-color: #fff;
@@ -351,6 +353,7 @@ ul.dropdown-menu > li > a {
 }
 ul.dropdown-menu > li > a:hover {
   color: #3364af;
+  background-color: #000;
 }
 
 div.menu-right > button {
@@ -402,6 +405,7 @@ li > a:before {
   left: 0;
   right: 100%;
   bottom: 0;
+  background: #3364af;
   height: 4px;
   -webkit-transition-property: right;
   transition-property: right;
