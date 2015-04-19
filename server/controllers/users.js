@@ -47,3 +47,19 @@ exports.updateUser = function(req, res) {
     res.send(req.user);
   });
 };
+
+exports.deleteUser = function(req, res) {
+  var userData = req.body;
+  userData.username = userData.username.toLowerCase();
+
+};
+
+exports.rights = function(req, res) {
+  var userData = req.body;
+  userData.username = userData.username.toLowerCase();
+  if(userData.rights ==='admin') {
+
+  };
+
+
+};

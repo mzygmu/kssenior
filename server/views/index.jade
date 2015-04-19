@@ -47,6 +47,8 @@ block main-content
             li(ng-if="identity.currentUser.isAdmin()")
               a(href="/admin/users") Admininstracja
             li
+              a(herf="/admin/users") Użytkownicy
+            li
               a(href="/profile") Twoje dane
             li
               a(href="", ng-click="signout()") Wyloguj
