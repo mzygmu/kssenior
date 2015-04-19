@@ -44,7 +44,7 @@ block main-content
             | {{identity.currentUser.firstName + " " + identity.currentUser.lastName}}
             b.caret
           ul.dropdown-menu
-            li(ng-show="identity.currentUser.isAdmin()")
+            li(ng-if="identity.currentUser.isAdmin()")
               a(href="/admin/users") Admininstracja
             li
               a(href="/profile") Twoje dane
