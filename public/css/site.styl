@@ -187,6 +187,7 @@ h2 {
 
 .base-panel {
   background-color: rgb(27, 27, 27);
+  padding-right: 25px;
   color: rgb(255, 255, 255);
 }
 .modal-panel {
@@ -324,7 +325,7 @@ div.menu-right a {
   padding-right: 0px;
   padding-top: 0px;
 }
-div.menu-right a:hover {
+div.menu-right a:hover, div.menu-right a:activ {
   background-color: #000;
 }
 div.menu-right a > b.caret {
@@ -337,10 +338,10 @@ div.menu-right a > b.caret:hover {
 }
 ul.dropdown-menu > li > a {
   margin-left: 10px;
+  margin-right: 10px;
   color: #fff;
 }
 ul.dropdown-menu > li > a:hover {
-  margin-left: 10px;
   color: #3364af;
 }
 
@@ -406,7 +407,6 @@ li > a:before {
 li > a:hover:before, li > a:focus:before, li > a:active:before {
   right: 0;
 }
-
 
 /* Underline From Left */
 .hvr-underline-from-left {
