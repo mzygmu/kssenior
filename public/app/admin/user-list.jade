@@ -4,6 +4,7 @@
       td {{user.firstName + ' ' + user.lastName}}
       td {{user.username}}
       td {{user.roles}}
-      td(ng-click='setAdmin(user)') set Admin  
       td
-      	button.btn.btn-warning(ng-click='removeUser(user)') Usuń
+        button.btn.btn-warning(ng-click='setAdmin(user)') set Admin  
+      td
+        button.btn.btn-warning(ng-click='removeUser(user)') Usun
