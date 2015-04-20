@@ -5,4 +5,5 @@
       td {{user.username}}
       td {{user.roles}}
       td(ng-click='setAdmin(user)') set Admin  
-      td(ng-click='removeUser(user)') usuń
+      td
+      	button(ng-click='removeUser(user)') usuń

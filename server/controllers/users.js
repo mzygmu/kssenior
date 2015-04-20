@@ -51,7 +51,14 @@ exports.updateUser = function(req, res) {
 exports.deleteUser = function(req, res) {
   var userData = req.body;
   userData.username = userData.username.toLowerCase();
-
+  User.remove( { username : userData.username }, function(err, user) {
+    if(err) {
+      res.status(400);
+      return res.send({reason:err.toString()});
+    }
+    res.status(200);
+    res.send();
+  });
 };
 
 exports.rights = function(req, res) {
