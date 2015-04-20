@@ -50,8 +50,7 @@ exports.updateUser = function(req, res) {
 
 exports.deleteUser = function(req, res) {
   var userData = req.body;
-  userData.username = userData.username.toLowerCase();
-  User.remove( { username : userData.username }, function(err, user) {
+  User.remove( { _id : userData.user_id }, function(err, user) {
     if(err) {
       res.status(400);
       return res.send({reason:err.toString()});
@@ -63,10 +62,7 @@ exports.deleteUser = function(req, res) {
 
 exports.rights = function(req, res) {
   var userData = req.body;
-  userData.username = userData.username.toLowerCase();
-  if(userData.rights ==='admin') {
-
-  };
+  // set user admin // userData.user_id;  userData.rights
 
 
 };

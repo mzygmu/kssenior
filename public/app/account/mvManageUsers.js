@@ -1,9 +1,9 @@
 angular.module('app').factory('mvManageUsers', function($http, mvIdentity, $q, mvUser) {
   return {
 
-    setAdmin: function(username) {
+    setAdmin: function(user) {
       var dfd = $q.defer();
-      $http.post('/api/users/rights', {username:username, rights:'admin'}).then(function(response) {
+      $http.post('/api/users/rights', {user_id:user._id, rights:'admin'}).then(function(response) {
         if(response.data.success) {
           dfd.resolve(true);
         } else {
@@ -12,9 +12,9 @@ angular.module('app').factory('mvManageUsers', function($http, mvIdentity, $q, m
       });
       return dfd.promise;
     },
-    removeUser: function(username) {
+    removeUser: function(user) {
       var dfd = $q.defer();
-      $http.delete('/api/users', {username:username}).then(function(response) {
+      $http.delete('/api/users', {user_id:user._id}).then(function(response) {
         if(response.data.success) {
           dfd.resolve(true);
         } else {
