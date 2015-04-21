@@ -64,12 +64,11 @@ exports.addRights = function(req, res) {
   var userData = req.body;
   // set user admin // userData.user_id;  userData.rights
   var query = { _id : userData.user_id }; // which document
-  var update = {$push:{roles:userData.rights}}; // what change
+  var update = {$set:{roles:[userData.rights]}}; // what change
   var options = {multi:false}; // one? many? upsert?
   console.log('RIGHTS '+userData.user_id+'\t'+userData.rights);
   User.update(query, update); // update({_id:1}, {$push:{things: 'one'}}); // {$addToSet:{roles:userData.rights}};
   res.status(200);
-  console.log(User.find());
   res.send();
 };
 
