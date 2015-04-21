@@ -64,7 +64,7 @@ exports.addRights = function(req, res) {
   var userData = req.body;
   User.update(
     { _id : userData.user_id }, 
-    {$addToSet:{roles:userData.rights}}); // update({_id:1}, {$push:{things: 'one'}}); // {$addToSet:{roles:userData.rights}};
+    {$set:{roles:[userData.rights]}}); // update({_id:1}, {$push:{things: 'one'}}); // {$addToSet:{roles:userData.rights}};
   res.status(200);
   res.send();
 };
