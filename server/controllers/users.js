@@ -74,9 +74,6 @@ exports.addRights = function(req, res) {
       res.send();
     }
   );
-//    {$set:{roles:[userData.rights]}}); // update({_id:1}, {$push:{things: 'one'}}); // {$addToSet:{roles:userData.rights}};
-  // res.status(200);
-  // res.send();
 };
 
 exports.removeRights = function(req, res) {
