@@ -14,6 +14,7 @@ angular.module('app').factory('mvManageUsers', function($http, mvIdentity, $q, m
     },
     removeUser: function(user) {
       var dfd = $q.defer();
+      console.log(user);
       $http.delete('/api/users', {user_id:user._id}).then(function(response) {
         if(response.data.success) {
           dfd.resolve(true);

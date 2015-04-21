@@ -50,6 +50,7 @@ exports.updateUser = function(req, res) {
 
 exports.deleteUser = function(req, res) {
   var userData = req.body;
+  
   User.remove( { _id : userData.user_id }, function(err, user) {
     if(err) {
       res.status(400);
