@@ -50,7 +50,7 @@ exports.updateUser = function(req, res) {
 
 exports.deleteUser = function(req, res) {
   var userData = req.body;
-  
+
   User.remove( { _id : userData.user_id }, function(err, user) {
     if(err) {
       res.status(400);
@@ -65,5 +65,6 @@ exports.rights = function(req, res) {
   var userData = req.body;
   // set user admin // userData.user_id;  userData.rights
 
-
+  res.status(200);
+  res.send();
 };

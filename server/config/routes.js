@@ -10,7 +10,7 @@ module.exports = function(app) {
     users.getUsers);
   app.post('/api/users', users.createUser);
   app.put('/api/users', users.updateUser);
-  app.delete('/api/users', users.deleteUser);
+  app.post('/api/users/remove', users.deleteUser);
   app.post('/api/users/rights', users.rights);
 
   app.get('/api/courses', courses.getCourses);
