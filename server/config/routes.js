@@ -11,7 +11,8 @@ module.exports = function(app) {
   app.post('/api/users', users.createUser);
   app.put('/api/users', users.updateUser);
   app.post('/api/users/remove', users.deleteUser);
-  app.post('/api/users/rights', users.rights);
+  app.post('/api/users/addRights', users.addRights);
+  app.post('/api/users/rmRights', users.removeRights);
 
   app.get('/api/courses', courses.getCourses);
   app.get('/api/courses/:id', courses.getCourseById);

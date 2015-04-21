@@ -50,7 +50,6 @@ exports.updateUser = function(req, res) {
 
 exports.deleteUser = function(req, res) {
   var userData = req.body;
-  console.log('REMOVE '+userData.user_id);
   User.remove( { _id : userData.user_id }, function(err, user) {
     if(err) {
       res.status(400);
@@ -61,13 +60,25 @@ exports.deleteUser = function(req, res) {
   });
 };
 
-exports.rights = function(req, res) {
+exports.addRights = function(req, res) {
   var userData = req.body;
   // set user admin // userData.user_id;  userData.rights
   var query = { _id : userData.user_id }; // which document
-  var update = {$addToSet:{roles:userData.rights}}; // what change
-  var options = ''; // one? many? upsert?
+  var update = {$push:{roles:userData.rights}}; // what change
+  var options = {multi:false}; // one? many? upsert?
   console.log('RIGHTS '+userData.user_id+'\t'+userData.rights);
+  User.update(query, update); // update({_id:1}, {$push:{things: 'one'}}); // {$addToSet:{roles:userData.rights}};
+  res.status(200);
+  res.send(User.find());
+};
+
+exports.removeRights = function(req, res) {
+  var userData = req.body;
+  // set user admin // userData.user_id;  userData.rights
+  var query = { _id : userData.user_id }; // which document
+  var update = {$pull:{roles:userData.rights}}; // what change
+  var options = ''; // one? many? upsert?
+  console.log('rmRIGHTS '+userData.user_id+'\t'+userData.rights);
   User.update(query, update); // update({_id:1}, {$push:{things: 'one'}});
   res.status(200);
   res.send();
