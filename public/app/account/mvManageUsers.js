@@ -12,6 +12,9 @@ angular.module('app').factory('mvManageUsers', function($http, mvIdentity, $q, m
       });
       return dfd.promise;
     },
+    isAdmin: function(user) {
+      return user.roles.indexOf('admin') > -1;
+    },
     removeRights: function(user) {
       var dfd = $q.defer();
       $http.post('/api/users/rmRights', {user_id:user._id, rights:'admin'}).then(function(response) {
