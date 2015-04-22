@@ -14,12 +14,13 @@ angular.module('app').controller('mvUserListCtrl', function($scope, mvUser, mvMa
         console.log(err);
       });
     }
-  }
+  };
   $scope.removeUser = function(user) {
     mvManageUsers.removeUser(user).then(function(res) {
         $scope.users = mvUser.query();
     }, function(err){
       console.log(err);
     });
+  };
   $scope.isAdmin = mvManageUsers.isAdmin;
 });
