@@ -78,12 +78,16 @@ exports.addRights = function(req, res) {
 
 exports.removeRights = function(req, res) {
   var userData = req.body;
-  // set user admin // userData.user_id;  userData.rights
-  var query = { _id : userData.user_id }; // which document
-  var update = {$pull:{roles:[userData.rights]}}; // what change
-  var options = {multi:false}; // one? many? upsert?
-  console.log('-------rmRIGHTS '+userData.user_id+'\t'+userData.rights);
-  User.update(query, update); // update({_id:1}, {$push:{things: 'one'}});
-  res.status(200);
-  res.send();
+  User.update(
+    { _id : userData.user_id }, 
+    {$pull:{roles:[userData.rights]}},
+    function(err, user) {
+      if(err) {
+        res.status(400);
+        return res.send({reason:err.toString()});
+      }
+      res.status(200);
+      res.send();
+    }
+  );
 };
