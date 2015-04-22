@@ -1,17 +1,20 @@
 .content.base-panel
   table.table
-    th 
-      tr Imię Nazwisko
-      tr E-Mail
-      tr Administrator
-      tr 
-    tr(ng-repeat="user in users")
-      td {{user.firstName + ' ' + user.lastName}}
-      td {{user.username}}
-      td {{user.roles}}
-      td
-        button.btn.btn-warning(ng-click='setAdmin(user)')
-          span.glyphicon(ng-class="{'glyphicon-check': isAdmin(user), 'glyphicon-unchecked':!isAdmin(user)}")
-      td
-        button.btn.btn-danger(ng-click='removeUser(user)') 
-          span.glyphicon.glyphicon-remove Usuń
+    tbody
+      tr
+        th L.p.
+        th Imię Nazwisko
+        th E-Mail
+        th Administrator
+        th  
+      tr(ng-repeat="user in users")
+        td {{ $index +1 }}
+        td {{ user.firstName + ' ' + user.lastName }}
+        td {{ user.username }}
+        td {{ user.roles }}
+        td
+          button.btn.btn-warning(ng-click='setAdmin(user)')
+            span.glyphicon(ng-class="{'glyphicon-check': isAdmin(user), 'glyphicon-unchecked':!isAdmin(user)}")
+        td
+          button.btn.btn-danger(ng-click='removeUser(user)') 
+            span.glyphicon.glyphicon-remove Usuń

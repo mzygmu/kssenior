@@ -1,7 +1,9 @@
 angular.module('app').factory('mvManageUsers', function($http, mvIdentity, $q, mvUser) {
   return {
-
-    setAdmin: function(user) {
+    isAdmin: function(user) {
+      return user.roles.indexOf('admin') > -1;
+    },
+    addRights: function(user) {
       var dfd = $q.defer();
       $http.post('/api/users/addRights', {user_id:user._id, rights:'admin'}).then(function(response) {
         if(response.data.success) {
@@ -11,9 +13,6 @@ angular.module('app').factory('mvManageUsers', function($http, mvIdentity, $q, m
         }
       });
       return dfd.promise;
-    },
-    isAdmin: function(user) {
-      return user.roles.indexOf('admin') > -1;
     },
     removeRights: function(user) {
       var dfd = $q.defer();
