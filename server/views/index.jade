@@ -46,8 +46,12 @@ block main-content
           ul.dropdown-menu
             li(ng-if="identity.currentUser.isAdmin()")
               a(href="/admin/users") Admininstracja
-            li
-              a(herf="/admin/users") Użytkownicy
+            li(ng-if="identity.currentUser.isAdmin()")
+              a(href="/admin/news") Aktualności
+            li(ng-if="identity.currentUser.isAdmin()")
+              a(href="/admin/edit") Edycja strony
+            li(ng-if="identity.currentUser.isAdmin()")
+              a(href="/admin/competitions") Zawody i wyniki
             li
               a(href="/profile") Twoje dane
             li
