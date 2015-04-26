@@ -16,6 +16,9 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       .when('/admin/users', { templateUrl: '/partials/admin/user-list',
         controller: 'mvUserListCtrl', resolve: routeRoleChecks.admin
       })
+      .when('/admin/news', { templateUrl: '/partials/news/news',
+        controller: 'newsListCtrl', resolve: routeRoleChecks.admin
+      })
       .when('/profile', { templateUrl: '/partials/account/profile',
         controller: 'mvProfileCtrl', resolve: routeRoleChecks.user
       })
@@ -25,7 +28,8 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       .when('/courses/:id', { templateUrl: '/partials/courses/course-details',
         controller: 'mvCourseDetailCtrl'
       })
-      .when('/aktualnosci', { templateUrl: '/partials/pages/aktualnosci'
+      .when('/aktualnosci', { templateUrl: '/partials/pages/aktualnosci', 
+        controller: 'newsListCtrl'
       })
       .when('/zawody', { templateUrl: '/partials/pages/zawody'
       })

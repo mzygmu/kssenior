@@ -1,0 +1,19 @@
+div.base-panel.modal-panel
+  div.modal-header
+    h3.modal-title Dodaj ogłoszenie
+
+  div.modal-body
+    form.form-horizontal(name="postForm")
+      fieldset
+        .form-group
+          label.col-md-2.control-label(for="title") Tytuł
+          .col-md-10
+            input.form-control(name="title", type="text", placeholder="Tytuł", ng-model="title", required)
+        .form-group
+          label.col-md-2.control-label(for="post") Imię
+          .col-md-10
+            textarea.form-control(rows="8", cols="80", name="post", type="text", ng-model="text", required)
+
+  div.modal-footer
+    button.btn.btn-primary(ng-click='addPost()', ng-disabled="signupForm.$invalid") Dodaj 
+    button.btn.btn-warning(ng-click='cancel()') Anuluj

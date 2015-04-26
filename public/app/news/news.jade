@@ -1,0 +1,16 @@
+.content.base-panel
+  h2 Publikacja aktualności
+  button.btn.btn-primary(ng-click='showNewPostModal()') 
+    span.glyphicon.glyphicon-plus Dodaj
+  table.table
+    tbody
+      tr
+        th L.p.
+        th Tytul
+        th Data
+        th Treść
+      tr(ng-repeat="n in news")
+        td {{ $index +1 }}
+        td {{ n.title }}
+        td {{ n.getDate() }}
+        td {{ n.text }}

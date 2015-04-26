@@ -1,5 +1,6 @@
 var auth = require('./auth'),
   users = require('../controllers/users'),
+  news = require('../controllers/news'),
   courses = require('../controllers/courses'),
   mongoose = require('mongoose'),
   User = mongoose.model('User');
@@ -13,6 +14,11 @@ module.exports = function(app) {
   app.post('/api/users/remove', users.deleteUser);
   app.post('/api/users/addRights', users.addRights);
   app.post('/api/users/rmRights', users.removeRights);
+
+  app.get('/api/news', news.getAll);
+  app.post('/api/news', news.publish);
+  app.put('/api/news', news.edit);
+  app.post('/api/news/remove', news.remove);
 
   app.get('/api/courses', courses.getCourses);
   app.get('/api/courses/:id', courses.getCourseById);
