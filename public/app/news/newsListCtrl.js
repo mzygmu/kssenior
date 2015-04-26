@@ -1,4 +1,4 @@
-angular.module('app').controller('newsListCtrl', function($scope, $modal, newsResource) {
+angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, newsResource) {
   $scope.news = newsResource.query();
 
   $scope.openNewPostWindow = function() {
