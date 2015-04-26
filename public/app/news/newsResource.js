@@ -6,7 +6,6 @@ angular.module('app').factory('newsResource', function($resource) {
   NewsResource.prototype.getDate = function() {
   	var timestamp = this._id.toString().substring(0,8);
   	return new Date( parseInt( timestamp, 16 ) * 1000 );
-    //return new ObjectId(this._id).getTimestamp();
   }
 
   return NewsResource;
