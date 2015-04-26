@@ -4,8 +4,9 @@ angular.module('app').factory('newsResource', function($resource) {
   });
 
   NewsResource.prototype.getDate = function() {
-  	console.log('DATE FROM ID '+this._id);
-    return new ObjectId(this._id).getTimestamp();
+  	var timestamp = _id.toString().substring(0,8)
+  	return new Date( parseInt( timestamp, 16 ) * 1000 );
+    //return new ObjectId(this._id).getTimestamp();
   }
 
   return NewsResource;
