@@ -12,5 +12,5 @@
       tr(ng-repeat="n in news")
         td {{ $index +1 }}
         td {{ n.title }}
-        td {{ n.getDate() | date:'dd-MM-YYYY' }}
+        td {{ n.getDate() | date:'dd-MM-yyyy' }}
         td {{ n.text }}
