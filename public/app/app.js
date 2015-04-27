@@ -28,7 +28,7 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       .when('/courses/:id', { templateUrl: '/partials/courses/course-details',
         controller: 'mvCourseDetailCtrl'
       })
-      .when('/aktualnosci', { templateUrl: '/partials/pages/aktualnosci', 
+      .when('/news', { templateUrl: '/partials/pages/news', 
         controller: 'newsListCtrl'
       })
       .when('/zawody', { templateUrl: '/partials/pages/zawody'

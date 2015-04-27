@@ -1,6 +1,11 @@
 .content.div-box
   div.pic-desc
-    h2 Aktualności
+    div
+      div.inline
+        h2 Aktualności
+      div.inline
+        button.btn.btn-primary(ng-click='openNewPostWindow()') 
+          span.glyphicon.glyphicon-plus Dodaj
     div.news 
       div 
         h4 Nowe władze Klubu
