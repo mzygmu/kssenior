@@ -41,7 +41,7 @@ exports.edit = function(req, res) {
 exports.remove = function(req, res) {
   var newsDelete = req.body;
 
-  User.remove( { _id : newsDelete.id }, function(err, user) {
+  News.remove( { _id : newsDelete.id }, function(err, user) {
     if(err) {
       res.status(400);
       return res.send({reason:err.toString()});
