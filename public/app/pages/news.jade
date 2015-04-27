@@ -4,7 +4,7 @@
       div.inline
         h2 Aktualności
       div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")
-        button.btn.btn-primary(ng-click='openNewPostWindow()') 
+        button.btn.btn-lg.btn-primary(ng-click='openNewPostWindow()') 
           span.glyphicon.glyphicon-plus Dodaj
 
     div.news(ng-repeat="n in news")
@@ -13,10 +13,10 @@
       div 
         small {{ n.getDate() | date:'dd-MM-yyyy' }}
       div.actionPanel(ng-if="identity.currentUser.isAdmin()")
-        button.btn.btn-warning(ng-click='editPost(n)')
-          span.glyphicon.glyphicon-edit Edytuj
-        button.btn.btn-danger(ng-click='removePost(n)') 
-          span.glyphicon.glyphicon-remove Usuń
+        button.btn.btn-xs.btn-warning(ng-click='editPost(n)')
+          span.glyphicon.glyphicon-pencil
+        button.btn.btn-xs.btn-danger(ng-click='removePost(n)') 
+          span.glyphicon.glyphicon-remove
       div.postText
         p {{ n.text }}
 

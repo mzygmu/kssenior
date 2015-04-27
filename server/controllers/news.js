@@ -2,7 +2,7 @@ var News = require('mongoose').model('News')
 
 exports.getAll = function(req, res) {
 
-  News.find({}).sort( { _id: -1 } ).limit( 5 ).exec(function(err, collection) {
+  News.find({}).sort( { _id: -1 } ).limit( 10 ).exec(function(err, collection) {
     res.send(collection);
   })
 };
