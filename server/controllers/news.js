@@ -40,6 +40,10 @@ exports.edit = function(req, res) {
 
 exports.remove = function(req, res) {
   var newsUpdate = req.body;
+
+  req.news.title = newsUpdate.title;
+  req.news.text = newsUpdate.text;
+
   // User.remove( { _id : newsUpdate.user_id }, function(err, user) {
   //   if(err) {
   //     res.status(400);
@@ -50,6 +54,6 @@ exports.remove = function(req, res) {
   // });
   req.news.remove(function(err) {
     if(err) { res.status(400); return res.send({reason:err.toString()});}
-    res.send(req.user);
+    res.send();
   });
 };
