@@ -12,7 +12,12 @@
         h4 {{ n.title }}
       div 
         small {{ n.getDate() | date:'dd-MM-yyyy' }}
-      div
+      div.actionPanel(ng-if="identity.currentUser.isAdmin()")
+        button.btn.btn-warning(ng-click='editPost(n)')
+          span.glyphicon.glyphicon-edit Edytuj
+        button.btn.btn-danger(ng-click='removePost(n)') 
+          span.glyphicon.glyphicon-remove Usuń
+      div.postText
         p {{ n.text }}
 
     div.news 
