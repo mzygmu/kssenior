@@ -39,21 +39,14 @@ exports.edit = function(req, res) {
 }
 
 exports.remove = function(req, res) {
-  var newsUpdate = req.body;
+  var newsDelete = req.body;
 
-  req.news.title = newsUpdate.title;
-  req.news.text = newsUpdate.text;
-
-  // User.remove( { _id : newsUpdate.user_id }, function(err, user) {
-  //   if(err) {
-  //     res.status(400);
-  //     return res.send({reason:err.toString()});
-  //   }
-  //   res.status(200);
-  //   res.send();
-  // });
-  req.news.remove(function(err) {
-    if(err) { res.status(400); return res.send({reason:err.toString()});}
+  User.remove( { _id : newsDelete.id }, function(err, user) {
+    if(err) {
+      res.status(400);
+      return res.send({reason:err.toString()});
+    }
+    res.status(200);
     res.send();
   });
 };

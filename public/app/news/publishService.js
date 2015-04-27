@@ -14,11 +14,14 @@ angular.module('app').factory('publishService', function($http, $q, newsResource
       return dfd.promise;
     },
     removeNews: function(newsData) {
-      var news = new newsResource(newsData);
       var dfd = $q.defer();
 
-      news.$remove().then(function() {
-        dfd.resolve();
+      $http.post('/api/news/remove', {id:newsData._id}).then(function(response) {
+        if(response.data.success) {
+          dfd.resolve(true);
+        } else {
+          dfd.resolve(false);
+        }
       }, function(response) {
         dfd.reject(response.data.reason);
       });
