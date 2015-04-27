@@ -40,12 +40,16 @@ exports.edit = function(req, res) {
 
 exports.remove = function(req, res) {
   var newsUpdate = req.body;
-  User.remove( { _id : newsUpdate.user_id }, function(err, user) {
-    if(err) {
-      res.status(400);
-      return res.send({reason:err.toString()});
-    }
-    res.status(200);
-    res.send();
+  // User.remove( { _id : newsUpdate.user_id }, function(err, user) {
+  //   if(err) {
+  //     res.status(400);
+  //     return res.send({reason:err.toString()});
+  //   }
+  //   res.status(200);
+  //   res.send();
+  // });
+  req.news.remove(function(err) {
+    if(err) { res.status(400); return res.send({reason:err.toString()});}
+    res.send(req.user);
   });
 };
