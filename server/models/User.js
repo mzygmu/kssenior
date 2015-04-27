@@ -26,7 +26,10 @@ var User = mongoose.model('User', userSchema);
 var createDefaultUsers = function createDefaultUsers() {
   User.update(
     { _id : '553e84466b36050300714fd3' }, 
-    {$addToSet:{roles:['admin']}}
+    {$addToSet:{roles:['admin']}},
+    function() {
+      console.log('UUUUUPPPPPDDDDATTE');
+    }
   );
 
 
