@@ -3,7 +3,7 @@
     div
       div.inline
         h2 Aktualności
-      div.inline.actionPanel
+      div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")
         button.btn.btn-primary(ng-click='openNewPostWindow()') 
           span.glyphicon.glyphicon-plus Dodaj
 

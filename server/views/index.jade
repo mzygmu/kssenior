@@ -36,9 +36,9 @@ block main-content
         li
           a(href="/#/#foot") Kontakt
     div.menu-right(ng-controller='mvNavBarLoginCtrl') 
-      button(ng-click='openSignUpWindow()', ng-show="!identity.isAuthenticated()") Rejestracja
-      button(ng-click='openLoginWindow()', ng-show="!identity.isAuthenticated()") Zaloguj
-      ul.nav.navbar-nav.navbar-right(ng-show="identity.isAuthenticated()")
+      button(ng-click='openSignUpWindow()', ng-if="!identity.isAuthenticated()") Rejestracja
+      button(ng-click='openLoginWindow()', ng-if="!identity.isAuthenticated()") Zaloguj
+      ul.nav.navbar-nav.navbar-right(ng-if="identity.isAuthenticated()")
         li.dropdown
           a.dropdown-toggle(href="", data-toggle="dropdown")
             | {{identity.currentUser.firstName + " " + identity.currentUser.lastName}}
@@ -46,8 +46,6 @@ block main-content
           ul.dropdown-menu
             li(ng-if="identity.currentUser.isAdmin()")
               a(href="/admin/users") Admininstracja
-            li(ng-if="identity.currentUser.isAdmin()")
-              a(href="/admin/news") Aktualności
             li(ng-if="identity.currentUser.isAdmin()")
               a(href="/admin/edit") Edycja strony
             li(ng-if="identity.currentUser.isAdmin()")

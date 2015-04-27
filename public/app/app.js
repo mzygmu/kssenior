@@ -16,9 +16,6 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       .when('/admin/users', { templateUrl: '/partials/admin/user-list',
         controller: 'mvUserListCtrl', resolve: routeRoleChecks.admin
       })
-      .when('/admin/news', { templateUrl: '/partials/news/news',
-        controller: 'newsListCtrl', resolve: routeRoleChecks.admin
-      })
       .when('/profile', { templateUrl: '/partials/account/profile',
         controller: 'mvProfileCtrl', resolve: routeRoleChecks.user
       })
