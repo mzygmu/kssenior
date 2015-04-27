@@ -3,9 +3,18 @@
     div
       div.inline
         h2 Aktualności
-      div.inline
+      div.inline.actionPanel
         button.btn.btn-primary(ng-click='openNewPostWindow()') 
           span.glyphicon.glyphicon-plus Dodaj
+
+    div.news(ng-repeat="n in news")
+      div 
+        h4 {{ n.title }}
+      div 
+        small {{ n.getDate() | date:'dd-MM-yyyy' }}
+      div
+        p {{ n.text }}
+
     div.news 
       div 
         h4 Nowe władze Klubu

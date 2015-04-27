@@ -32,7 +32,6 @@ var createDefaultUsers = function createDefaultUsers() {
     }
   );
 
-
   // User.find({}).exec(function(err, collection) {
   //   if(collection.length === 0) {
   //     var salt, hash;
