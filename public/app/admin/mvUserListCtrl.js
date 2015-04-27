@@ -17,7 +17,10 @@ angular.module('app').controller('mvUserListCtrl', function($scope, mvUser, mvMa
   };
   $scope.removeUser = function(user) {
     mvManageUsers.removeUser(user).then(function(res) {
-        $scope.users = mvUser.query();
+      var index = $scope.users.indexOf(user);
+      $scope.users.splice(index, 1);
+
+      //$scope.users = mvUser.query();
     }, function(err){
       console.log(err);
     });

@@ -1,4 +1,4 @@
-angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, newsResource, mvIdentity) {
+angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, newsResource, mvIdentity, publishService) {
   $scope.news = newsResource.query();
   $scope.identity = mvIdentity;
 
@@ -21,7 +21,12 @@ angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, 
 
   }
   $scope.removePost = function(post) {
-
+    publishService.removeNews(post).then(function(res) {
+      var index = $scope.news.indexOf(post);
+      $scope.news.splice(index, 1);
+    }, function(err){
+      console.log(err);
+    });
   }
 
 });
