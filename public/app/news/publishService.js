@@ -30,9 +30,11 @@ angular.module('app').factory('publishService', function($http, $q, newsResource
     },
     updateNews: function(newsData) {
       var dfd = $q.defer();
-      var news = new newsResource(newsData);
 
-      news.$save().then(function() {
+      var clone = angular.copy(newsData);
+      //angular.extend(clone, newsData);
+      console.log(clone);
+      clone.$update().then(function() {
         dfd.resolve();
       }, function(response) {
         dfd.reject(response.data.reason);
