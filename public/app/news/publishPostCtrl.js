@@ -26,7 +26,6 @@ angular.module('app').controller('publishPostCtrl', function($scope, $modalInsta
     var newsData = {
       title: $scope.title,
       text: $scope.text
-      //_id: postData._id;
     };
     angular.extend(clone, newsData);
 
