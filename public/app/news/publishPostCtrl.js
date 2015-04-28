@@ -3,7 +3,6 @@ angular.module('app').controller('publishPostCtrl', function($scope, $modalInsta
   if (postData) {
     $scope.title = postData.title;
     $scope.text = postData.text;
-    console.log(postData);
   }
 
   var addPost = function() {
@@ -19,7 +18,7 @@ angular.module('app').controller('publishPostCtrl', function($scope, $modalInsta
     });
     $modalInstance.dismiss('posted');
   }
-
+  
   var update = function() {
     var clone = angular.copy(postData);
 
