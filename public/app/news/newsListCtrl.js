@@ -6,7 +6,12 @@ angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, 
 
     var modalInstance = $modal.open({
       templateUrl: '/partials/news/newPostModal',
-      controller: 'publishPostCtrl'
+      controller: 'publishPostCtrl',
+      resolve: {
+        postData: function () {
+          return undefined;
+        }
+      }
     });
 
     modalInstance.result.then(function () {

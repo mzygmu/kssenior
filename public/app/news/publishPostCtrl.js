@@ -1,7 +1,10 @@
 angular.module('app').controller('publishPostCtrl', function($scope, $modalInstance, mvNotifier, publishService, postData) {
 
-  $scope.title = postData.title;
-  $scope.text = postData.text;
+  if (postData) {
+    $scope.title = postData.title;
+    $scope.text = postData.text;
+    console.log(postData);
+  }
 
   var addPost = function() {
     var newsData = {
@@ -36,7 +39,7 @@ angular.module('app').controller('publishPostCtrl', function($scope, $modalInsta
   }
 
   $scope.publish = function() {
-    if (postData != undefined) {
+    if (postData) {
       update();
     } else {
       addPost();
