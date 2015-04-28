@@ -18,8 +18,25 @@ angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, 
   };
 
   $scope.editPost = function(post) {
-
+    var modalInstance = $modal.open({
+      templateUrl: '/partials/news/newPostModal',
+      controller: 'publishPostCtrl',
+      resolve: {
+        postData: function () {
+          return post;
+        }
+      }
+    });
+     
+    modalInstance.result.then(function (postData) {
+      post.title = postData.title;
+      post.text = postData.text;
+      // TacticsService.saveTactic(tactic).then(function() {
+      //   $scope.getTactics(true);
+      // });
+    });
   }
+
   $scope.removePost = function(post) {
     publishService.removeNews(post).then(function(res) {
       var index = $scope.news.indexOf(post);

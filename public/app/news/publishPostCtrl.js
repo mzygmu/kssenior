@@ -1,6 +1,9 @@
-angular.module('app').controller('publishPostCtrl', function($scope, $modalInstance, mvNotifier, publishService) {
+angular.module('app').controller('publishPostCtrl', function($scope, $modalInstance, mvNotifier, publishService, postData) {
 
-  $scope.addPost = function() {
+  $scope.title = postData.title;
+  $scope.text = postData.text;
+
+  var addPost = function() {
     var newsData = {
       title: $scope.title,
       text: $scope.text
@@ -14,7 +17,34 @@ angular.module('app').controller('publishPostCtrl', function($scope, $modalInsta
     $modalInstance.dismiss('posted');
   }
 
+  var update = function() {
+    var clone = angular.copy(postData);
+
+    var newsData = {
+      title: $scope.title,
+      text: $scope.text
+      //_id: postData._id;
+    };
+    angular.extend(clone, newsData);
+
+    publishService.updateNews(clone).then(function() {
+      mvNotifier.notify('Ogłoszenie zostało zaktualizowane');
+    }, function(reason) {
+      mvNotifier.error(reason);
+    })
+    $modalInstance.dismiss('posted');
+  }
+
+  $scope.publish = function() {
+    if (postData != undefined) {
+      update();
+    } else {
+      addPost();
+    }
+  }
+
   $scope.cancel = function () {
     $modalInstance.dismiss('cancel');
   };
+
 })

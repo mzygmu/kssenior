@@ -27,6 +27,21 @@ angular.module('app').factory('publishService', function($http, $q, newsResource
       });
 
       return dfd.promise;
+    },
+    updateNews: function(newsData) {
+      var dfd = $q.defer();
+      var clone = angular.copy(newsData);
+
+      angular.extend(clone, newsData);
+
+      news.$update().then(function() {
+        dfd.resolve();
+      }, function(response) {
+        dfd.reject(response.data.reason);
+      });
+
+      return dfd.promise;
     }
+    
   }
 });
