@@ -30,9 +30,10 @@ angular.module('app').factory('publishService', function($http, $q, newsResource
     },
     updateNews: function(newsData) {
       var dfd = $q.defer();
-      var clone = angular.copy(newsData);
-
-      angular.extend(clone, newsData);
+      // var clone = angular.copy(newsData);
+      // angular.extend(clone, newsData);
+      
+      var news = new newsResource(newsData);
 
       news.$update().then(function() {
         dfd.resolve();
@@ -42,6 +43,6 @@ angular.module('app').factory('publishService', function($http, $q, newsResource
 
       return dfd.promise;
     }
-    
+
   }
 });
