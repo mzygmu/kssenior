@@ -8,8 +8,9 @@ angular.module('app').factory('newsList', function(newsResource) {
         console.log(news);
     },
     edit: function(news) {
-        console.log('newsList edit');
-        console.log(newsList);
+        var i = newsList.indexOf(news);
+        newsList[i].title = news.title;
+        newsList[i].text = news.text;
     },
     remove: function(news) {
         console.log('newsList remove');
