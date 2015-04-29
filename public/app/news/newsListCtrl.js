@@ -35,6 +35,7 @@ angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, 
      
     modalInstance.result.then(function (postData) {
       newsList.edit(postData);
+      $scope.news = newsList.newsList;
     });
   }
 
