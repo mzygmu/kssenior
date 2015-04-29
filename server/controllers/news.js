@@ -28,16 +28,23 @@ exports.edit = function(req, res) {
     return res.end();
   }
 
-  console.log('NEWS '+req.news);
-  console.log('BODY '+JSON.stringify(newsUpdate));
-  req.news.title = newsUpdate.title;
-  req.news.text = newsUpdate.text;
-
-  req.news.save(function(err) {
-    if(err) { res.status(400); return res.send({reason:err.toString()}); }
-    res.send(req.news);
-  });
-
+  News.update(
+    { _id : newsUpdate._id }, 
+    {
+      $set: {
+        title: newsUpdate.title,
+        text: newsUpdate.text
+      }
+    },
+    function(err, user) {
+      if(err) {
+        res.status(400);
+        return res.send({reason:err.toString()});
+      }
+      res.status(200);
+      res.send();
+    }
+  );
 }
 
 exports.remove = function(req, res) {
