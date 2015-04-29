@@ -28,8 +28,8 @@ exports.edit = function(req, res) {
     return res.end();
   }
 
-  console.log(req);
-
+  console.log('NEWS '+req.news);
+  console.log('BODY '+newsUpdate);
   req.news.title = newsUpdate.title;
   req.news.text = newsUpdate.text;
 
