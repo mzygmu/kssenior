@@ -29,7 +29,7 @@ exports.edit = function(req, res) {
   }
 
   console.log('NEWS '+req.news);
-  console.log('BODY '+newsUpdate);
+  console.log('BODY '+JSON.stringify(newsUpdate));
   req.news.title = newsUpdate.title;
   req.news.text = newsUpdate.text;
 

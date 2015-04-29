@@ -29,16 +29,16 @@ angular.module('app').factory('publishService', function($http, $q, newsResource
       return dfd.promise;
     },
     updateNews: function(newsData) {
-      var news = new newsResource(newsData);
+      //var news = new newsResource(newsData);
       var dfd = $q.defer();
 
-      var clone = angular.copy(news);
-      angular.extend(clone, newsData);
+      // var clone = angular.copy(news);
+      // angular.extend(clone, newsData);
 
-      //var clone = angular.copy(newsData);
+      var clone = angular.copy(newsData);
       //angular.extend(clone, newsData);
-      
-      console.log(clone);
+      console.log('News Data '+newsData);
+      console.log('Clone '+ clone);
       clone.$update().then(function() {
         dfd.resolve();
       }, function(response) {
@@ -47,6 +47,7 @@ angular.module('app').factory('publishService', function($http, $q, newsResource
 
       return dfd.promise;
     }
+
 
   }
 });
