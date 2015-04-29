@@ -18,7 +18,7 @@ angular.module('app').controller('publishPostCtrl', function($scope, $modalInsta
     }, function(reason) {
       mvNotifier.error(reason);
     });
-    $modalInstance.dismiss('posted');
+    $modalInstance.close(newsData);
   }
   
   var update = function() {
@@ -36,7 +36,7 @@ angular.module('app').controller('publishPostCtrl', function($scope, $modalInsta
     }, function(reason) {
       mvNotifier.error(reason);
     })
-    $modalInstance.dismiss('posted');
+    $modalInstance.close(clone);
   }
 
   $scope.publish = function() {
