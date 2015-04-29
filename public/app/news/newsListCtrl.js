@@ -34,6 +34,10 @@ angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, 
     });
      
     modalInstance.result.then(function (postData) {
+      console.log("END of edit 1");
+      newsList.edit(postData);
+    }, function () {
+      console.log("END of edit 2");
       newsList.edit(postData);
     });
   }

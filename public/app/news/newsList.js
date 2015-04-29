@@ -4,13 +4,13 @@ angular.module('app').factory('newsList', function(newsResource) {
   return {
     newsList: newsList,
     add: function(news) {
-    	console.log(news);
+        console.log(news);
     },
     edit: function(news) {
-    	console.log(news);
+        console.log(news);
     },
     remove: function(news) {
-    	console.log(news);
+        console.log(news);
     }
   }
 })
