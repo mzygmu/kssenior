@@ -1,4 +1,4 @@
-angular.module('app').controller('publishPostCtrl', function($scope, $modalInstance, mvNotifier, publishService, postData) {
+angular.module('app').controller('publishPostCtrl', function($scope, $modalInstance, mvNotifier, publishService, newsList, postData) {
 
   if (postData) {
     $scope.title = postData.title;
@@ -13,6 +13,7 @@ angular.module('app').controller('publishPostCtrl', function($scope, $modalInsta
 
     publishService.publishNews(newsData).then(function() {
       mvNotifier.notify('Opublikowano wiadomość');
+      newsList.add(newsData);
     }, function(reason) {
       mvNotifier.error(reason);
     });
@@ -30,6 +31,7 @@ angular.module('app').controller('publishPostCtrl', function($scope, $modalInsta
 
     publishService.updateNews(clone).then(function() {
       mvNotifier.notify('Ogłoszenie zostało zaktualizowane');
+
     }, function(reason) {
       mvNotifier.error(reason);
     })

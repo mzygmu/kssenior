@@ -1,5 +1,5 @@
-angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, newsResource, mvIdentity, publishService, mvNotifier) {
-  $scope.news = newsResource.query();
+angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, newsList, mvIdentity, publishService, mvNotifier) {
+  $scope.news = newsList.newsList;
   $scope.identity = mvIdentity;
 
   $scope.openNewPostWindow = function() {
@@ -34,11 +34,7 @@ angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, 
     });
      
     modalInstance.result.then(function (postData) {
-      post.title = postData.title;
-      post.text = postData.text;
-      // TacticsService.saveTactic(tactic).then(function() {
-      //   $scope.getTactics(true);
-      // });
+      newsList.edit(postData);
     });
   }
 
