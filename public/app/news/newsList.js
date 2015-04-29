@@ -10,6 +10,7 @@ angular.module('app').factory('newsList', function(newsResource) {
     edit: function(news) {
         console.log('newsList edit');
         console.log(news);
+        newsList = newsResource.query();
     },
     remove: function(news) {
         console.log('newsList remove');

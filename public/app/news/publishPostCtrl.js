@@ -48,7 +48,7 @@ angular.module('app').controller('publishPostCtrl', function($scope, $modalInsta
   }
 
   $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
+    $modalInstance.dismiss(undefined);
   };
 
 })
