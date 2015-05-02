@@ -4,7 +4,7 @@ var pageContent = mongoose.Schema({
   pageId: {type:String, required:'{PATH} is required!'},
   sectionTitle: String,
   text: {type:[String], required:'{PATH} is required!'},
-  position: Double
+  position: Number
 });
 var PageContent = mongoose.model('PageContent', pageContent);
 
