@@ -7,7 +7,7 @@ angular.module('app').controller('contentModalCtrl', function($scope, $modalInst
   }
 
   var getArray = function() {
-    var array = String[];
+    var array = [];
     if ($scope.text1) {
       array.push($scope.text1);
     }
