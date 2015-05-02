@@ -1,4 +1,4 @@
-angular.module('app').controller('publishPostCtrl', function($scope, $modalInstance, pageContentService, mvNotifier, pageId, modalTitle, content) {
+angular.module('app').controller('contentModalCtrl', function($scope, $modalInstance, pageContentService, mvNotifier, pageId, modalTitle, content) {
 
   $scope.modalTitle = modalTitle;
   if (content) {
