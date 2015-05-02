@@ -78,7 +78,7 @@ angular.module('app').controller('contentModalCtrl', function($scope, $modalInst
 
     var data = {
       sectionTitle: $scope.sectionTitle,
-      text: $scope.getArray()
+      text: getArray()
     };
     angular.extend(clone, data);
 
