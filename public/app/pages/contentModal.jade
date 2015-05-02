@@ -1,0 +1,32 @@
+div.base-panel.modal-panel
+  div.modal-header
+    h3.modal-title {{modalTitle}}
+
+  div.modal-body
+    form.form-horizontal(name="contentForm")
+      fieldset
+        .form-group
+          label.col-md-2.control-label(for="sectionTitle") Nagłówek
+          .col-md-10
+            input.form-control(name="sectionTitle", type="text", placeholder="Nagłówek", ng-model="sectionTitle")
+        .form-group
+          .col-md-10
+            textarea.form-control(rows="2", cols="80", type="text", ng-model="text1", required)
+          .col-md-10
+            textarea.form-control(rows="2", cols="80", type="text", ng-model="text2")
+          .col-md-10
+            textarea.form-control(rows="2", cols="80", type="text", ng-model="text3")
+          .col-md-10
+            textarea.form-control(rows="2", cols="80", type="text", ng-model="text4")
+          .col-md-10
+            textarea.form-control(rows="2", cols="80", type="text", ng-model="text5")
+          .col-md-10
+            textarea.form-control(rows="2", cols="80", type="text", ng-model="text6")
+          .col-md-10
+            textarea.form-control(rows="2", cols="80", type="text", ng-model="text7")
+          .col-md-10
+            textarea.form-control(rows="2", cols="80", type="text", ng-model="text8")
+
+  div.modal-footer
+    button.btn.btn-primary(ng-click='publish()', ng-disabled="signupForm.$invalid") Zapisz 
+    button.btn.btn-warning(ng-click='cancel()') Anuluj
