@@ -10,22 +10,23 @@ div.base-panel.modal-panel
           .col-md-10
             input.form-control(name="sectionTitle", type="text", placeholder="Nagłówek", ng-model="sectionTitle")
         .form-group
+          label.col-md-2.control-label(for="text") Treść
           .col-md-10
-            textarea.form-control(rows="2", cols="80", type="text", ng-model="text1", required)
+            textarea.form-control(rows="2", cols="80", name="text", type="text", ng-model="text1", required)
           .col-md-10
-            textarea.form-control(rows="2", cols="80", type="text", ng-model="text2")
+            textarea.form-control(rows="2", cols="80", name="text", type="text", ng-model="text2")
           .col-md-10
-            textarea.form-control(rows="2", cols="80", type="text", ng-model="text3")
+            textarea.form-control(rows="2", cols="80", name="text", type="text", ng-model="text3")
           .col-md-10
-            textarea.form-control(rows="2", cols="80", type="text", ng-model="text4")
+            textarea.form-control(rows="2", cols="80", name="text", type="text", ng-model="text4")
           .col-md-10
-            textarea.form-control(rows="2", cols="80", type="text", ng-model="text5")
+            textarea.form-control(rows="2", cols="80", name="text", type="text", ng-model="text5")
           .col-md-10
-            textarea.form-control(rows="2", cols="80", type="text", ng-model="text6")
+            textarea.form-control(rows="2", cols="80", name="text", type="text", ng-model="text6")
           .col-md-10
-            textarea.form-control(rows="2", cols="80", type="text", ng-model="text7")
+            textarea.form-control(rows="2", cols="80", name="text", type="text", ng-model="text7")
           .col-md-10
-            textarea.form-control(rows="2", cols="80", type="text", ng-model="text8")
+            textarea.form-control(rows="2", cols="80", name="text", type="text", ng-model="text8")
 
   div.modal-footer
     button.btn.btn-primary(ng-click='publish()', ng-disabled="signupForm.$invalid") Zapisz 
