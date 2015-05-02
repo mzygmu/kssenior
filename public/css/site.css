@@ -142,6 +142,19 @@ div.text-box.main-elem-text {
 a {
   color: #fff;
 }
+div.inline {
+  display: inline-block;
+}
+.actionPanel {
+  vertical-align: top;
+  float: right;
+}
+.actionPanel > button {
+  margin-left: 3px;
+}
+.actionPanel > button.btn-lg {
+  width: 140px;
+}
 .pic-desc {
   text-align: left;
   vertical-align: top;
@@ -154,13 +167,14 @@ a {
 .pic-desc.desc {
   width: 649px;
 }
-.pic-desc h4 {
+h4 {
   color: #3364af;
   font: 25px/1.2em 'Enriqueta', serif;
 }
-.pic-desc h2 {
+h2 {
   color: #ba2800;
   font: 40px/1.1em 'Enriqueta', serif;
+  margin-top: 0px;
 }
 .senior-table-bg {
   width: 994px;
@@ -177,6 +191,24 @@ a {
   background-color: #1b1b1b;
   border-radius: 0px;
   box-shadow: rgba(0,0,0,0.6) 0px 1px 4px 0px;
+}
+.base-panel {
+  background-color: #1b1b1b;
+  padding-right: 25px;
+  color: #fff;
+}
+.modal-panel {
+  border-radius: 3px;
+}
+.base-panel label {
+  font-weight: normal;
+}
+.base-panel input:active,
+.base-panel input:focus {
+  border: 2px solid #3364af;
+}
+.base-panel h2 {
+  margin-left: 25px;
 }
 div.news {
   width: 994px;
@@ -200,6 +232,10 @@ div.news div {
 }
 div.news small {
   font: 14px 'Jockey One', sans-serif;
+}
+div.news > div.postText {
+  margin-right: 5px;
+  display: inline;
 }
 .senior-top {
   display: inline-block;
@@ -287,6 +323,44 @@ div.menu-right > ul {
   list-style-type: none;
   -webkit-padding-end: 15px;
   padding-bottom: 0px;
+  padding-right: 0px;
+}
+div.menu-right a {
+  padding-bottom: 5px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+}
+div.menu-right > ul > li.dropdown > a:hover,
+div.menu-right > ul > li.dropdown > a:focus {
+  background-color: #000;
+  text-decoration: none;
+}
+div.menu-right a > b.caret {
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+}
+div.menu-right a:hover > b.caret,
+div.menu-right a:focus > b.caret {
+  border-top-color: #3364af;
+  border-bottom-color: #3364af;
+}
+ul.dropdown-menu {
+  background-color: #000;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 10px;
+}
+ul.dropdown-menu > li {
+  background-color: #000;
+}
+ul.dropdown-menu > li > a {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #fff;
+}
+ul.dropdown-menu > li > a:hover {
+  color: #3364af;
+  background-color: #000;
 }
 div.menu-right > button {
   color: #fff;

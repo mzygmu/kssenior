@@ -1,6 +1,12 @@
 .content.div-box
   div.pic-desc
     h2 Opłaty i składki członkowskie
+    div(ng-repeat="section in content | filter:'charges' | orderBy:position")
+      h4 {{section.sectionTitle}}
+      div(ng-repeat="row in section.text")
+        p {{row}}
+
+
     h4 Wpisowe 
     p Dla nowoprzyjętych członków opłata wynosi 200,- zł. (młodzież do lat 20-stu wpisowego nie wpłaca)
     h4 Roczna składka członkowska wynosi:

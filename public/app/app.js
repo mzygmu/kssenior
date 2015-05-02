@@ -30,7 +30,8 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       })
       .when('/zawody', { templateUrl: '/partials/pages/zawody'
       })
-      .when('/oplaty', { templateUrl: '/partials/pages/oplaty'
+      .when('/charges', { templateUrl: '/partials/pages/charges',
+        controller: 'pageContentCtrl'
       })
       .when('/dolacz', { templateUrl: '/partials/pages/dolacz'
       })
