@@ -1,4 +1,4 @@
-angular.module('app').controller('pageContentCtrl', function($scope, $modal, $log, cachedPageContent, mvIdentity, mvNotifier) {
+angular.module('app').controller('pageContentCtrl', function($scope, $modal, $log, cachedPageContent, pageContentService, mvIdentity, mvNotifier) {
   $scope.content = cachedPageContent.query();
   $scope.identity = mvIdentity;
 
@@ -45,17 +45,16 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
       }
     });
      
-    modalInstance.result.then(function (postData) {
-      newsList.edit(postData);
-      $scope.news = newsList.newsList;
+    modalInstance.result.then(function (data) {
+      
     });
   }
 
   $scope.remove = function(section) {
-    publishService.removeNews(section).then(function(res) {
-      var index = $scope.news.indexOf(section);
-      $scope.news.splice(index, 1);
-      mvNotifier.notify('Ogłoszenie zostało usunięte');
+    pageContentService.remove(section).then(function(res) {
+      var index = $scope.content.indexOf(section);
+      $scope.content.splice(index, 1);
+      mvNotifier.notify('Usunięto');
     }, function(err){
       mvNotifier.error(err);
       console.log(err);

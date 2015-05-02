@@ -2,8 +2,30 @@ angular.module('app').controller('contentModalCtrl', function($scope, $modalInst
 
   $scope.modalTitle = modalTitle;
   if (content) {
-    $scope.title = postData.title;
-    $scope.text = postData.text;
+    $scope.sectionTitle = content.sectionTitle;
+    $scope.text1 = content.text[0];
+
+    if (content.text[1]) {
+      $scope.text2 = content.text[1];
+    }
+    if (content.text[2]) {
+      $scope.text3 = content.text[2];
+    }
+    if (content.text[3]) {
+      $scope.text4 = content.text[3];
+    }
+    if (content.text[4]) {
+      $scope.text5 = content.text[4];
+    }
+    if (content.text[5]) {
+      $scope.text6 = content.text[5];
+    }
+    if (content.text[6]) {
+      $scope.text7 = content.text[6];
+    }
+    if (content.text[7]) {
+      $scope.text8 = content.text[7];
+    }
   }
 
   var getArray = function() {
