@@ -22,6 +22,9 @@ module.exports = function(app) {
   app.post('/api/news/remove', news.remove);
 
   app.get('/api/content', content.getPageContent);
+  app.post('/api/content', content.publish);
+  app.put('/api/content', content.edit);
+  app.post('/api/content/remove', content.remove);
 
   app.get('/api/courses', courses.getCourses);
   app.get('/api/courses/:id', courses.getCourseById);

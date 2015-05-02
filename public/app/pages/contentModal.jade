@@ -10,24 +10,30 @@ div.base-panel.modal-panel
           .col-md-10
             input.form-control(name="sectionTitle", type="text", placeholder="Nagłówek", ng-model="sectionTitle")
         .form-group
-          label.col-md-2.control-label(for="text1") Treść
+          label.col-md-2.control-label(for="text1")
           .col-md-10
             textarea.form-control(rows="2", cols="80", name="text1", type="text", ng-model="text1", required)
           label.col-md-2.control-label(for="text2")   
           .col-md-10
             textarea.form-control(rows="2", cols="80", name="text2", type="text", ng-model="text2")
+          label.col-md-2.control-label(for="text3") 
           .col-md-10
-            textarea.form-control(rows="2", cols="80", name="text", type="text", ng-model="text3")
+            textarea.form-control(rows="2", cols="80", name="text3", type="text", ng-model="text3")
+          label.col-md-2.control-label(for="text4") 
           .col-md-10
-            textarea.form-control(rows="2", cols="80", name="text", type="text", ng-model="text4")
+            textarea.form-control(rows="2", cols="80", name="text4", type="text", ng-model="text4")
+          label.col-md-2.control-label(for="text5") 
           .col-md-10
-            textarea.form-control(rows="2", cols="80", name="text", type="text", ng-model="text5")
+            textarea.form-control(rows="2", cols="80", name="text5", type="text", ng-model="text5")
+          label.col-md-2.control-label(for="text6") 
           .col-md-10
-            textarea.form-control(rows="2", cols="80", name="text", type="text", ng-model="text6")
+            textarea.form-control(rows="2", cols="80", name="text6", type="text", ng-model="text6")
+          label.col-md-2.control-label(for="text7") 
           .col-md-10
-            textarea.form-control(rows="2", cols="80", name="text", type="text", ng-model="text7")
+            textarea.form-control(rows="2", cols="80", name="text7", type="text", ng-model="text7")
+          label.col-md-2.control-label(for="text8") 
           .col-md-10
-            textarea.form-control(rows="2", cols="80", name="text", type="text", ng-model="text8")
+            textarea.form-control(rows="2", cols="80", name="text8", type="text", ng-model="text8")
 
   div.modal-footer
     button.btn.btn-primary(ng-click='publish()', ng-disabled="signupForm.$invalid") Zapisz 
