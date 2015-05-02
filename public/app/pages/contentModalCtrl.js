@@ -52,21 +52,21 @@ angular.module('app').controller('contentModalCtrl', function($scope, $modalInst
   }
   
   var update = function() {
-    // var clone = angular.copy(postData);
+    var clone = angular.copy(content);
 
-    // var newsData = {
-    //   title: $scope.title,
-    //   text: $scope.text
-    // };
-    // angular.extend(clone, newsData);
+    var data = {
+      sectionTitle: $scope.sectionTitle,
+      text: $scope.getArray()
+    };
+    angular.extend(clone, data);
 
-    // publishService.updateNews(clone).then(function() {
-    //   mvNotifier.notify('Ogłoszenie zostało zaktualizowane');
+    pageContentService.update(clone).then(function() {
+      mvNotifier.notify('Zaktualizowano');
 
-    // }, function(reason) {
-    //   mvNotifier.error(reason);
-    // })
-    // $modalInstance.close(clone);
+    }, function(reason) {
+      mvNotifier.error(reason);
+    })
+    $modalInstance.close(clone);
   }
 
   $scope.publish = function() {

@@ -1,7 +1,7 @@
 var PageContent = require('mongoose').model('PageContent');
 
 exports.getPageContent = function(req, res) {
-  PageContent.find({}).exec(function(err, collection) {
+  PageContent.find({}).sort( { _id: -1 } ).exec(function(err, collection) {
     res.send(collection);
   })
 };

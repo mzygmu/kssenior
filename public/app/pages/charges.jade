@@ -6,6 +6,12 @@
       button.btn.btn-lg.btn-primary(ng-click='openNewChargesWindow()') 
         span.glyphicon.glyphicon-plus Dodaj
     div(ng-repeat="section in content | filter:'charges' | orderBy:position")
-      h4 {{section.sectionTitle}}
+      div.inline 
+        h4 {{section.sectionTitle}}
+      div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")
+        button.btn.btn-xs.btn-warning(ng-click='editCharges(section)')
+          span.glyphicon.glyphicon-pencil
+        button.btn.btn-xs.btn-danger(ng-click='remove(section)') 
+          span.glyphicon.glyphicon-remove
       div(ng-repeat="row in section.text")
         p {{row}}
