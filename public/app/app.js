@@ -19,12 +19,12 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       .when('/profile', { templateUrl: '/partials/account/profile',
         controller: 'mvProfileCtrl', resolve: routeRoleChecks.user
       })
-      .when('/courses', { templateUrl: '/partials/courses/course-list',
-        controller: 'mvCourseListCtrl'
-      })
-      .when('/courses/:id', { templateUrl: '/partials/courses/course-details',
-        controller: 'mvCourseDetailCtrl'
-      })
+      // .when('/courses', { templateUrl: '/partials/courses/course-list',
+      //   controller: 'mvCourseListCtrl'
+      // })
+      // .when('/courses/:id', { templateUrl: '/partials/courses/course-details',
+      //   controller: 'mvCourseDetailCtrl'
+      // })
       .when('/news', { templateUrl: '/partials/pages/news', 
         controller: 'newsListCtrl'
       })
@@ -33,9 +33,11 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       .when('/charges', { templateUrl: '/partials/pages/charges',
         controller: 'pageContentCtrl'
       })
-      .when('/join', { templateUrl: '/partials/pages/join'
+      .when('/join', { templateUrl: '/partials/pages/join',
+        controller: 'pageContentCtrl'
       })
-      .when('/klub', { templateUrl: '/partials/pages/klub'
+      .when('/klub', { templateUrl: '/partials/pages/klub',
+        controller: 'pageContentCtrl'
       })
 });
 
