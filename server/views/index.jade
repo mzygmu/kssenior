@@ -34,7 +34,7 @@ block main-content
     div.menu-right(ng-controller='mvNavBarLoginCtrl') 
       button(ng-click='openSignUpWindow()', ng-if="!identity.isAuthenticated()") Rejestracja
       button(ng-click='openLoginWindow()', ng-if="!identity.isAuthenticated()") Zaloguj
-      ul.nav.navbar-nav.navbar-right(ng-if="identity.isAuthenticated()")
+      ul.nav.navbar-nav.navbar-right(ng-if="!!identity.isAuthenticated()")
         li.dropdown
           a.dropdown-toggle(href="", data-toggle="dropdown")
             | {{identity.currentUser.firstName + " " + identity.currentUser.lastName}}
