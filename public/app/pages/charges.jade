@@ -3,13 +3,13 @@
     div.inline
       h2 Opłaty i składki członkowskie
     div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")
-      button.btn.btn-lg.btn-primary(ng-click='openNewChargesWindow()') 
+      button.btn.btn-lg.btn-primary(ng-click='openChargesWindow()') 
         span.glyphicon.glyphicon-plus Dodaj
     div(ng-repeat="section in content | filter:'charges' | orderBy:position")
       div.inline 
         h4 {{section.sectionTitle}}
       div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")
-        button.btn.btn-xs.btn-warning(ng-click='editCharges(section)')
+        button.btn.btn-xs.btn-warning(ng-click='openChargesWindow(section)')
           span.glyphicon.glyphicon-pencil
         button.btn.btn-xs.btn-danger(ng-click='remove(section)') 
           span.glyphicon.glyphicon-remove

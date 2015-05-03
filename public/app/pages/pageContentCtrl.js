@@ -2,31 +2,7 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
   $scope.content = cachedPageContent.query();
   $scope.identity = mvIdentity;
 
-  $scope.openNewChargesWindow = function() {
-    var modalInstance = $modal.open({
-      templateUrl: '/partials/pages/contentModal',
-      controller: 'contentModalCtrl',
-      resolve: {
-      	pageId: function() {
-      		return 'charges';
-      	},
-      	modalTitle: function() {
-      		return 'Opłaty i składki';
-      	},
-        content: function () {
-          return undefined;
-        }
-      }
-    });
-
-    modalInstance.result.then(function () {
-
-    }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
-    });
-  };
-
-  $scope.editCharges = function(section) {
+  $scope.openChargesWindow = function(section) {
     var modalInstance = $modal.open({
       templateUrl: '/partials/pages/contentModal',
       controller: 'contentModalCtrl',
@@ -44,35 +20,16 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
     });
      
     modalInstance.result.then(function (data) {
-      
+      if (section) {
+        var index = $scope.content.indexOf(section);
+        $scope.content[index] = data;
+      } else {
+        $scope.content = cachedPageContent.query(true);
+      }
     });
   }
 
-  $scope.openNewJoinWindow = function() {
-    var modalInstance = $modal.open({
-      templateUrl: '/partials/pages/contentModal',
-      controller: 'contentModalCtrl',
-      resolve: {
-        pageId: function() {
-          return 'join';
-        },
-        modalTitle: function() {
-          return 'Jak zostać zawodnikiem Klubu';
-        },
-        content: function () {
-          return undefined;
-        }
-      }
-    });
-
-    modalInstance.result.then(function () {
-
-    }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
-    });
-  };
-
-  $scope.editJoin = function(section) {
+  $scope.openJoinWindow = function(section) {
     var modalInstance = $modal.open({
       templateUrl: '/partials/pages/contentModal',
       controller: 'contentModalCtrl',

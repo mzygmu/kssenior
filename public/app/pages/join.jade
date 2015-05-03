@@ -3,13 +3,13 @@
     div.inline
       h2 Jak zostać zawodnikiem Klubu:
     div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")
-      button.btn.btn-lg.btn-primary(ng-click='editJoin()') 
+      button.btn.btn-lg.btn-primary(ng-click='openJoinWindow()') 
         span.glyphicon.glyphicon-plus Dodaj
     div(ng-repeat="section in content | filter:'join' | orderBy:position")
       div.inline 
         h4 {{section.sectionTitle}}
       div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")
-        button.btn.btn-xs.btn-warning(ng-click='editJoin(section)')
+        button.btn.btn-xs.btn-warning(ng-click='openJoinWindow(section)')
           span.glyphicon.glyphicon-pencil
         button.btn.btn-xs.btn-danger(ng-click='remove(section)') 
           span.glyphicon.glyphicon-remove
