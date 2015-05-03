@@ -58,7 +58,7 @@ block main-content
       div.box-elem(ng-repeat="section in content | filter:'footer' | orderBy:position")
         div.inline 
           h6.foottitle {{section.sectionTitle}}
-        div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")
+        div.inline(ng-if="identity.currentUser.isAdmin()")
           button.btn.btn-xs.btn-warning(ng-click='openFooterWindow(section)')
             span.glyphicon.glyphicon-pencil
         div(ng-repeat="row in section.text")

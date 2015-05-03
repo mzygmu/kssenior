@@ -150,15 +150,21 @@ a {
 div.inline {
   display: inline-block;
 }
+button.btn-xs {
+  margin-left: 3px;
+  display: none;
+}
 .actionPanel {
   vertical-align: top;
   float: right;
 }
-.actionPanel > button {
-  margin-left: 3px;
-}
+
 .actionPanel > button.btn-lg {
   width: 140px;
+}
+
+section:hover button.btn-xs {
+  display: inline-block;
 }
 
 .pic-desc {
@@ -175,7 +181,8 @@ div.inline {
 }
 h4 {
   color: rgb(51, 100, 175); 
-  font: 25px/1.2em 'Enriqueta', serif; 
+  font: 25px/1.2em 'Enriqueta', serif;
+  margin-right: 10px; 
 }
 h2 {
   color: rgb(186, 40, 0);
@@ -284,7 +291,10 @@ footer
   p#copy
     font: 13px 'Jockey One', sans-serif;
 
-h6.foottitle    
+h6.foottitle
+  margin-top: 0px;
+  margin-bottom: 10px;
+  margin-right: 10px;    
   line-height: 1.3em;
   text-align: left;
   color: rgb(51, 100, 175);
