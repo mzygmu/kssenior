@@ -56,6 +56,33 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
     });
   }
 
+  $scope.openFooterWindow = function(section) {
+    var modalInstance = $modal.open({
+      templateUrl: '/partials/pages/contentModal',
+      controller: 'contentModalCtrl',
+      resolve: {
+        pageId: function() {
+          return 'footer';
+        },
+        modalTitle: function() {
+          return 'Stopka';
+        },
+        content: function () {
+          return section;
+        }
+      }
+    });
+     
+    modalInstance.result.then(function (data) {
+      if (section) {
+        var index = $scope.content.indexOf(section);
+        $scope.content[index] = data;
+      } else {
+        $scope.content = cachedPageContent.query(true);
+      }
+    });
+  }
+
   $scope.remove = function(section) {
     pageContentService.remove(section).then(function(res) {
       var index = $scope.content.indexOf(section);
