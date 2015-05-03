@@ -24,7 +24,7 @@ block main-content
         li
           a(href="/charges") Opłaty
         li
-          a(href="/klub") O klubie
+          a(href="/about") O klubie
         <!--
         li
           a(href="/galeria") Galeria
@@ -55,7 +55,7 @@ block main-content
 
   footer.content.div-box(ng-controller='pageContentCtrl')
     div#foot
-      div.box-elem(ng-repeat="section in content | filter:'footer' | orderBy:position")
+      section.box-elem(ng-repeat="section in content | filter:'footer' | orderBy:position")
         div.inline 
           h6.foottitle {{section.sectionTitle}}
         div.inline(ng-if="identity.currentUser.isAdmin()")

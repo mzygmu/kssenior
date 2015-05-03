@@ -1,0 +1,19 @@
+.content.div-box
+  div.pic-desc
+    img(src="../img/Oklubie.png")
+  div.pic-desc
+    div.inline
+      h2 O klubie
+    div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")
+      button.btn.btn-lg.btn-primary(ng-click='openAboutWindow()') 
+        span.glyphicon.glyphicon-plus Dodaj
+    section(ng-repeat="section in content | filter:'about' | orderBy:position")
+      div.inline 
+        h4 {{section.sectionTitle}}
+      div.inline(ng-if="identity.currentUser.isAdmin()")
+        button.btn.btn-xs.btn-warning(ng-click='openAboutWindow(section)')
+          span.glyphicon.glyphicon-pencil
+        button.btn.btn-xs.btn-danger(ng-click='remove(section)') 
+          span.glyphicon.glyphicon-remove
+      div(ng-repeat="row in section.text")
+        p {{row}}

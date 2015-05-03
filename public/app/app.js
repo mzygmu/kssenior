@@ -36,7 +36,7 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       .when('/join', { templateUrl: '/partials/pages/join',
         controller: 'pageContentCtrl'
       })
-      .when('/klub', { templateUrl: '/partials/pages/klub',
+      .when('/about', { templateUrl: '/partials/pages/about',
         controller: 'pageContentCtrl'
       })
 });

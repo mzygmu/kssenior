@@ -56,6 +56,33 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
     });
   }
 
+  $scope.openAboutWindow = function(section) {
+    var modalInstance = $modal.open({
+      templateUrl: '/partials/pages/contentModal',
+      controller: 'contentModalCtrl',
+      resolve: {
+        pageId: function() {
+          return 'about';
+        },
+        modalTitle: function() {
+          return 'O klubie';
+        },
+        content: function () {
+          return section;
+        }
+      }
+    });
+     
+    modalInstance.result.then(function (data) {
+      if (section) {
+        var index = $scope.content.indexOf(section);
+        $scope.content[index] = data;
+      } else {
+        $scope.content = cachedPageContent.query(true);
+      }
+    });
+  }
+
   $scope.openFooterWindow = function(section) {
     var modalInstance = $modal.open({
       templateUrl: '/partials/pages/contentModal',
