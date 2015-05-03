@@ -17,7 +17,7 @@ block main-content
         li
           a(href="/news") Aktualności 
         li
-          a(href="/zawody") Zawody      
+          a(href="/events") Zawody      
         <!--
         li
           a(href="/klasy") Klasy sportowe -->
@@ -30,8 +30,7 @@ block main-content
           a(href="/galeria") Galeria
         li
           a(href="/linki") Linki -->
-        li
-          a(href="/#/#foot") Kontakt
+
     div.menu-right(ng-controller='mvNavBarLoginCtrl') 
       button(ng-click='openSignUpWindow()', ng-if="!identity.isAuthenticated()") Rejestracja
       button(ng-click='openLoginWindow()', ng-if="!identity.isAuthenticated()") Zaloguj
