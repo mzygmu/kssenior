@@ -33,7 +33,7 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       .when('/charges', { templateUrl: '/partials/pages/charges',
         controller: 'pageContentCtrl'
       })
-      .when('/dolacz', { templateUrl: '/partials/pages/dolacz'
+      .when('/join', { templateUrl: '/partials/pages/join'
       })
       .when('/klub', { templateUrl: '/partials/pages/klub'
       })

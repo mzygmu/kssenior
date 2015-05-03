@@ -3,7 +3,6 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
   $scope.identity = mvIdentity;
 
   $scope.openNewChargesWindow = function() {
-
     var modalInstance = $modal.open({
       templateUrl: '/partials/pages/contentModal',
       controller: 'contentModalCtrl',
@@ -25,7 +24,6 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
     }, function () {
       $log.info('Modal dismissed at: ' + new Date());
     });
-
   };
 
   $scope.editCharges = function(section) {
@@ -39,6 +37,52 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
       	modalTitle: function() {
       		return 'Opłaty i składki';
       	},
+        content: function () {
+          return section;
+        }
+      }
+    });
+     
+    modalInstance.result.then(function (data) {
+      
+    });
+  }
+
+  $scope.openNewJoinWindow = function() {
+    var modalInstance = $modal.open({
+      templateUrl: '/partials/pages/contentModal',
+      controller: 'contentModalCtrl',
+      resolve: {
+        pageId: function() {
+          return 'join';
+        },
+        modalTitle: function() {
+          return 'Jak zostać zawodnikiem Klubu';
+        },
+        content: function () {
+          return undefined;
+        }
+      }
+    });
+
+    modalInstance.result.then(function () {
+
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+  $scope.editJoin = function(section) {
+    var modalInstance = $modal.open({
+      templateUrl: '/partials/pages/contentModal',
+      controller: 'contentModalCtrl',
+      resolve: {
+        pageId: function() {
+          return 'join';
+        },
+        modalTitle: function() {
+          return 'Jak zostać zawodnikiem Klubu';
+        },
         content: function () {
           return section;
         }

@@ -58,7 +58,18 @@ function createDefaultPageContent() {
       PageContent.create({pageId: 'about', sectionTitle: 'Krórka historia Klubu', 
         text: [
           'W latach 1952 – 1995 istniała Sekcja strzelecka Z.W.LOK w Gdańsku.Nazwę ”SENIOR” LOK Gdańsk Klub przyjął na zebraniu Sprawozdawczo-wyborczym członków w grudniu 1995 r. Decyzją Urzędu Miejskiego w Gdańsku z dnia 28 marca 2001 r.dopuszczono do użytkowania strzelnicę sportową z odkrytą osią 50-cio metrową 9-cio stanowiskową do broni kulowej (kaliber do 9mm pistoletowy) oraz osią krytą 15-sto metrową 4-ro stanowiskową do broni pneumatycznej (kaliber 4,5mm) zlokalizowaną w Gdańsku przy ul.Kopernika 16. W dniu 9 czerwca 2002 r.Polski Związek Strzelectwa Sportowego w Warszawie przyznał Klubowi ”SENIOR” LOK Gdańsk Licencję Nr LK-30/02/R. W roku 2005 uruchomiono dodatkowo 2-gą oś krytą 10-cio metrową 6-cio stanowiskową do strzelań z broni pneumatycznej (karabin i pistolet). Klub posiada Sekcję młodzieżową (strzelectwo sportowe oraz sporty obronne i letni biathlon) jak również Sekcję Grupy Powszechnej (strzelectwo sportowe). Od roku 2005 Klub pomaga co rok Gminie Trąbki Wielkie w organizacji Mistrzostw Gminy w strzelaniu z broni kulowej i pneumatycznej. W historii naszego Klubu biathlonista Przemysław Tymczuk był w latach 1994-1996 członkiem Kadry Narodowej Letniego Biathlonu a Medias Grzegorz w latach 2007-2008 był członkiem Kadry Narodowej Juniorów w pistolecie. Co rok w miesiącu wrześniu Klub ogłasza nabór nowych członków w wieku od lat 10-ciu.'], position: 0});
-
+      PageContent.create({pageId: 'join', sectionTitle: 'Deklaracja', 
+        text: [
+          '- z wypełnioną Deklaracją zgłosić się na posiedzenie Zarządu Klubu,',
+          '- po przyjęciu do Klubu opłacić obowiązujące składki,',
+          '- opłacić Legitymację członkowską PZSS – 32,50 zł'], position: 0});
+      PageContent.create({pageId: 'join', sectionTitle: 'Egzamin', 
+        text: [
+          '- przystąpić do egzaminu na PATENT STRZELECKI PZSS (test pisemny oraz praktyczny – strzelenie z pistoletu lub karabinka sportowego) wniosek o w/w Patent po wypełnieniu podpisuje lekarz medycyny sportowej. Koszt egzaminu wynosi 400,- zł.'], position: 0});
+      PageContent.create({pageId: 'join', sectionTitle: 'Licencja strzelecka PZSS', 
+        text: [
+          '- po otrzymaniu Patentu wysyłamy kolejny wniosek do PZSS-u o Licencję strzelecką PZSS (koszt 50zł +/- opłata pocztowa). Na Wniosku należy również otrzymać podpis lekarza medycyny sportowej o zdolności uprawiania strzelectwa sportowego.',
+          '- po otrzymaniu Licencji należy brać udział w treningach i zawodach strzeleckich.'], position: 0});
     }
   })
 }
