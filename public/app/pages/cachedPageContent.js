@@ -2,8 +2,8 @@ angular.module('app').factory('cachedPageContent', function(pageContentResource)
   var content;
 
   return {
-    query: function() {
-      if(!content) {
+    query: function(refresh) {
+      if(!content || refresh) {
         content = pageContentResource.query();
       }
 

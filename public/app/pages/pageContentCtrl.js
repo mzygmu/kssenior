@@ -90,7 +90,12 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
     });
      
     modalInstance.result.then(function (data) {
-      
+      if (section) {
+        var index = $scope.content.indexOf(section);
+        $scope.content[index] = data;
+      } else {
+        $scope.content = cachedPageContent.query(true);
+      }
     });
   }
 
