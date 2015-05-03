@@ -5,7 +5,7 @@
     button.btn.btn-lg.btn-primary(ng-click='openAboutWindow()') 
       span.glyphicon.glyphicon-plus Dodaj
   div
-    div
+    div.pic-aside
       img(src="../img/Oklubie.png") 
     section.inline(ng-repeat="section in content | filter:'about' | orderBy:position")
       div.inline 
