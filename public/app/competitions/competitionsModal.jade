@@ -19,12 +19,12 @@ div.base-panel.modal-panel
             input.form-control(name="competitions", type="text", placeholder="Konkurencja", ng-model="comp")
           .col-md-2
             button.btn.btn-success(ng-click='addComp(comp)') Dodaj
+        .form-group(ng-hide='competitions.length === 0')
           label.col-md-2.control-label(for="competitions")
           .col-md-10
             ul
-              li(ng-repeat="c in competitions") {{ c }}                 
-                button.btn.btn-xs.btn-danger(ng-click='rmComp(c)') 
-                  span.glyphicon.glyphicon-remove
+              li(ng-repeat="c in competitions") {{ c }} 
+                span.glyphicon.glyphicon-remove(ng-click='rmComp(c)')
         .form-group
           label.col-md-2.control-label(for="notes") Uwagi
           .col-md-10

@@ -1,6 +1,8 @@
 angular.module('app').controller('competitionsModalCtrl', function($scope, $modalInstance, competitionsService, mvNotifier, competitions) {
 
   if (competitions) {
+    console.log(competitions.date);
+    
     $scope.title = competitions.title;
     $scope.date = competitions.date;
     $scope.competitions = competitions.competition;
