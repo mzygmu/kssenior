@@ -35,5 +35,5 @@ div.base-panel.modal-panel
             textarea.form-control(rows="5", cols="80", name="description", type="text", ng-model="description")
 
   div.modal-footer
-    button.btn.btn-primary(ng-click='publish()', ng-disabled="competitionsForm.$invalid && competitions.length === 0") Zapisz 
+    button.btn.btn-primary(ng-click='publish()', ng-disabled="competitionsForm.$invalid || competitions.length === 0") Zapisz 
     button.btn.btn-warning(ng-click='cancel()') Anuluj
