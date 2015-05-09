@@ -10,7 +10,7 @@
     div 
       h4 {{ n.title }}
     div 
-      small {{ n.getDate() | date:'dd-MM-yyyy  HH:mm' }}
+      small {{ n.getDate() | date:'dd-MM-yyyy HH:mm' }}
     div.actionPanel(ng-if="identity.currentUser.isAdmin()")
       button.btn.btn-xs.btn-warning(ng-click='openPostWindow(n)')
         span.glyphicon.glyphicon-pencil

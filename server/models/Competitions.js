@@ -6,6 +6,7 @@ var competitionsSchema = mongoose.Schema({
   date: {type:Date, required:'{PATH} is required!'},
   category: [String],
   types: [String],
-  notes: String
+  notes: String,
+  description: String
 });
 var Competitions = mongoose.model('Competitions', competitionsSchema);

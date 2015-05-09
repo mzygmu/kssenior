@@ -28,7 +28,7 @@ var createDefaultUsers = function createDefaultUsers() {
     { _id : '553e84466b36050300714fd3' }, 
     {$addToSet:{roles:['admin']}},
     function() {
-      console.log('UUUUUPPPPPDDDDATTE');
+
     }
   );
 
