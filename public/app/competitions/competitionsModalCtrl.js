@@ -3,7 +3,7 @@ angular.module('app').controller('competitionsModalCtrl', function($scope, $moda
   if (competitions) {
   	// TODO set all fields
     $scope.title = competitions.title;
-    
+
     $scope.notes = competitions.notes;
     $scope.description = competitions.description;
   }
@@ -11,7 +11,7 @@ angular.module('app').controller('competitionsModalCtrl', function($scope, $moda
   var add = function() {
     var content = {
       title: $scope.title,
-      competition: ['3x20'],
+      competition: ['3x20', 'Psp 20', 'Pcz 30'],
       date: new Date(),
       notes: $scope.notes,
       description: $scope.description
