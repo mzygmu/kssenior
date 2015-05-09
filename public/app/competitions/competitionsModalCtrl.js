@@ -8,11 +8,13 @@ angular.module('app').controller('competitionsModalCtrl', function($scope, $moda
     $scope.description = competitions.description;
   }
 
+  $scope.date = new Date();
+
   var add = function() {
     var content = {
       title: $scope.title,
       competition: ['3x20', 'Psp 20', 'Pcz 30'],
-      date: new Date(),
+      date: $scope.date,
       notes: $scope.notes,
       description: $scope.description
 
