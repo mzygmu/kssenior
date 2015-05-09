@@ -1,5 +1,5 @@
 angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, newsList, mvIdentity, publishService, mvNotifier) {
-  $scope.news = newsList.newsList;
+  $scope.news = newsList.query();
   $scope.identity = mvIdentity;
 
   $scope.openPostWindow = function(post) {
