@@ -35,7 +35,7 @@ angular.module('app').controller('competitionsModalCtrl', function($scope, $moda
   }
   
   var update = function() {
-    var clone = angular.copy(content);
+    var clone = angular.copy(competitions);
 
     var data = {
       title: $scope.title,
@@ -64,7 +64,7 @@ angular.module('app').controller('competitionsModalCtrl', function($scope, $moda
   }
 
   $scope.publish = function() {
-    if (content) {
+    if (competitions) {
       update();
     } else {
       add();
