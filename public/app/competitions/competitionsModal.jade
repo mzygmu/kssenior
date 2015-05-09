@@ -12,13 +12,13 @@ div.base-panel.modal-panel
         .form-group
           label.col-md-2.control-label(for="data") Data
           .col-md-10
-            input.form-control(name="data", type="date", ng-model="date")
+            input.form-control(name="data", type="date", ng-model="date", required)
         .form-group
           label.col-md-2.control-label(for="competitions") Konkurencje
           .col-md-8
             input.form-control(name="competitions", type="text", placeholder="Konkurencja", ng-model="comp")
           .col-md-2
-            button.btn.btn-success(ng-click='addComp(comp)') Dodaj
+            button.btn.btn-success(ng-click='addComp(comp)', ng-disabled="!comp")) Dodaj
         .form-group(ng-hide='competitions.length === 0')
           label.col-md-2.control-label(for="competitions")
           .col-md-10
@@ -35,5 +35,5 @@ div.base-panel.modal-panel
             textarea.form-control(rows="5", cols="80", name="description", type="text", ng-model="description")
 
   div.modal-footer
-    button.btn.btn-primary(ng-click='publish()', ng-disabled="competitionsForm.$invalid") Zapisz 
+    button.btn.btn-primary(ng-click='publish()', ng-disabled="competitionsForm.$invalid && competitions.length === 0") Zapisz 
     button.btn.btn-warning(ng-click='cancel()') Anuluj

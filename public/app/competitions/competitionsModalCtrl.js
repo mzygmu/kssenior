@@ -18,7 +18,8 @@ angular.module('app').controller('competitionsModalCtrl', function($scope, $moda
   }
 
   $scope.addComp = function(comp) {
-    $scope.competitions.push(comp)
+    $scope.competitions.push(comp);
+    $scope.comp = '';
   };
 
   $scope.rmComp = function(comp) {
