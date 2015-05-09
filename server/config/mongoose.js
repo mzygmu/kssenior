@@ -2,6 +2,8 @@ var mongoose = require('mongoose'),
     userModel = require('../models/User'),
     newsModel = require('../models/News'),
     contentModel = require('../models/PageContent'),
+    competitionsModel = require('../models/Competitions'),
+    participantResultModel = require('../models/ParticipantResult'),
     courseModel = require('../models/Course');
 
 module.exports = function(config) {

@@ -1,0 +1,23 @@
+div.base-panel.modal-panel
+  div.modal-header
+    h3.modal-title Zawody
+
+  div.modal-body
+    form.form-horizontal(name="competitionsForm")
+      fieldset
+        .form-group
+          label.col-md-2.control-label(for="title") Tytuł
+          .col-md-10
+            input.form-control(name="title", type="text", placeholder="Tytuł", ng-model="title", required)
+        .form-group
+          label.col-md-2.control-label(for="notes") Uwagi
+          .col-md-10
+            input.form-control(name="notes", type="text", placeholder="Uwagi", ng-model="notes")
+        .form-group
+          label.col-md-2.control-label(for="description") Opis
+          .col-md-10
+            textarea.form-control(rows="5", cols="80", name="description", type="text", ng-model="description")
+
+  div.modal-footer
+    button.btn.btn-primary(ng-click='publish()', ng-disabled="competitionsForm.$invalid") Zapisz 
+    button.btn.btn-warning(ng-click='cancel()') Anuluj
