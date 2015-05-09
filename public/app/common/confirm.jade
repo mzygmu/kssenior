@@ -1,12 +1,11 @@
 div.base-panel.modal-panel
   div.modal-header
     h3.modal-title Potwierdź: 
-      b{{ confirmTitle }}
+      b {{ confirmTitle }}
 
   div.modal-body
-    {{ confirmText }}
-    label
-      Czy na pewno chcesz {{ confirmQyestion }}?      
+    h4 {{ confirmText }}
+    label Czy na pewno chcesz {{ confirmQuestion }}?      
 
   div.modal-footer
     button.btn.btn-primary(ng-click='ok()') Potwierdzam 
