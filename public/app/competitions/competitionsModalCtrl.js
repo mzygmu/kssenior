@@ -9,7 +9,9 @@ angular.module('app').controller('competitionsModalCtrl', function($scope, $moda
     $scope.notes = competitions.notes;
     $scope.description = competitions.description;
   } else {
-    $scope.date = new Date().toString().substring(0, 10);
+    var d = new Date();
+    console.log(d);
+    $scope.date = d.toString().substring(0, 10);
     $scope.competitions = [];
     $scope.category = [];
     $scope.types = [];
