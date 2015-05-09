@@ -3,7 +3,7 @@ angular.module('app').factory('newsList', function(newsResource) {
 
   return {
     query: function(refresh) {
-      if(!content || refresh) {
+      if(!newsList || refresh) {
         newsList = newsResource.query();
       }
 
