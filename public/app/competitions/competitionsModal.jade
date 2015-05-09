@@ -14,6 +14,14 @@ div.base-panel.modal-panel
           .col-md-10
             input.form-control(name="data", type="date", ng-model="date")
         .form-group
+          label.col-md-2.control-label(for="competitions") Konkurencje
+          .col-md-10
+            input.form-control(name="competitions", type="text", placeholder="Konkurencja", ng-model="comp")
+            button.btn.btn-success(ng-click='addComp(comp)') Dodaj
+          .col-md-10
+            ul(ng-repeat="c in competitions")
+              li {{ c }}
+        .form-group
           label.col-md-2.control-label(for="notes") Uwagi
           .col-md-10
             input.form-control(name="notes", type="text", placeholder="Uwagi", ng-model="notes")

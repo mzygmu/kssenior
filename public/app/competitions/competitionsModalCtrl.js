@@ -1,31 +1,33 @@
 angular.module('app').controller('competitionsModalCtrl', function($scope, $modalInstance, competitionsService, mvNotifier, competitions) {
 
   if (competitions) {
-  	// TODO set all fields
     $scope.title = competitions.title;
-
+    $scope.date = competitions.date;
+    $scope.competitions = competitions.competition;
+    $scope.category = competitions.category;
+    $scope.types = competitions.types;
     $scope.notes = competitions.notes;
     $scope.description = competitions.description;
+  } else {
+    $scope.date = new Date();
+    $scope.competitions = [];
+    $scope.category = [];
+    $scope.types = [];
   }
 
-  $scope.date = new Date();
+  $scope.addComp = function(comp) {
+    $scope.competitions.push(comp)
+  };
 
   var add = function() {
     var content = {
       title: $scope.title,
-      competition: ['3x20', 'Psp 20', 'Pcz 30'],
+      competition: $scope.competitions,
       date: $scope.date,
+      category: $scope.category,
+      types: $scope.types,
       notes: $scope.notes,
       description: $scope.description
-
-  // title: {type:String, required:'{PATH} is required!'},
-  // competition: {type:[String], required:'{PATH} is required!'},
-  // date: {type:Date, required:'{PATH} is required!'},
-  // category: [String],
-  // types: [String],
-  // notes: String,
-  // description: String
-
     };
 
     competitionsService.publish(content).then(function() {
@@ -41,18 +43,12 @@ angular.module('app').controller('competitionsModalCtrl', function($scope, $moda
 
     var data = {
       title: $scope.title,
-      competition: ['3x10'],
-      date: new Date(),
+      competition: $scope.competitions,
+      date: $scope.date,
+      category: $scope.category,
+      types: $scope.types,
       notes: $scope.notes,
       description: $scope.description
-
-  // title: {type:String, required:'{PATH} is required!'},
-  // competition: {type:[String], required:'{PATH} is required!'},
-  // date: {type:Date, required:'{PATH} is required!'},
-  // category: [String],
-  // types: [String],
-  // notes: String,
-  // description: String
     };
     angular.extend(clone, data);
 
