@@ -18,7 +18,7 @@ angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, 
         var index = $scope.news.indexOf(post);
         $scope.news[index] = data;
       } else {
-        $scope.news = newsList.newsList;
+        $scope.news = newsList.query(true);
       }
     });
   }
