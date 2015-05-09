@@ -1,0 +1,13 @@
+div.base-panel.modal-panel
+  div.modal-header
+    h3.modal-title Potwierdź: 
+      b{{ confirmTitle }}
+
+  div.modal-body
+    {{ confirmText }}
+    label
+      Czy na pewno chcesz {{ confirmQyestion }}?      
+
+  div.modal-footer
+    button.btn.btn-primary(ng-click='ok()') Potwierdzam 
+    button.btn.btn-warning(ng-click='cancel()') Anuluj

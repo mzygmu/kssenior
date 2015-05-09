@@ -1,4 +1,4 @@
-angular.module('app').controller('competitionsCtrl', function($scope, $modal, $log, cachedCompetitions, competitionsService, mvIdentity, mvNotifier) {
+angular.module('app').controller('competitionsCtrl', function($scope, $modal, $log, cachedCompetitions, competitionsService, mvIdentity, mvNotifier, ConfirmService) {
   $scope.competitions = cachedCompetitions.query();
   $scope.identity = mvIdentity;
 
@@ -24,14 +24,23 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
   }
 
   $scope.remove = function(comp) {
-    competitionsService.remove(comp).then(function(res) {
-      var index = $scope.competitions.indexOf(comp);
-      $scope.competitions.splice(index, 1);
-      mvNotifier.notify('Usunięto');
-    }, function(err){
-      mvNotifier.error(err);
-      console.log(err);
-    });
+    var doRemove = function() {
+      competitionsService.remove(comp).then(function(res) {
+        var index = $scope.competitions.indexOf(comp);
+        $scope.competitions.splice(index, 1);
+        mvNotifier.notify('Usunięto');
+      }, function(err){
+        mvNotifier.error(err);
+        console.log(err);
+      });
+    }
+
+    var ask = {
+      title: 'usunięcie zawodów',      
+      question: 'usunąć zawody z listy',
+      text: comp.title
+    }
+    ConfirmService.confirm(ask, doRemove);   
   }
 
 });
