@@ -2,27 +2,7 @@ angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, 
   $scope.news = newsList.newsList;
   $scope.identity = mvIdentity;
 
-  $scope.openNewPostWindow = function() {
-
-    var modalInstance = $modal.open({
-      templateUrl: '/partials/news/newPostModal',
-      controller: 'publishPostCtrl',
-      resolve: {
-        postData: function () {
-          return undefined;
-        }
-      }
-    });
-
-    modalInstance.result.then(function () {
-
-    }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
-    });
-
-  };
-
-  $scope.editPost = function(post) {
+  $scope.openPostWindow = function(post) {
     var modalInstance = $modal.open({
       templateUrl: '/partials/news/newPostModal',
       controller: 'publishPostCtrl',
@@ -33,9 +13,13 @@ angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, 
       }
     });
      
-    modalInstance.result.then(function (postData) {
-      newsList.edit(postData);
-      $scope.news = newsList.newsList;
+    modalInstance.result.then(function (data) {
+      if (post) {
+        var index = $scope.news.indexOf(post);
+        $scope.news[index] = data;
+      } else {
+        $scope.news = newsList.newsList;
+      }
     });
   }
 
