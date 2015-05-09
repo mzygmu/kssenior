@@ -8,7 +8,7 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
       controller: 'competitionsModalCtrl',
       resolve: {
         competitions: function () {
-          return comp;
+          return angular.copy(comp);
         }
       }
     });

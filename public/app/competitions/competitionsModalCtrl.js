@@ -2,19 +2,21 @@ angular.module('app').controller('competitionsModalCtrl', function($scope, $moda
 
   if (competitions) {
     console.log(competitions.date);
-    
+
     $scope.title = competitions.title;
-    $scope.date = competitions.date;
+    $scope.date = competitions.date.toString();
     $scope.competitions = competitions.competition;
     $scope.category = competitions.category;
     $scope.types = competitions.types;
     $scope.notes = competitions.notes;
     $scope.description = competitions.description;
   } else {
-    $scope.date = new Date();
+    $scope.date = new Date().toString();
     $scope.competitions = [];
     $scope.category = [];
     $scope.types = [];
+    $scope.notes = '';
+    $scope.description = '';
   }
 
   $scope.addComp = function(comp) {
