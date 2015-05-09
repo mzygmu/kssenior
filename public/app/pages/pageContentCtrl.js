@@ -1,4 +1,4 @@
-angular.module('app').controller('pageContentCtrl', function($scope, $modal, $log, cachedPageContent, pageContentService, mvIdentity, mvNotifier) {
+angular.module('app').controller('pageContentCtrl', function($scope, $modal, $log, cachedPageContent, pageContentService, mvIdentity, mvNotifier, ConfirmService) {
   $scope.content = cachedPageContent.query();
   $scope.identity = mvIdentity;
 
@@ -111,14 +111,23 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
   }
 
   $scope.remove = function(section) {
-    pageContentService.remove(section).then(function(res) {
-      var index = $scope.content.indexOf(section);
-      $scope.content.splice(index, 1);
-      mvNotifier.notify('Usunięto');
-    }, function(err){
-      mvNotifier.error(err);
-      console.log(err);
-    });
+    var doRemove = function() {
+      pageContentService.remove(section).then(function(res) {
+        var index = $scope.content.indexOf(section);
+        $scope.content.splice(index, 1);
+        mvNotifier.notify('Usunięto');
+      }, function(err){
+        mvNotifier.error(err);
+        console.log(err);
+      });
+    }
+
+    var ask = {
+      title: 'usunięcie zawartości strony',      
+      question: 'usunąć ten akapit ze strony',
+      text: section.title
+    }
+    ConfirmService.confirm(ask, doRemove); 
   }
 
 });

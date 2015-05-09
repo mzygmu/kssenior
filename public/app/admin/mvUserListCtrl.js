@@ -1,4 +1,4 @@
-angular.module('app').controller('mvUserListCtrl', function($scope, mvUser, mvManageUsers) {
+angular.module('app').controller('mvUserListCtrl', function($scope, mvUser, mvManageUsers, ConfirmService) {
   $scope.users = mvUser.query();
   $scope.setAdmin = function(user) {
     if (mvManageUsers.isAdmin(user)) {
@@ -16,14 +16,24 @@ angular.module('app').controller('mvUserListCtrl', function($scope, mvUser, mvMa
     }
   };
   $scope.removeUser = function(user) {
-    mvManageUsers.removeUser(user).then(function(res) {
-      var index = $scope.users.indexOf(user);
-      $scope.users.splice(index, 1);
+    var doRemove = function() {
+      mvManageUsers.removeUser(user).then(function(res) {
+        var index = $scope.users.indexOf(user);
+        $scope.users.splice(index, 1);
 
-      //$scope.users = mvUser.query();
-    }, function(err){
-      console.log(err);
-    });
+        //$scope.users = mvUser.query();
+      }, function(err){
+        console.log(err);
+      });
+    }
+
+    var ask = {
+      title: 'usunięcie użytkownika',      
+      question: 'usunąć użytkownika z bazy danych',
+      text: user.firstName + ' ' + user.lastName
+    }
+    ConfirmService.confirm(ask, doRemove); 
   };
+
   $scope.isAdmin = mvManageUsers.isAdmin;
 });
