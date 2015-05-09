@@ -27,7 +27,7 @@
         td {{ c.competition.toString() }}
         td {{ c.date | date:'dd-MM-yyyy' }}
         td {{ c.notes }}
-        td Komunikat
+        td 
         td(ng-if="identity.currentUser.isAdmin()")
           button.btn.btn-xs.btn-warning(ng-click='openCompetitionsWindow(c)')
             span.glyphicon.glyphicon-pencil

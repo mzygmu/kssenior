@@ -1,17 +1,15 @@
 angular.module('app').controller('competitionsModalCtrl', function($scope, $modalInstance, competitionsService, mvNotifier, competitions) {
 
   if (competitions) {
-    console.log(competitions.date);
-
     $scope.title = competitions.title;
-    $scope.date = competitions.date.toString();
+    $scope.date = competitions.date.toString().substring(0, 10);
     $scope.competitions = competitions.competition;
     $scope.category = competitions.category;
     $scope.types = competitions.types;
     $scope.notes = competitions.notes;
     $scope.description = competitions.description;
   } else {
-    $scope.date = new Date().toString();
+    $scope.date = new Date().toString().substring(0, 10);
     $scope.competitions = [];
     $scope.category = [];
     $scope.types = [];

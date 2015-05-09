@@ -30,15 +30,16 @@ exports.edit = function(req, res) {
   Competitions.update(
     { _id : data._id }, 
     {
-      $set: {
-        title: data.title,
-        competition: data.competition,
-        date: data.date,
-        category: data.category,
-        types: data.types,
-        notes: data.notes,
-        description: data.description
-      }
+      $set: data
+      // $set: {
+      //   title: data.title,
+      //   competition: data.competition,
+      //   date: data.date,
+      //   category: data.category,
+      //   types: data.types,
+      //   notes: data.notes,
+      //   description: data.description
+      // }
     },
     function(err, user) {
       if(err) {
