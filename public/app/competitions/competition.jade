@@ -22,9 +22,9 @@
     div.inline
       h4 
         small
-          Komunikat nr {{ index +1 }} konkurencja: 
+          Komunikat nr {{ $index +1 }} konkurencja: 
         {{ comp }}
-    div.inline
+    div.inline(ng-if="identity.currentUser.isAdmin()")   
       button.btn.btn-primary(ng-click='openResultWindow()') 
         span.glyphicon.glyphicon-plus Dodaj wynik
 
