@@ -31,6 +31,9 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       .when('/events', { templateUrl: '/partials/competitions/competitions', 
         controller: 'competitionsCtrl'
       })
+      .when('/events/:id', { templateUrl: '/partials/competitions/competition', 
+        controller: 'competitionsCtrl'
+      })
       .when('/charges', { templateUrl: '/partials/pages/charges',
         controller: 'pageContentCtrl'
       })

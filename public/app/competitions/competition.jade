@@ -1,0 +1,21 @@
+.content.div-box
+  div#events
+    div.inline
+      h2 {{ details.title }}
+    div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")
+      button.btn.btn-lg.btn-warning(ng-click='openCompetitionsWindow(details)') 
+        span.glyphicon.glyphicon-pencil Edytuj
+      button.btn.btn-lg.btn-primary(ng-click='openResultWindow()') 
+        span.glyphicon.glyphicon-plus Dodaj wynik
+
+  div
+    div
+      h4 Opis
+    div
+      small {{ details.date | date:'dd-MM-yyyy' }}
+    div {{ details.description }}
+    div
+      small {{ details.notes}}
+    div 
+      {{details.resultsOn}}
+

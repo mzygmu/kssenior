@@ -1,6 +1,14 @@
-angular.module('app').controller('competitionsCtrl', function($scope, $modal, $log, cachedCompetitions, competitionsService, mvIdentity, mvNotifier, ConfirmService) {
+angular.module('app').controller('competitionsCtrl', function($scope, $modal, $log, $routeParams, cachedCompetitions, competitionsService, mvIdentity, mvNotifier, ConfirmService) {
   $scope.competitions = cachedCompetitions.query();
   $scope.identity = mvIdentity;
+
+  cachedCompetitions.query().$promise.then(function(collection) {
+    collection.forEach(function(comp) {
+      if(comp._id === $routeParams.id) {
+        $scope.details = comp;
+      }
+    })
+  })
 
   $scope.openCompetitionsWindow = function(comp) {
     var modalInstance = $modal.open({

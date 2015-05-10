@@ -1,7 +1,7 @@
 var Competitions = require('mongoose').model('Competitions');
 
 exports.getAll = function(req, res) {
-  Competitions.find({}).sort( { date: -1 } ).exec(function(err, collection) {
+  Competitions.find({}).sort( { date: 1 } ).exec(function(err, collection) {
     res.send(collection);
   })
 };

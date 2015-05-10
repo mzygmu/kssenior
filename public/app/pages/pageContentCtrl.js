@@ -125,7 +125,7 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
     var ask = {
       title: 'usunięcie zawartości strony',      
       question: 'usunąć ten akapit ze strony',
-      text: section.title
+      text: section.sectionTitle
     }
     ConfirmService.confirm(ask, doRemove); 
   }

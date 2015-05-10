@@ -7,7 +7,10 @@
         span.glyphicon.glyphicon-plus Dodaj
 
   div.form-group
-    input.form-control.search(ng-model="searchText", placeholder="Szukaj")
+    .col-md-4
+      input.form-control.search(ng-model="searchText", placeholder="Szukaj")
+    .col-md-4
+      Organizator zastrzega sobie prawo do zmiany w/w terminów w szczególnych przypadkach.
 
   table.senior-table-bg.table
     thead
@@ -22,7 +25,7 @@
       tr(ng-repeat="c in competitions | filter:searchText") {{ c._id }}
         td {{ $index +1 }}
         td 
-          a(href="/event/{{c._id}}") {{ c.title }}
+          a(href="/events/{{c._id}}") {{ c.title }}
         td {{ c.competition.toString() }}
         td {{ c.date | date:'dd-MM-yyyy' }}
         td {{ c.notes }}

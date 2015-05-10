@@ -7,6 +7,7 @@ var competitionsSchema = mongoose.Schema({
   category: [String],
   types: [String],
   notes: String,
-  description: String
+  description: String,
+  resultsOn: Boolean
 });
 var Competitions = mongoose.model('Competitions', competitionsSchema);
