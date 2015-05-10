@@ -1,7 +1,7 @@
 .content.div-box
   div#events
     div.inline
-      h2 {{ details.title }}
+      h2 {{ details.title + ' ' }}
         small {{ details.date | date:'dd-MM-yyyy' }}
     div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")
       button.btn.btn-primary(ng-click='openResultWindow()') 
@@ -16,7 +16,7 @@
       h4 Opis
       {{ details.description }}
     div
-      small {{ details.notes}}
+      small {{ details.notes }}
     div 
-      {{details.resultsOn}}
+      {{ details.resultsOn }}
 
