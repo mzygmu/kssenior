@@ -2,18 +2,19 @@
   div#events
     div.inline
       h2 {{ details.title }}
+        small {{ details.date | date:'dd-MM-yyyy' }}
     div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")
-      button.btn.btn-lg.btn-warning(ng-click='openCompetitionsWindow(details)') 
-        span.glyphicon.glyphicon-pencil Edytuj
-      button.btn.btn-lg.btn-primary(ng-click='openResultWindow()') 
+      button.btn.btn-primary(ng-click='openResultWindow()') 
         span.glyphicon.glyphicon-plus Dodaj wynik
+      button.btn.btn-warning(ng-click='openCompetitionsWindow(details)') 
+        span.glyphicon.glyphicon-pencil Edytuj
+      button.btn.btn-danger(ng-click='remove(details)') 
+        span.glyphicon.glyphicon-remove Usuń
 
   div
-    div
+    div(ng-show='details.description') 
       h4 Opis
-    div
-      small {{ details.date | date:'dd-MM-yyyy' }}
-    div {{ details.description }}
+      {{ details.description }}
     div
       small {{ details.notes}}
     div 
