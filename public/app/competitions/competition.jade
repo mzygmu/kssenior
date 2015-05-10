@@ -3,9 +3,7 @@
     div.inline
       h2 {{ details.title + ' ' }}
         small {{ details.date | date:'dd-MM-yyyy' }}
-    div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")
-      button.btn.btn-primary(ng-click='openResultWindow()') 
-        span.glyphicon.glyphicon-plus Dodaj wynik
+    div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")      
       button.btn.btn-warning(ng-click='openCompetitionsWindow(details)') 
         span.glyphicon.glyphicon-pencil Edytuj
       button.btn.btn-danger(ng-click='remove(details)') 
@@ -21,7 +19,15 @@
       {{ details.resultsOn }}
 
   div(ng-repeat="comp in details.competition")
-    h4 {{ comp }}
+    div.inline
+      h4 
+        small
+          Komunikat nr {{ index +1 }} konkurencja: 
+        {{ comp }}
+    div.inline
+      button.btn.btn-primary(ng-click='openResultWindow()') 
+        span.glyphicon.glyphicon-plus Dodaj wynik
+
     table.senior-table-bg.table
       thead
         tr
