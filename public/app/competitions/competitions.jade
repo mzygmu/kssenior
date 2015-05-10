@@ -22,7 +22,7 @@
         th Uwagi
         th(ng-if="identity.currentUser.isAdmin()")
     tbody
-      tr(ng-repeat="c in competitions | filter:searchText") {{ c._id }}
+      tr(ng-repeat="c in competitions | filter:searchText")
         td {{ $index +1 }}
         td 
           a(href="/events/{{c._id}}") {{ c.title }}
