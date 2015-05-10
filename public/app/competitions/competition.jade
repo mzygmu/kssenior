@@ -21,8 +21,7 @@
   div(ng-repeat="comp in details.competition")
     div.inline
       h4 
-        small
-          Komunikat nr {{ $index +1 }} konkurencja: 
+        small Komunikat nr {{ $index +1 }} konkurencja: 
         {{ comp }}
     div.inline(ng-if="identity.currentUser.isAdmin()")   
       button.btn.btn-primary(ng-click='openResultWindow()') 
