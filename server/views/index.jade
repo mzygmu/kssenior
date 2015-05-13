@@ -32,8 +32,11 @@ block main-content
           a(href="/linki") Linki -->
 
     div.menu-right(ng-controller='mvNavBarLoginCtrl') 
-      a(ng-click='openSignUpWindow()', ng-if="!identity.isAuthenticated()") Rejestracja
-      a(ng-click='openLoginWindow()', ng-if="!identity.isAuthenticated()") Zaloguj
+      ul
+        li
+          a(ng-click='openSignUpWindow()', ng-if="!identity.isAuthenticated()") Rejestracja
+        li
+          a(ng-click='openLoginWindow()', ng-if="!identity.isAuthenticated()") Zaloguj
       ul.nav.navbar-nav.navbar-right(ng-if="!!identity.isAuthenticated()")
         li.dropdown
           a.dropdown-toggle(href="", data-toggle="dropdown")
