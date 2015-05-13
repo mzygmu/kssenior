@@ -32,7 +32,7 @@ block main-content
           a(href="/linki") Linki -->
 
     div.menu-right(ng-controller='mvNavBarLoginCtrl') 
-      ul
+      ul(ng-if="!identity.isAuthenticated()")
         li
           a(ng-click='openSignUpWindow()', ng-if="!identity.isAuthenticated()") Rejestracja
         li
