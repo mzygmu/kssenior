@@ -1,4 +1,4 @@
-angular.module('app').controller('competitionsCtrl', function($scope, $modal, $log, $routeParams, cachedCompetitions, resultsResource, competitionsService, mvIdentity, mvNotifier, ConfirmService) {
+angular.module('app').controller('competitionsCtrl', function($scope, $modal, $log, $routeParams, cachedCompetitions, resultsResource, resultService, competitionsService, mvIdentity, mvNotifier, ConfirmService) {
   $scope.competitions = cachedCompetitions.query();
   $scope.identity = mvIdentity;
 
@@ -10,8 +10,10 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
     })
   })
 
-  console.log(resultsResource);
-  $scope.results = resultsResource.query($routeParams.id);
+  resultService.getResult($routeParams.id).then(function(res) {
+    console.log(res);
+    $scope.results = res;
+  });
 
   $scope.openResultWindow = function(c, result) {
     var modalInstance = $modal.open({

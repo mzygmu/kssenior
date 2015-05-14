@@ -1,6 +1,18 @@
 angular.module('app').factory('resultService', function($http, $q, resultsResource) {
   return {
+    getResult: function(competitionId) {
+      var dfd = $q.defer();
 
+      $http.get('http://kssenior.herokuapp.com/api/results/'+competitionId)
+      .success(function(res) {
+        defer.resolve(res);
+      })
+      .error(function(err, status) {
+        defer.reject(err);
+      });
+
+      return dfd.promise;
+    },
     publish: function(resultData) {
       var results = new resultsResource(resultData);
       var dfd = $q.defer();
