@@ -10,9 +10,12 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
     })
   })
 
-  resultService.getResult($routeParams.id).then(function(res) {
-    $scope.results = res;
-  });
+  var getResults = function() {
+    resultService.getResult($routeParams.id).then(function(res) {
+      $scope.results = res;
+    });
+  }
+  getResults();
 
   $scope.openResultWindow = function(c, result) {
     var modalInstance = $modal.open({
@@ -33,8 +36,10 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
      
     modalInstance.result.then(function (data) {
       if (result) {
-        // var index = $scope.competitions.indexOf(comp);
-        // $scope.competitions[index] = data;
+        var index = $scope.results.indexOf(result);
+        $scope.results[index] = data;
+      } else {
+        getResults();
       }
     });
   };
