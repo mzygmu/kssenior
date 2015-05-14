@@ -1,19 +1,15 @@
 angular.module('app').controller('resultModalCtrl', function($scope, $modalInstance, resultService, mvNotifier, result, competitionName, competitionId) {
 
   if (result) {
-    $scope.title = result.title;
-    $scope.date = result.date.toString().substring(0, 10);
-    $scope.result = result.competition;
-    $scope.category = result.category;
-    $scope.types = result.types;
+    $scope.name = result.name;
+    $scope.total = result.total;
+    $scope.place = result.place;
+    $scope.series = result.series;
+    $scope.club = result.club;
     $scope.notes = result.notes;
-    $scope.description = result.description;
   } else {
-    $scope.result = [];
-    $scope.category = [];
-    $scope.types = [];
+    $scope.series = [];
     $scope.notes = '';
-    $scope.description = '';
   }
 
   $scope.addSeries = function(s) {
@@ -28,13 +24,13 @@ angular.module('app').controller('resultModalCtrl', function($scope, $modalInsta
 
   var add = function() {
     var content = {
-      title: $scope.title,
-      competition: $scope.result,
-      date: $scope.date,
-      category: $scope.category,
-      types: $scope.types,
-      notes: $scope.notes,
-      description: $scope.description
+      competition_id: competitionId,
+      name: $scope.name,
+      total: $scope.total,
+      place: $scope.place,
+      series: $scope.series,
+      club: $scope.club,
+      notes: $scope.notes
     };
 
     resultService.publish(content).then(function() {
@@ -49,13 +45,13 @@ angular.module('app').controller('resultModalCtrl', function($scope, $modalInsta
     var clone = angular.copy(result);
 
     var data = {
-      title: $scope.title,
-      competition: $scope.result,
-      date: $scope.date,
-      category: $scope.category,
-      types: $scope.types,
-      notes: $scope.notes,
-      description: $scope.description
+      competition_id: competitionId,
+      name: $scope.name,
+      total: $scope.total,
+      place: $scope.place,
+      series: $scope.series,
+      club: $scope.club,
+      notes: $scope.notes
     };
     angular.extend(clone, data);
 
