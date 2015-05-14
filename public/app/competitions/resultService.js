@@ -5,10 +5,10 @@ angular.module('app').factory('resultService', function($http, $q, resultsResour
 
       $http.get('http://kssenior.herokuapp.com/api/results/'+competitionId)
       .success(function(res) {
-        defer.resolve(res);
+        dfd.resolve(res);
       })
       .error(function(err, status) {
-        defer.reject(err);
+        dfd.reject(err);
       });
 
       return dfd.promise;
