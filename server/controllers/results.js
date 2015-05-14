@@ -1,7 +1,7 @@
 var Results = require('mongoose').model('ParticipantResult');
 
 exports.getResults = function(req, res) {
-  Results.find({competition_id:req.params.id}).exec(function(err, collection) {
+  Results.find({competition_id:req.params.id}).sort( { place: -1 } ).exec(function(err, collection) {
     res.send(collection);
   })
 };

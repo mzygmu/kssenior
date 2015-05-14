@@ -38,7 +38,7 @@
           th Uwagi
           th(ng-if="identity.currentUser.isAdmin()")
       tbody
-        tr(ng-repeat="r in results | filter:comp | orderBy:r.place:false")
+        tr(ng-repeat="r in results | filter:comp")
           td {{ r.place }}
           td {{ r.name }}
           td {{ r.club }}

@@ -35,8 +35,6 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
       if (result) {
         // var index = $scope.competitions.indexOf(comp);
         // $scope.competitions[index] = data;
-      } else {
-        $scope.results = resultsResource.query();
       }
     });
   };
