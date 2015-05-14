@@ -1,4 +1,4 @@
-angular.module('app').controller('competitionsCtrl', function($scope, $modal, $log, $routeParams, cachedCompetitions, competitionsService, mvIdentity, mvNotifier, ConfirmService) {
+angular.module('app').controller('competitionsCtrl', function($scope, $modal, $log, $routeParams, cachedCompetitions, resultsResource, competitionsService, mvIdentity, mvNotifier, ConfirmService) {
   $scope.competitions = cachedCompetitions.query();
   $scope.identity = mvIdentity;
 
@@ -9,6 +9,33 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
       }
     })
   })
+
+  $scope.openResultWindow = function(c, result) {
+    var modalInstance = $modal.open({
+      templateUrl: '/partials/competitions/resultModal',
+      controller: 'resultModalCtrl',
+      resolve: {
+        result: function () {
+          return angular.copy(result);
+        },
+        competitionName: function () {
+          return angular.copy(c);
+        },
+        competitionId: function () {
+          return angular.copy($routeParams.id);
+        }
+      }
+    });
+     
+    modalInstance.result.then(function (data) {
+      if (result) {
+        // var index = $scope.competitions.indexOf(comp);
+        // $scope.competitions[index] = data;
+      } else {
+        $scope.results = resultsResource.query();
+      }
+    });
+  };
 
   $scope.openCompetitionsWindow = function(comp) {
     var modalInstance = $modal.open({
@@ -29,7 +56,7 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
         $scope.competitions = cachedCompetitions.query(true);
       }
     });
-  }
+  };
 
   $scope.remove = function(comp) {
     var doRemove = function() {

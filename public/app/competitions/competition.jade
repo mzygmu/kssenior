@@ -24,7 +24,7 @@
         small Komunikat nr {{ $index +1 }} konkurencja: 
         {{ comp }}
     div.inline(ng-if="identity.currentUser.isAdmin()")   
-      button.btn.btn-primary(ng-click='openResultWindow()') 
+      button.btn.btn-primary(ng-click='openResultWindow(comp)') 
         span.glyphicon.glyphicon-plus Dodaj wynik
 
     table.senior-table-bg.table

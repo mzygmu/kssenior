@@ -1,0 +1,43 @@
+div.base-panel.modal-panel
+  div.modal-header
+    h3.modal-title Wynik w konkurencji {{ competitionName }}
+
+  div.modal-body
+    form.form-horizontal(name="resultForm")
+      fieldset
+        .form-group
+          label.col-md-2.control-label(for="competitor") Zawodnik
+          .col-md-10
+            input.form-control(name="competitor", type="text", placeholder="NAZWISKO Imię", ng-model="name", required)
+        .form-group
+          label.col-md-2.control-label(for="club") Klub
+          .col-md-10
+            input.form-control(name="club", type="text", ng-model="club")
+        .form-group
+          label.col-md-2.control-label(for="place") Miejsce
+          .col-md-10
+            input.form-control(name="place", type="number", ng-model="place", required)
+        .form-group
+          label.col-md-2.control-label(for="total") Wynik
+          .col-md-10
+            input.form-control(name="total", type="text", ng-model="total", required)
+        .form-group
+          label.col-md-2.control-label(for="series") Serie
+          .col-md-8
+            input.form-control(name="series", type="text", placeholder="Seria", ng-model="s")
+          .col-md-2
+            button.btn.btn-success(ng-click='addSeries(s)', ng-disabled="!s") Dodaj
+        .form-group(ng-hide='series.length === 0')
+          label.col-md-2.control-label(for="series")
+          .col-md-10
+            ul
+              li(ng-repeat="s in series") {{ s }} 
+                span.glyphicon.glyphicon-remove(ng-click='rmSeries(s)')
+        .form-group
+          label.col-md-2.control-label(for="notes") Uwagi
+          .col-md-10
+            input.form-control(name="notes", type="text", placeholder="Uwagi", ng-model="notes")
+
+  div.modal-footer
+    button.btn.btn-primary(ng-click='publish()', ng-disabled="resultForm.$invalid || series.length === 0") Zapisz 
+    button.btn.btn-warning(ng-click='cancel()') Anuluj

@@ -3,6 +3,7 @@ var auth = require('./auth'),
   news = require('../controllers/news'),
   content = require('../controllers/content'),
   competitions = require('../controllers/competitions'),
+  results = require('../controllers/results'),
   courses = require('../controllers/courses'),
   mongoose = require('mongoose'),
   User = mongoose.model('User');
@@ -31,6 +32,11 @@ module.exports = function(app) {
   app.post('/api/competitions', competitions.publish);
   app.put('/api/competitions', competitions.edit);
   app.post('/api/competitions/remove', competitions.remove);
+
+  app.get('/api/results/:id', results.getResults);
+  app.post('/api/results', results.publish);
+  app.put('/api/results', results.edit);
+  app.post('/api/results/remove', results.remove);
 
   app.get('/api/courses', courses.getCourses);
   app.get('/api/courses/:id', courses.getCourseById);
