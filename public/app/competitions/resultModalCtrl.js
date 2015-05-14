@@ -25,6 +25,7 @@ angular.module('app').controller('resultModalCtrl', function($scope, $modalInsta
   var add = function() {
     var content = {
       competition_id: competitionId,
+      competition_name: competitionName,
       name: $scope.name,
       total: $scope.total,
       place: $scope.place,

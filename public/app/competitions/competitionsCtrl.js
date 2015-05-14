@@ -11,7 +11,6 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
   })
 
   resultService.getResult($routeParams.id).then(function(res) {
-    console.log(res);
     $scope.results = res;
   });
 
