@@ -43,14 +43,14 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
 
   $scope.removeResult = function(result) {
     var doRemove = function() {
-      // competitionsService.remove(comp).then(function(res) {
-      //   var index = $scope.competitions.indexOf(comp);
-      //   $scope.competitions.splice(index, 1);
-      //   mvNotifier.notify('Usunięto');
-      // }, function(err){
-      //   mvNotifier.error(err);
-      //   console.log(err);
-      // });
+      resultService.remove(result).then(function(res) {
+        var index = $scope.results.indexOf(result);
+        $scope.results.splice(index, 1);
+        mvNotifier.notify('Usunięto');
+      }, function(err){
+        mvNotifier.error(err);
+        console.log(err);
+      });
     }
 
     var ask = {
