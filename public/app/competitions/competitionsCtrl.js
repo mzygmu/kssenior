@@ -41,6 +41,26 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
     });
   };
 
+  $scope.removeResult = function(result) {
+    var doRemove = function() {
+      // competitionsService.remove(comp).then(function(res) {
+      //   var index = $scope.competitions.indexOf(comp);
+      //   $scope.competitions.splice(index, 1);
+      //   mvNotifier.notify('Usunięto');
+      // }, function(err){
+      //   mvNotifier.error(err);
+      //   console.log(err);
+      // });
+    }
+
+    var ask = {
+      title: 'usunięcie wyniku',      
+      question: 'usunąć wynik z '+ result.competition_name,
+      text: result.name
+    }
+    ConfirmService.confirm(ask, doRemove);   
+  }
+
   $scope.openCompetitionsWindow = function(comp) {
     var modalInstance = $modal.open({
       templateUrl: '/partials/competitions/competitionsModal',

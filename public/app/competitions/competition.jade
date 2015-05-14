@@ -38,7 +38,7 @@
           th Uwagi
           th(ng-if="identity.currentUser.isAdmin()")
       tbody
-        tr(ng-repeat="r in results | filter:comp | orderBy:r.place")
+        tr(ng-repeat="r in results | filter:comp | orderBy:r.place:true")
           td {{ r.place }}
           td {{ r.name }}
           td {{ r.club }}
@@ -46,7 +46,7 @@
           td {{ r.total }}
           td {{ r.notes }}
           td(ng-if="identity.currentUser.isAdmin()")
-            button.btn.btn-xs.btn-warning(ng-click='openResultWindow(r)')
+            button.btn.btn-xs.btn-warning(ng-click='openResultWindow(comp, r)')
               span.glyphicon.glyphicon-pencil
             button.btn.btn-xs.btn-danger(ng-click='removeResult(r)') 
               span.glyphicon.glyphicon-remove
