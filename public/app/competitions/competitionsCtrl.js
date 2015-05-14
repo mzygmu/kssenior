@@ -10,6 +10,8 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
     })
   })
 
+  $scope.results = resultsResource.query();
+
   $scope.openResultWindow = function(c, result) {
     var modalInstance = $modal.open({
       templateUrl: '/partials/competitions/resultModal',
