@@ -39,5 +39,5 @@ div.base-panel.modal-panel
             input.form-control(name="notes", type="text", placeholder="Uwagi", ng-model="notes")
 
   div.modal-footer
-    button.btn.btn-primary(ng-click='publish()', ng-disabled="resultForm.$invalid || series.length === 0") Zapisz 
+    button.btn.btn-primary(ng-click='publish()', ng-disabled="resultForm.$invalid") Zapisz 
     button.btn.btn-warning(ng-click='cancel()') Anuluj
