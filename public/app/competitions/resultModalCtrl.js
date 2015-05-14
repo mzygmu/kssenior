@@ -1,5 +1,7 @@
 angular.module('app').controller('resultModalCtrl', function($scope, $modalInstance, resultService, mvNotifier, result, competitionName, competitionId) {
 
+  $scope.competitionName = competitionName;
+
   if (result) {
     $scope.name = result.name;
     $scope.total = result.total;
