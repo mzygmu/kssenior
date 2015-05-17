@@ -58,7 +58,7 @@ angular.module('app').controller('resultModalCtrl', function($scope, $modalInsta
     };
     angular.extend(clone, data);
 
-    resultService.update(clone).then(function() {
+    resultService.update(competitionName, clone).then(function() {
       mvNotifier.notify('Zaktualizowano');
 
     }, function(reason) {
