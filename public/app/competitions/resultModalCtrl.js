@@ -15,12 +15,12 @@ angular.module('app').controller('resultModalCtrl', function($scope, $modalInsta
   }
 
   $scope.addSeries = function(s) {
-    $scope.series.push(' '+s);
+    $scope.series.push(s);
     $scope.s = '';
   };
 
   $scope.rmSeries = function(index) {
-    $scope.result.splice(index, 1);
+    $scope.series.splice(index, 1);
   };
 
   var add = function() {
