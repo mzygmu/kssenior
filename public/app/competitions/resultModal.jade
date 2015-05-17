@@ -31,7 +31,7 @@ div.base-panel.modal-panel
           label.col-md-2.control-label(for="series")
           .col-md-10
             ul
-              li(ng-repeat="s in series track by $id(s)") {{ s }} 
+              li(ng-repeat="s in series track by $index") {{ s }} 
                 span.glyphicon.glyphicon-remove(ng-click='rmSeries(s)')
         .form-group
           label.col-md-2.control-label(for="notes") Uwagi
