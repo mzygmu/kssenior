@@ -21,8 +21,8 @@ angular.module('app').controller('competitionsModalCtrl', function($scope, $moda
     $scope.comp = '';
   };
 
-  $scope.rmComp = function(comp) {
-    var index = $scope.competitions.indexOf(comp);
+  $scope.rmComp = function(index) {
+    //var index = $scope.competitions.indexOf(comp);
     $scope.competitions.splice(index, 1);
   };
 

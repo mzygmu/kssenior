@@ -19,8 +19,7 @@ angular.module('app').controller('resultModalCtrl', function($scope, $modalInsta
     $scope.s = '';
   };
 
-  $scope.rmSeries = function(s) {
-    var index = $scope.result.indexOf(s);
+  $scope.rmSeries = function(index) {
     $scope.result.splice(index, 1);
   };
 
