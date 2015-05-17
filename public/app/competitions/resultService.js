@@ -40,11 +40,11 @@ angular.module('app').factory('resultService', function($http, $q, resultsResour
 
       return dfd.promise;
     },
-    update: function(resultData) {
+    update: function(comp, resultData) {
+      var results = new resultsResource(resultData);
       var dfd = $q.defer();
-      var clone = angular.copy(resultData);
 
-      clone.$update().then(function() {
+      results.$update().then(function() {
         dfd.resolve();
       }, function(response) {
         dfd.reject(response.data.reason);
