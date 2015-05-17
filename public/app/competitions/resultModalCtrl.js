@@ -15,7 +15,7 @@ angular.module('app').controller('resultModalCtrl', function($scope, $modalInsta
   }
 
   $scope.addSeries = function(s) {
-    $scope.result.push(s);
+    $scope.series.push(s);
     $scope.s = '';
   };
 
