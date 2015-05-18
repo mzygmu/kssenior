@@ -41,10 +41,12 @@ angular.module('app').controller('resultModalCtrl',
 
     resultService.publish(content).then(function() {
       mvNotifier.notify('Opublikowano');
+      $modalInstance.close(content);
     }, function(reason) {
       mvNotifier.error(reason);
+      $modalInstance.close(content);
     });
-    $modalInstance.close(content);
+    
   }
   
   var update = function() {
