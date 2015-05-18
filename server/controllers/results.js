@@ -1,4 +1,5 @@
 var Results = require('mongoose').model('ParticipantResult');
+var Competitions = require('mongoose').model('Competitions');
 
 exports.getResults = function(req, res) {
   Results.find({competition_id:req.params.id}).sort( { place: 1 } ).exec(function(err, collection) {
@@ -12,6 +13,18 @@ exports.publish = function(req, res) {
       if (err) {
         res.status(400);
         return res.send({reason:err.toString()});
+      } else {
+        Competitions.update(
+          { _id : data.competition_id }, 
+          {
+            $set: {
+              resultsOn: true
+            }
+          },
+          function(err, user) {
+
+          }
+        );      
       }
       res.status(200);
       res.send();
