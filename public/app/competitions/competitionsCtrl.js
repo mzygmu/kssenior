@@ -30,6 +30,9 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
         },
         competitionId: function () {
           return angular.copy($routeParams.id);
+        },
+        resultsCount: function () {
+          return $scope.results.length;
         }
       }
     });

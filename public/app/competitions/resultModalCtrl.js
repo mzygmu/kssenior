@@ -1,4 +1,5 @@
-angular.module('app').controller('resultModalCtrl', function($scope, $modalInstance, resultService, mvNotifier, result, competitionName, competitionId) {
+angular.module('app').controller('resultModalCtrl', 
+  function($scope, $modalInstance, resultService, mvNotifier, result, competitionName, competitionId, resultsCount) {
 
   $scope.competitionName = competitionName;
 
@@ -10,8 +11,11 @@ angular.module('app').controller('resultModalCtrl', function($scope, $modalInsta
     $scope.club = result.club;
     $scope.notes = result.notes;
   } else {
+    $scope.place = resultsCount + 1;
     $scope.series = [];
+    $scope.club = 'KS Senior LOK';    
     $scope.notes = '';
+
   }
 
   $scope.addSeries = function(s) {
@@ -24,11 +28,6 @@ angular.module('app').controller('resultModalCtrl', function($scope, $modalInsta
   };
 
   var add = function() {
-    var pClub = $scope.club;
-    if (!pClub) {
-      pClub = 'KS Senior LOK';
-    }
-
     var content = {
       competition_id: competitionId,
       competition_name: competitionName,
@@ -36,7 +35,7 @@ angular.module('app').controller('resultModalCtrl', function($scope, $modalInsta
       total: $scope.total,
       place: $scope.place,
       series: $scope.series,
-      club: pClub,
+      club: $scope.club,
       notes: $scope.notes
     };
 
