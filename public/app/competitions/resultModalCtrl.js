@@ -24,6 +24,11 @@ angular.module('app').controller('resultModalCtrl', function($scope, $modalInsta
   };
 
   var add = function() {
+    var pClub = $scope.club;
+    if (!pClub) {
+      pClub = 'KS Senior LOK';
+    }
+
     var content = {
       competition_id: competitionId,
       competition_name: competitionName,
@@ -31,7 +36,7 @@ angular.module('app').controller('resultModalCtrl', function($scope, $modalInsta
       total: $scope.total,
       place: $scope.place,
       series: $scope.series,
-      club: $scope.club,
+      club: pClub,
       notes: $scope.notes
     };
 
