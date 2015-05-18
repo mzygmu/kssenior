@@ -67,10 +67,12 @@ angular.module('app').controller('contentModalCtrl', function($scope, $modalInst
 
     pageContentService.publish(content).then(function() {
       mvNotifier.notify('Opublikowano');
+      $modalInstance.close(content);
     }, function(reason) {
       mvNotifier.error(reason);
+      $modalInstance.close(content);
     });
-    $modalInstance.close(content);
+    
   }
   
   var update = function() {
@@ -84,11 +86,11 @@ angular.module('app').controller('contentModalCtrl', function($scope, $modalInst
 
     pageContentService.update(clone).then(function() {
       mvNotifier.notify('Zaktualizowano');
-
+      $modalInstance.close(clone);
     }, function(reason) {
       mvNotifier.error(reason);
-    })
-    $modalInstance.close(clone);
+      $modalInstance.close(clone);
+    });    
   }
 
   $scope.publish = function() {

@@ -15,10 +15,12 @@ angular.module('app').controller('publishPostCtrl', function($scope, $modalInsta
       mvNotifier.notify('Opublikowano wiadomość');
       console.log('ADDED');
       newsList.add(newsData);
+      $modalInstance.close(newsData);
     }, function(reason) {
       mvNotifier.error(reason);
+      $modalInstance.close(newsData);
     });
-    $modalInstance.close(newsData);
+    
   }
   
   var update = function() {
@@ -32,11 +34,11 @@ angular.module('app').controller('publishPostCtrl', function($scope, $modalInsta
 
     publishService.updateNews(clone).then(function() {
       mvNotifier.notify('Ogłoszenie zostało zaktualizowane');
-
+      $modalInstance.close(clone);
     }, function(reason) {
       mvNotifier.error(reason);
-    })
-    $modalInstance.close(clone);
+      $modalInstance.close(clone);
+    });    
   }
 
   $scope.publish = function() {

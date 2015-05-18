@@ -65,11 +65,11 @@ angular.module('app').controller('resultModalCtrl',
 
     resultService.update(competitionName, clone).then(function() {
       mvNotifier.notify('Zaktualizowano');
-
+      $modalInstance.close(clone);
     }, function(reason) {
       mvNotifier.error(reason);
-    })
-    $modalInstance.close(clone);
+      $modalInstance.close(clone);
+    });    
   }
 
   $scope.publish = function() {
