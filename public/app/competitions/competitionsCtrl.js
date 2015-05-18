@@ -32,7 +32,13 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
           return angular.copy($routeParams.id);
         },
         resultsCount: function () {
-          return $scope.results.length;
+          var count = 0;
+          if ($scope.results) for (r in $scope.results) {
+            if (r.comp === c) {
+              count += 1;
+            }
+          }
+          return count;
         }
       }
     });
