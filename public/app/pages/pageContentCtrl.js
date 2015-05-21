@@ -131,19 +131,32 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
   }
 
   $scope.move = function(section) {
-    console.log(section);
-    for (var i in $scope.content) {
-      if ($scope.content[i]._id === section._id) {
-        $scope.content[i].position =+ 1;
-        console.log($scope.content[i].position);
-      }
-    }
+    section.position =+ 1;
+    pageContentService.update(section)
+      .than(function(res) {
+        // var index = $scope.content.indexOf(section);
+        // $scope.content.splice(index, 1);
+        $scope.content = cachedPageContent.query(true);
+        console.log(res);
+        mvNotifier.notify('Przesunięto zawartość');
+      }, function(err){
+        mvNotifier.error(err);
+        console.log(err);
+      });
 
-    $scope.content.sort(function(a, b){return a.position - b.position});
+    // console.log(section);
+    // for (var i in $scope.content) {
+    //   if ($scope.content[i]._id === section._id) {
+    //     $scope.content[i].position =+ 1;
+    //     console.log($scope.content[i].position);
+    //   }
+    // }
+
+    // $scope.content.sort(function(a, b){return a.position - b.position});
 
 
-    console.log(section);
-    //pageContentService.move(section);
+    // console.log(section);
+    //
   }
 
 });
