@@ -132,14 +132,14 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
 
   $scope.move = function(section) {
     console.log(section);
-
+    section.position =+ 1;
     for (var i in $scope.content) {
       if ($scope.content[i]._id === section._id) {
         $scope.content[i].position =+ 1;
         console.log($scope.content[i].position);
       }
     }
-
+    $scope.$apply();
     //pageContentService.move(section);
   }
 
