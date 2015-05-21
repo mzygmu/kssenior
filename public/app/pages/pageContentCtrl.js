@@ -133,7 +133,7 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
   $scope.move = function(section) {
     section.position =+ 1;
     pageContentService.update(section)
-      .than(function(res) {
+      .then(function(res) {
         // var index = $scope.content.indexOf(section);
         // $scope.content.splice(index, 1);
         $scope.content = cachedPageContent.query(true);
