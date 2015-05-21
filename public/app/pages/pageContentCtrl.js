@@ -131,8 +131,10 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
   }
 
   $scope.move = function(section) {
-    section.position++;
+    console.log(section);
+    section.position =+ 1;
     //pageContentService.move(section);
+    console.log(section);
   }
 
 });
