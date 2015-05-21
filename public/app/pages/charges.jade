@@ -4,10 +4,12 @@
     div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")
       button.btn.btn-lg.btn-primary(ng-click='openChargesWindow()') 
         span.glyphicon.glyphicon-plus Dodaj
-    section(ng-repeat="section in content | filter:'charges' | orderBy:position")
+    section(ng-repeat="section in content | filter:'charges' | orderBy:'-position'")
       div.inline 
         h4 {{section.sectionTitle}}
       div.inline(ng-if="identity.currentUser.isAdmin()")
+        button.btn.btn-xs.btn-primary(ng-click='move(section)')
+          span.glyphicon.glyphicon-arrow-up
         button.btn.btn-xs.btn-warning(ng-click='openChargesWindow(section)')
           span.glyphicon.glyphicon-pencil
         button.btn.btn-xs.btn-danger(ng-click='remove(section)') 

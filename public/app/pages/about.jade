@@ -7,7 +7,7 @@
   div
     div.pic-aside
       img(src="../img/Oklubie.png") 
-    section.inline(ng-repeat="section in content | filter:'about' | orderBy:-position")
+    section.inline(ng-repeat="section in content | filter:'about' | orderBy:'-position'")
       div.inline 
         h4 {{section.sectionTitle}}
       div.inline(ng-if="identity.currentUser.isAdmin()")
