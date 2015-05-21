@@ -138,6 +138,10 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
         console.log($scope.content[i].position);
       }
     }
+
+    $scope.content.sort(function(a, b){return a.position - b.position});
+
+
     console.log(section);
     //pageContentService.move(section);
   }
