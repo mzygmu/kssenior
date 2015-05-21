@@ -131,7 +131,7 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
   }
 
   $scope.move = function(section) {
-    section.position =+ 1;
+    section.position++;
     pageContentService.update(section)
       .then(function(res) {
         // var index = $scope.content.indexOf(section);
