@@ -8,9 +8,7 @@
 
   div.form-group
     .col-md-4
-      input.form-control.search(ng-model="searchText", placeholder="Szukaj")
-    .col-md-8 
-      b Organizator zastrzega sobie prawo do zmiany w/w terminów w szczególnych przypadkach.
+      input.form-control.search(ng-model="searchText", placeholder="Szukaj")      
 
   table.senior-table-bg.table
     thead
@@ -35,4 +33,6 @@
             span.glyphicon.glyphicon-pencil
           button.btn.btn-xs.btn-danger(ng-click='remove(c)') 
             span.glyphicon.glyphicon-remove
-              
+
+  center
+    b Organizator zastrzega sobie prawo do zmiany w/w terminów w szczególnych przypadkach.

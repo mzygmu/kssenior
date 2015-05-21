@@ -11,6 +11,8 @@
       div.inline 
         h4 {{section.sectionTitle}}
       div.inline(ng-if="identity.currentUser.isAdmin()")
+        button.btn.btn-xs.btn-primary(ng-click='move(section)')
+          span.glyphicon.glyphicon-arrow-up
         button.btn.btn-xs.btn-warning(ng-click='openAboutWindow(section)')
           span.glyphicon.glyphicon-pencil
         button.btn.btn-xs.btn-danger(ng-click='remove(section)') 

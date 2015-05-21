@@ -130,4 +130,9 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
     ConfirmService.confirm(ask, doRemove); 
   }
 
+  $scope.move = function(section) {
+    section.position++;
+    //pageContentService.move(section);
+  }
+
 });
