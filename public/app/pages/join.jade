@@ -10,7 +10,7 @@
         h4 {{section.sectionTitle}}
       div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")
         button.btn.btn-xs.btn-primary(ng-click='move(section)')
-          span.glyphicon.glyphicon-arrow-up
+          span.glyphicon.glyphicon-arrow-up {{section.position}}
         button.btn.btn-xs.btn-warning(ng-click='openJoinWindow(section)')
           span.glyphicon.glyphicon-pencil
         button.btn.btn-xs.btn-danger(ng-click='remove(section)') 
