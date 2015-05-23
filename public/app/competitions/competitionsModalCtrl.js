@@ -56,8 +56,7 @@ angular.module('app').controller('competitionsModalCtrl', function($scope, $moda
       category: $scope.category,
       types: $scope.types,
       notes: $scope.notes,
-      description: $scope.description,
-      resultsOn: false
+      description: $scope.description
     };
     angular.extend(clone, data);
 
