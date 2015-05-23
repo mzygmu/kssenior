@@ -6,6 +6,21 @@
       button.btn.btn-lg.btn-primary(ng-click='openPostWindow()') 
         span.glyphicon.glyphicon-plus Dodaj
 
+  div.data-aside(ng-controller='competitionsCtrl')
+    div 
+      h4 Ostatnie komunikaty
+    table.senior-table-bg.table
+      thead
+        tr
+          th Nazwa zawodów
+          th Data
+      tbody
+        tr(ng-repeat="c in competitions | limitTo:5")
+          td 
+            a(href="/events/{{c._id}}") {{ c.title }}
+          td 
+            nobr {{ c.date | date:'dd-MM-yyyy' }}
+
   div.news(ng-repeat="n in news")
     div 
       h4 {{ n.title }}
