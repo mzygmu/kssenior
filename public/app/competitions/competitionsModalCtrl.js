@@ -22,7 +22,6 @@ angular.module('app').controller('competitionsModalCtrl', function($scope, $moda
   };
 
   $scope.rmComp = function(index) {
-    //var index = $scope.competitions.indexOf(comp);
     $scope.competitions.splice(index, 1);
   };
 
@@ -34,7 +33,8 @@ angular.module('app').controller('competitionsModalCtrl', function($scope, $moda
       category: $scope.category,
       types: $scope.types,
       notes: $scope.notes,
-      description: $scope.description
+      description: $scope.description,
+      resultsOn: false
     };
 
     competitionsService.publish(content).then(function() {
@@ -56,7 +56,8 @@ angular.module('app').controller('competitionsModalCtrl', function($scope, $moda
       category: $scope.category,
       types: $scope.types,
       notes: $scope.notes,
-      description: $scope.description
+      description: $scope.description,
+      resultsOn: false
     };
     angular.extend(clone, data);
 

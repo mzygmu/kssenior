@@ -29,7 +29,7 @@
           th Nazwa zawodów
           th Data
       tbody
-        tr(ng-repeat="c in competitions | filter:{resultsOn:undefined} | limitTo:5")
+        tr(ng-repeat="c in competitions | filter:{resultsOn:false} | limitTo:5")
           td 
             a(href="/events/{{c._id}}") {{ c.title }}
           td 
