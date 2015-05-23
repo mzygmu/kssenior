@@ -7,7 +7,7 @@
         span.glyphicon.glyphicon-plus Dodaj
 
   div.data-aside(ng-controller="competitionsCtrl")
-    div 
+    center 
       h4 Ostatnie komunikaty
     table.senior-table-bg.table.aside-table
       thead
@@ -21,7 +21,7 @@
           td 
             nobr {{ c.date | date:'dd-MM-yyyy' }}
 
-    div 
+    center 
       h4 Nadchodzące zawody
     table.senior-table-bg.table.aside-table
       thead
@@ -29,7 +29,7 @@
           th Nazwa zawodów
           th Data
       tbody
-        tr(ng-repeat="c in competitions | filter:{resultsOn:false} | limitTo:5")
+        tr(ng-repeat="c in competitions | filter:{resultsOn:undefined} | limitTo:5")
           td 
             a(href="/events/{{c._id}}") {{ c.title }}
           td 
