@@ -36,6 +36,7 @@
             nobr {{ c.date | date:'dd-MM-yyyy' }} 
 
   div.news(ng-repeat="n in news | limitTo:10")
+    ks-news(news="n")
     div 
       h4 {{ n.title }}
     div 

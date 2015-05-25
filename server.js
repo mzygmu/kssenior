@@ -32,6 +32,7 @@ var scripts = [
 './public/app/account/mvSignupCtrl.js',
 './public/app/account/mvProfileCtrl.js',
 './public/app/admin/mvUserListCtrl.js',
+
 './public/app/news/newsList.js',
 './public/app/news/newsListCtrl.js',
 './public/app/news/newsResource.js',
@@ -50,6 +51,7 @@ var scripts = [
 './public/app/competitions/resultModalCtrl.js',
 './public/app/competitions/resultService.js'
 ];
+// './public/app/news/newsDirectives.js',
 
 var compressor = require('node-minify');
 new compressor.minify({
