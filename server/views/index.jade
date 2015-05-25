@@ -57,7 +57,7 @@ block main-content
 
   footer.content.div-box(ng-controller='pageContentCtrl')
     div#foot
-      section.box-elem(ng-repeat="section in content | filter:'footer' | orderBy:position")
+      div.box-elem(ng-repeat="section in content | filter:'footer' | orderBy:position")
         div.inline 
           h6.foottitle {{section.sectionTitle}}
         div.inline(ng-if="identity.currentUser.isAdmin()")
