@@ -18,12 +18,12 @@ app.listen(config.port);
 console.log('Listening on port ' + config.port + '...');
 
 var libs = [
-'./public/vendor/jquery/dist/jquery.js',
+'./public/vendor/jquery/dist/jquery.min.js',
 './public/vendor/bootstrap/dist/js/bootstrap.min.js',
-'./public/vendor/toastr/toastr.js',
-'./public/vendor/angular/angular.js',
-'./public/vendor/angular-resource/angular-resource.js',
-'./public/vendor/angular-route/angular-route.js',
+'./public/vendor/toastr/toastr.min.js',
+'./public/vendor/angular/angular.min.js',
+'./public/vendor/angular-resource/angular-resource.min.js',
+'./public/vendor/angular-route/angular-route.min.js',
 './public/vendor/ui-bootstrap-custom/ui-bootstrap-custom-0.11.2.min.js',
 './public/vendor/ui-bootstrap-custom/ui-bootstrap-custom-tpls-0.11.2.min.js',
 ];
@@ -64,7 +64,7 @@ var scripts = [
 
 var compressor = require('node-minify');
 new compressor.minify({
-    type: 'no-compress',
+    type: 'gcc',
     fileIn: scripts,
     fileOut: 'public/app/ks-senior.js',
     callback: function(err, min){
