@@ -27,9 +27,9 @@ var libs = [
 './public/vendor/ui-bootstrap-custom/ui-bootstrap-custom-0.11.2.min.js',
 './public/vendor/ui-bootstrap-custom/ui-bootstrap-custom-tpls-0.11.2.min.js',
 ];
+
 var scripts = [
 './public/app/app.js',
-'./public/app/main/mvMainCtrl.js',
 './public/app/account/loginModalCtrl.js',
 './public/app/account/mvNavBarLoginCtrl.js',
 './public/app/account/mvIdentity.js',
