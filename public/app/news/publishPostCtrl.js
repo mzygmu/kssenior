@@ -13,8 +13,7 @@ angular.module('app').controller('publishPostCtrl', function($scope, $modalInsta
 
     publishService.publishNews(newsData).then(function() {
       mvNotifier.notify('Opublikowano wiadomość');
-      console.log('ADDED');
-      newsList.add(newsData);
+      //newsList.add(newsData);
       $modalInstance.close(newsData);
     }, function(reason) {
       mvNotifier.error(reason);

@@ -6,7 +6,7 @@
       span.glyphicon.glyphicon-plus Dodaj
   div
     div.pic-aside
-      img(src="../img/Oklubie.png") 
+      img(src="../img/Oklubie.png", width="330", height="419") 
     section.inline(ng-repeat="section in content | filter:'about' | orderBy:'-position'")
       div.inline 
         h4 {{section.sectionTitle}}
