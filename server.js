@@ -18,14 +18,14 @@ app.listen(config.port);
 console.log('Listening on port ' + config.port + '...');
 
 var libs = [
-'/vendor/jquery/dist/jquery.js',
-'/vendor/bootstrap/dist/js/bootstrap.min.js',
-'/vendor/toastr/toastr.js',
-'/vendor/angular/angular.js',
-'/vendor/angular-resource/angular-resource.js',
-'/vendor/angular-route/angular-route.js',
-'/vendor/ui-bootstrap-custom/ui-bootstrap-custom-0.11.2.min.js',
-'/vendor/ui-bootstrap-custom/ui-bootstrap-custom-tpls-0.11.2.min.js',
+'./public/vendor/jquery/dist/jquery.js',
+'./public/vendor/bootstrap/dist/js/bootstrap.min.js',
+'./public/vendor/toastr/toastr.js',
+'./public/vendor/angular/angular.js',
+'./public/vendor/angular-resource/angular-resource.js',
+'./public/vendor/angular-route/angular-route.js',
+'./public/vendor/ui-bootstrap-custom/ui-bootstrap-custom-0.11.2.min.js',
+'./public/vendor/ui-bootstrap-custom/ui-bootstrap-custom-tpls-0.11.2.min.js',
 ];
 var scripts = [
 './public/app/app.js',
