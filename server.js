@@ -17,7 +17,16 @@ require('./server/config/routes')(app);
 app.listen(config.port);
 console.log('Listening on port ' + config.port + '...');
 
-
+var libs = [
+'/vendor/jquery/dist/jquery.js',
+'/vendor/bootstrap/dist/js/bootstrap.min.js',
+'/vendor/toastr/toastr.js',
+'/vendor/angular/angular.js',
+'/vendor/angular-resource/angular-resource.js',
+'/vendor/angular-route/angular-route.js',
+'/vendor/ui-bootstrap-custom/ui-bootstrap-custom-0.11.2.min.js',
+'/vendor/ui-bootstrap-custom/ui-bootstrap-custom-tpls-0.11.2.min.js',
+];
 var scripts = [
 './public/app/app.js',
 './public/app/main/mvMainCtrl.js',
@@ -58,6 +67,16 @@ new compressor.minify({
     type: 'no-compress',
     fileIn: scripts,
     fileOut: 'public/app/ks-senior.js',
+    callback: function(err, min){
+        console.log(err);
+//        console.log(min); 
+    }
+});
+
+new compressor.minify({
+    type: 'no-compress',
+    fileIn: libs,
+    fileOut: 'public/app/ks-senior-libs.js',
     callback: function(err, min){
         console.log(err);
 //        console.log(min); 
