@@ -64,7 +64,7 @@ var scripts = [
 
 var compressor = require('node-minify');
 new compressor.minify({
-    type: 'gcc',
+    type: 'yui-js',
     fileIn: scripts,
     fileOut: 'public/app/ks-senior.js',
     callback: function(err, min){
