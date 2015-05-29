@@ -2,13 +2,6 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
   $scope.content = cachedPageContent.query();
   $scope.identity = mvIdentity;
 
-  $sce.resourceUrlWhitelist([
-    // Allow same origin resource loads.
-    'self',
-    // Allow loading from our assets domain.  Notice the difference between * and **.
-    'https://www.google.com/maps/**'
-  ]);
-
   $scope.getLocation = function(section) {    
     return $sce.getTrustedResourceUrl(section.text);
   }

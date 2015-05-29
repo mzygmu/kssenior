@@ -1,6 +1,6 @@
 angular.module('app', ['ngResource', 'ngRoute', 'ui.bootstrap']);
 
-angular.module('app').config(function($routeProvider, $locationProvider) {
+angular.module('app').config(function($routeProvider, $locationProvider, $sceDelegateProvider) {
   var routeRoleChecks = {
     admin: {auth: function(mvAuth) {
       return mvAuth.authorizeCurrentUserForRoute('admin')
@@ -9,6 +9,18 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
       return mvAuth.authorizeAuthenticatedUserForRoute()
     }}
   }
+
+  $sceDelegateProvider.resourceUrlWhitelist([
+    // Allow same origin resource loads.
+    'self',
+    // Allow loading from our assets domain.  Notice the difference between * and **.
+    'https://www.google.com/maps/**'
+  ]);
+
+  // The blacklist overrides the whitelist so the open redirect here is blocked.
+  // $sceDelegateProvider.resourceUrlBlacklist([
+  //   'http://myapp.example.com/clickThru**'
+  // ]);
 
   $locationProvider.html5Mode(true);
   $routeProvider
