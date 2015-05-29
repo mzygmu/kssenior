@@ -65,7 +65,7 @@ block main-content
             span.glyphicon.glyphicon-pencil
         div.description
           span.foottext {{section.text}}
-      div.box-elem 
-        h6.foottitle {{getLocation().sectionTitle}}
-        <iframe ng-src="{{getLocation().text}}" width="100%" height="100%" frameborder="0" style="border:0"></iframe>
+      div.box-elem(ng-repeat="section in content | filter:'location'")
+        h6.foottitle {{section.sectionTitle}}
+        <iframe ng-src="{{section.text}}" width="100%" height="100%" frameborder="0" style="border:0"></iframe>
     p#copy &copy; 2015 KS "Senior" LOK w Gdańsku.

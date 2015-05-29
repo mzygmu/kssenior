@@ -6,13 +6,13 @@ angular.module('app').factory('cachedPageContent', function(pageContentResource)
     query: function(refresh) {
       if(!content || refresh) {
         content = pageContentResource.query();
-        for (i in content) {
-          console.log(content[i]);
-          if (content[i].pageId === 'location') {
-            location = content[i];
-            break;
-          }
-        }
+        // for (i in content) {
+        //   console.log(content[i]);
+        //   if (content[i].pageId === 'location') {
+        //     location = content[i];
+        //     break;
+        //   }
+        // }
       }
 
       return content;
