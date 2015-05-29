@@ -2,6 +2,10 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
   $scope.content = cachedPageContent.query();
   $scope.identity = mvIdentity;
 
+  $scope.getLocation = function() {
+    return cachedPageContent.getLocation();
+  }
+
   $scope.openChargesWindow = function(section) {
     var modalInstance = $modal.open({
       templateUrl: '/partials/pages/contentModal',
