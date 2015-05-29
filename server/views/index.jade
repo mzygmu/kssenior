@@ -72,5 +72,5 @@ block main-content
           button.btn.btn-xs.btn-warning(ng-click='openFooterWindow(section)')
             span.glyphicon.glyphicon-pencil
         div.description   
-          <iframe ng-src="{{$sce.getTrustedResourceUrl(section.text)}}" width="100%" height="100%" frameborder="0" style="border:0"></iframe>
+          <iframe ng-src="{{getLocation(section)}}" width="100%" height="100%" frameborder="0" style="border:0"></iframe>
     p#copy &copy; 2015 KS "Senior" LOK w Gdańsku.

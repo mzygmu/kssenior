@@ -1,9 +1,9 @@
-angular.module('app').controller('pageContentCtrl', function($scope, $modal, $log, cachedPageContent, pageContentService, mvIdentity, mvNotifier, ConfirmService) {
+angular.module('app').controller('pageContentCtrl', function($scope, $modal, $log, $sce, cachedPageContent, pageContentService, mvIdentity, mvNotifier, ConfirmService) {
   $scope.content = cachedPageContent.query();
   $scope.identity = mvIdentity;
 
-  $scope.getLocation = function() {
-    return cachedPageContent.getLocation();
+  $scope.getLocation = function(section) {    
+    return $sce.getTrustedResourceUrl(section.text);
   }
 
   $scope.openChargesWindow = function(section) {
