@@ -1,8 +1,8 @@
-angular.module('app').controller('pageContentCtrl', function($scope, $modal, $log, $sceDelegateProvider, cachedPageContent, pageContentService, mvIdentity, mvNotifier, ConfirmService) {
+angular.module('app').controller('pageContentCtrl', function($scope, $modal, $log, $sce, cachedPageContent, pageContentService, mvIdentity, mvNotifier, ConfirmService) {
   $scope.content = cachedPageContent.query();
   $scope.identity = mvIdentity;
 
-  $sceDelegateProvider.resourceUrlWhitelist([
+  $sce.resourceUrlWhitelist([
     // Allow same origin resource loads.
     'self',
     // Allow loading from our assets domain.  Notice the difference between * and **.
@@ -10,7 +10,7 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
   ]);
 
   $scope.getLocation = function(section) {    
-    return $sceDelegateProvider.getTrustedResourceUrl(section.text);
+    return $sce.getTrustedResourceUrl(section.text);
   }
 
   $scope.openChargesWindow = function(section) {
