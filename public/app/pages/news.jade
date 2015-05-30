@@ -42,9 +42,11 @@
     div 
       small {{ n.getDate() | date:'dd-MM-yyyy' }}
     div.actionPanel(ng-if="identity.currentUser.isAdmin()")
-      button.btn.btn-xs.btn-warning(ng-click='openPostWindow(n)')
+      button.btn.btn-xs.btn-warning(ng-click='openPostWindow(n)', 
+              popover='Edytuj' popover-trigger='mouseenter', popover-placement='right')
         span.glyphicon.glyphicon-pencil
-      button.btn.btn-xs.btn-danger(ng-click='removePost(n)') 
+      button.btn.btn-xs.btn-danger(ng-click='removePost(n)', 
+              popover='Usuń' popover-trigger='mouseenter', popover-placement='right') 
         span.glyphicon.glyphicon-remove
     div.postText
       p {{ n.text }}

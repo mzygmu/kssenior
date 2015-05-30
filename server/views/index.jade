@@ -61,7 +61,8 @@ block main-content
         div.inline 
           h6.foottitle {{section.sectionTitle}}
         div.inline(ng-if="identity.currentUser.isAdmin()")
-          button.btn.btn-xs.btn-warning(ng-click='openFooterWindow(section)')
+          button.btn.btn-xs.btn-warning(ng-click='openFooterWindow(section)', 
+              popover='Edytuj' popover-trigger='mouseenter', popover-placement='right')
             span.glyphicon.glyphicon-pencil
         div.description
           span.foottext {{section.text}}
@@ -69,7 +70,8 @@ block main-content
         div.inline 
           h6.foottitle {{section.sectionTitle}}
         div.inline(ng-if="identity.currentUser.isAdmin()")
-          button.btn.btn-xs.btn-warning(ng-click='openFooterWindow(section)')
+          button.btn.btn-xs.btn-warning(ng-click='openFooterWindow(section)', 
+              popover='Edytuj' popover-trigger='mouseenter', popover-placement='right')
             span.glyphicon.glyphicon-pencil
         <iframe ng-src="{{getLocation(section)}}" width="100%" height="100%" frameborder="0" style="border:0"></iframe>
     p#copy &copy; 2015 KS "Senior" LOK w Gdańsku.
