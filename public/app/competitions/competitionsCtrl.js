@@ -73,19 +73,22 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
     ConfirmService.confirm(ask, doRemove);   
   }
 
-  $scope.openCompetitionsWindow = function(comp) {
+  $scope.openCompetitionsWindow = function(comp, copy) {
     var modalInstance = $modal.open({
       templateUrl: '/partials/competitions/competitionsModal',
       controller: 'competitionsModalCtrl',
       resolve: {
         competitions: function () {
           return angular.copy(comp);
+        },
+        copy: function () {
+          return copy;
         }
       }
     });
      
     modalInstance.result.then(function (data) {
-      if (comp) {
+      if (!copy && comp) {
         var index = $scope.competitions.indexOf(comp);
         $scope.competitions[index] = data;
       } else {

@@ -1,4 +1,4 @@
-angular.module('app').controller('competitionsModalCtrl', function($scope, $modalInstance, competitionsService, mvNotifier, competitions) {
+angular.module('app').controller('competitionsModalCtrl', function($scope, $modalInstance, competitionsService, mvNotifier, competitions, copy) {
 
   if (competitions) {
     $scope.title = competitions.title;
@@ -70,7 +70,7 @@ angular.module('app').controller('competitionsModalCtrl', function($scope, $moda
   }
 
   $scope.publish = function() {
-    if (competitions) {
+    if (!copy && competitions) {
       update();
     } else {
       add();

@@ -31,6 +31,8 @@
         td(ng-if="identity.currentUser.isAdmin()")
           button.btn.btn-xs.btn-warning(ng-click='openCompetitionsWindow(c)')
             span.glyphicon.glyphicon-pencil
+          button.btn.btn-xs.btn-info(ng-click='openCompetitionsWindow(c, true)')
+            span.glyphicon.glyphicon-share-alt
           button.btn.btn-xs.btn-danger(ng-click='remove(c)') 
             span.glyphicon.glyphicon-remove
 
