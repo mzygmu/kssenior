@@ -29,11 +29,14 @@
           nobr {{ c.date | date:'dd-MM-yyyy' }}
         td {{ c.notes }}
         td(ng-if="identity.currentUser.isAdmin()")
-          button.btn.btn-xs.btn-warning(ng-click='openCompetitionsWindow(c)')
+          button.btn.btn-xs.btn-warning(ng-click='openCompetitionsWindow(c)', 
+              popover='Edytuj' popover-trigger='mouseenter', popover-placement='right')
             span.glyphicon.glyphicon-pencil
-          button.btn.btn-xs.btn-info(ng-click='openCompetitionsWindow(c, true)')
+          button.btn.btn-xs.btn-info(ng-click='openCompetitionsWindow(c, true)', 
+              popover='Kopiuj' popover-trigger='mouseenter', popover-placement='right')
             span.glyphicon.glyphicon-share-alt
-          button.btn.btn-xs.btn-danger(ng-click='remove(c)') 
+          button.btn.btn-xs.btn-danger(ng-click='remove(c)', 
+              popover='Usuń' popover-trigger='mouseenter', popover-placement='right')
             span.glyphicon.glyphicon-remove
 
   center
