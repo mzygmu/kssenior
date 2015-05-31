@@ -1,4 +1,4 @@
-angular.module('app').factory('mvUser', function($resource) {
+angular.module('app').factory('kssUser', function($resource) {
   var UserResource = $resource('/api/users/:id', {_id: "@id"}, {
     update: {method:'PUT',isArray:false}
   });

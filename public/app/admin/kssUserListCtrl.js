@@ -1,15 +1,15 @@
-angular.module('app').controller('mvUserListCtrl', function($scope, mvUser, mvManageUsers, ConfirmService) {
-  $scope.users = mvUser.query();
+angular.module('app').controller('kssUserListCtrl', function($scope, kssUser, mvManageUsers, ConfirmService) {
+  $scope.users = kssUser.query();
   $scope.setAdmin = function(user) {
     if (mvManageUsers.isAdmin(user)) {
       mvManageUsers.removeRights(user).then(function(res) {
-        $scope.users = mvUser.query();
+        $scope.users = kssUser.query();
       }, function(err){
         console.log(err);
       });
     } else {
       mvManageUsers.addRights(user).then(function(res) {
-          $scope.users = mvUser.query();
+          $scope.users = kssUser.query();
       }, function(err){
         console.log(err);
       });
@@ -21,7 +21,7 @@ angular.module('app').controller('mvUserListCtrl', function($scope, mvUser, mvMa
         var index = $scope.users.indexOf(user);
         $scope.users.splice(index, 1);
 
-        //$scope.users = mvUser.query();
+        //$scope.users = kssUser.query();
       }, function(err){
         console.log(err);
       });

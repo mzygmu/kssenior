@@ -1,10 +1,10 @@
-angular.module('app').factory('mvAuth', function($http, mvIdentity, $q, mvUser) {
+angular.module('app').factory('mvAuth', function($http, mvIdentity, $q, kssUser) {
   return {
     authenticateUser: function(username, password) {
       var dfd = $q.defer();
       $http.post('/login', {username:username, password:password}).then(function(response) {
         if(response.data.success) {
-          var user = new mvUser();
+          var user = new kssUser();
           angular.extend(user, response.data.user);
           mvIdentity.currentUser = user;
           dfd.resolve(true);
@@ -16,7 +16,7 @@ angular.module('app').factory('mvAuth', function($http, mvIdentity, $q, mvUser) 
     },
 
     createUser: function(newUserData) {
-      var newUser = new mvUser(newUserData);
+      var newUser = new kssUser(newUserData);
       var dfd = $q.defer();
 
       newUser.$save().then(function() {

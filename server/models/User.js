@@ -24,28 +24,16 @@ userSchema.methods = {
 var User = mongoose.model('User', userSchema);
 
 var createDefaultUsers = function createDefaultUsers() {
-  User.update(
-    { _id : '553e84466b36050300714fd3' }, 
-    {$addToSet:{roles:['admin']}},
-    function() {
-
+  // DELETE THIS USER AFTER REGISTRATION
+  User.find({}).exec(function(err, collection) {
+    if(collection.length === 0) {
+      var salt, hash;
+      salt = encrypt.createSalt();
+      hash = encrypt.hashPwd(salt, 'admin');
+      User.create({firstName:'admin',lastName:'admin',username:'admin', salt: salt, hashed_pwd: hash, roles: ['admin']});
     }
-  );
+  });
 
-  // User.find({}).exec(function(err, collection) {
-  //   if(collection.length === 0) {
-  //     var salt, hash;
-  //     salt = encrypt.createSalt();
-  //     hash = encrypt.hashPwd(salt, 'joe');
-  //     User.create({firstName:'Joe',lastName:'Eames',username:'joe', salt: salt, hashed_pwd: hash, roles: ['admin']});
-  //     salt = encrypt.createSalt();
-  //     hash = encrypt.hashPwd(salt, 'john');
-  //     User.create({firstName:'John',lastName:'Papa',username:'john', salt: salt, hashed_pwd: hash, roles: []});
-  //     salt = encrypt.createSalt();
-  //     hash = encrypt.hashPwd(salt, 'dan');
-  //     User.create({firstName:'Dan',lastName:'Wahlin',username:'dan', salt: salt, hashed_pwd: hash});
-  //   }
-  // })
 };
 
 exports.createDefaultUsers = createDefaultUsers;

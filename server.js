@@ -36,12 +36,11 @@ var scripts = [
 './public/app/common/mvNotifier.js',
 './public/app/common/confirmCtrl.js',
 './public/app/account/mvAuth.js',
-'./public/app/account/mvUser.js',
+'./public/app/account/kssUser.js',
 './public/app/account/mvManageUsers.js',
 './public/app/account/mvSignupCtrl.js',
 './public/app/account/mvProfileCtrl.js',
 './public/app/admin/mvUserListCtrl.js',
-
 './public/app/news/newsList.js',
 './public/app/news/newsListCtrl.js',
 './public/app/news/newsResource.js',
@@ -60,7 +59,6 @@ var scripts = [
 './public/app/competitions/resultModalCtrl.js',
 './public/app/competitions/resultService.js'
 ];
-// './public/app/news/newsDirectives.js',
 
 var compressor = require('node-minify');
 new compressor.minify({
