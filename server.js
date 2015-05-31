@@ -40,7 +40,7 @@ var scripts = [
 './public/app/account/mvManageUsers.js',
 './public/app/account/mvSignupCtrl.js',
 './public/app/account/mvProfileCtrl.js',
-'./public/app/admin/mvUserListCtrl.js',
+'./public/app/admin/kssUserListCtrl.js',
 './public/app/news/newsList.js',
 './public/app/news/newsListCtrl.js',
 './public/app/news/newsResource.js',
