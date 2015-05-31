@@ -24,7 +24,7 @@ angular.module('app').config(function($routeProvider, $locationProvider, $sceDel
 
   $locationProvider.html5Mode(true);
   $routeProvider
-      .when('/', { templateUrl: '/partials/main/main', controller: 'kssMainCtrl'})
+      .when('/', { templateUrl: '/partials/main/main' })
       .when('/admin/users', { templateUrl: '/partials/admin/user-list',
         controller: 'kssUserListCtrl', resolve: routeRoleChecks.admin
       })
