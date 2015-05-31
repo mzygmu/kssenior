@@ -1,4 +1,4 @@
-angular.module('app').controller('ConfirmCtrl', function ($scope, $modalInstance, ask) {
+angular.module('app').controller('kssConfirmCtrl', function ($scope, $modalInstance, ask) {
   $scope.confirmTitle = ask.title;
   $scope.confirmText = ask.text;
   $scope.confirmQuestion = ask.question;
@@ -18,7 +18,7 @@ angular.module('app').factory('ConfirmService', function($modal) {
     confirm: function(content, confirmCallback) {
         var modalInstance = $modal.open({
           templateUrl: '/partials/common/confirm',
-          controller: 'ConfirmCtrl',
+          controller: 'kssConfirmCtrl',
           resolve: {
             ask: function () {
               return content;

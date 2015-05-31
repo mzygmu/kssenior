@@ -1,12 +1,12 @@
-angular.module('app').controller('loginModalCtrl', function ($scope, $modalInstance, $log, mvAuth, mvNotifier) {
+angular.module('app').controller('loginModalCtrl', function ($scope, $modalInstance, $log, kssAuth, kssNotifier) {
 
   $scope.signin = function(username, password) {
-    mvAuth.authenticateUser(username, password).then(function(success) {
+    kssAuth.authenticateUser(username, password).then(function(success) {
       if(success) {
-        mvNotifier.notify('Logowanie się powiodło!');
+        kssNotifier.notify('Logowanie się powiodło!');
         $modalInstance.close();
       } else {
-        mvNotifier.error('Nazwa użytkownika lub hasło jest nieprawidłowe');
+        kssNotifier.error('Nazwa użytkownika lub hasło jest nieprawidłowe');
       }
     });
   }

@@ -1,6 +1,6 @@
-angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, newsList, mvIdentity, publishService, mvNotifier, ConfirmService) {
+angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, newsList, kssIdentity, publishService, kssNotifier, ConfirmService) {
   $scope.news = newsList.query();
-  $scope.identity = mvIdentity;
+  $scope.identity = kssIdentity;
 
   $scope.openPostWindow = function(post) {
     var modalInstance = $modal.open({
@@ -28,9 +28,9 @@ angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, 
       publishService.removeNews(post).then(function(res) {
         var index = $scope.news.indexOf(post);
         $scope.news.splice(index, 1);
-        mvNotifier.notify('Ogłoszenie zostało usunięte');
+        kssNotifier.notify('Ogłoszenie zostało usunięte');
       }, function(err){
-        mvNotifier.error(err);
+        kssNotifier.error(err);
         console.log(err);
       });
     }

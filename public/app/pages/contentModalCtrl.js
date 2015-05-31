@@ -1,4 +1,4 @@
-angular.module('app').controller('contentModalCtrl', function($scope, $modalInstance, pageContentService, mvNotifier, pageId, modalTitle, content) {
+angular.module('app').controller('contentModalCtrl', function($scope, $modalInstance, pageContentService, kssNotifier, pageId, modalTitle, content) {
 
   $scope.modalTitle = modalTitle;
   if (content) {
@@ -15,10 +15,10 @@ angular.module('app').controller('contentModalCtrl', function($scope, $modalInst
     };
 
     pageContentService.publish(content).then(function() {
-      mvNotifier.notify('Opublikowano');
+      kssNotifier.notify('Opublikowano');
       $modalInstance.close(content);
     }, function(reason) {
-      mvNotifier.error(reason);
+      kssNotifier.error(reason);
       $modalInstance.close(content);
     });
   }
@@ -33,10 +33,10 @@ angular.module('app').controller('contentModalCtrl', function($scope, $modalInst
     angular.extend(clone, data);
 
     pageContentService.update(clone).then(function() {
-      mvNotifier.notify('Zaktualizowano');
+      kssNotifier.notify('Zaktualizowano');
       $modalInstance.close(clone);
     }, function(reason) {
-      mvNotifier.error(reason);
+      kssNotifier.error(reason);
       $modalInstance.close(clone);
     });    
   }

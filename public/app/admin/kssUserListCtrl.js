@@ -1,14 +1,14 @@
-angular.module('app').controller('kssUserListCtrl', function($scope, kssUser, mvManageUsers, ConfirmService) {
+angular.module('app').controller('kssUserListCtrl', function($scope, kssUser, kssManageUsers, ConfirmService) {
   $scope.users = kssUser.query();
   $scope.setAdmin = function(user) {
-    if (mvManageUsers.isAdmin(user)) {
-      mvManageUsers.removeRights(user).then(function(res) {
+    if (kssManageUsers.isAdmin(user)) {
+      kssManageUsers.removeRights(user).then(function(res) {
         $scope.users = kssUser.query();
       }, function(err){
         console.log(err);
       });
     } else {
-      mvManageUsers.addRights(user).then(function(res) {
+      kssManageUsers.addRights(user).then(function(res) {
           $scope.users = kssUser.query();
       }, function(err){
         console.log(err);
@@ -17,7 +17,7 @@ angular.module('app').controller('kssUserListCtrl', function($scope, kssUser, mv
   };
   $scope.removeUser = function(user) {
     var doRemove = function() {
-      mvManageUsers.removeUser(user).then(function(res) {
+      kssManageUsers.removeUser(user).then(function(res) {
         var index = $scope.users.indexOf(user);
         $scope.users.splice(index, 1);
 
@@ -35,5 +35,5 @@ angular.module('app').controller('kssUserListCtrl', function($scope, kssUser, mv
     ConfirmService.confirm(ask, doRemove); 
   };
 
-  $scope.isAdmin = mvManageUsers.isAdmin;
+  $scope.isAdmin = kssManageUsers.isAdmin;
 });

@@ -1,4 +1,4 @@
-angular.module('app').controller('competitionsModalCtrl', function($scope, $modalInstance, competitionsService, mvNotifier, competitions, copy) {
+angular.module('app').controller('competitionsModalCtrl', function($scope, $modalInstance, competitionsService, kssNotifier, competitions, copy) {
 
   if (competitions) {
     $scope.title = competitions.title;
@@ -38,10 +38,10 @@ angular.module('app').controller('competitionsModalCtrl', function($scope, $moda
     };
 
     competitionsService.publish(content).then(function() {
-      mvNotifier.notify('Opublikowano');
+      kssNotifier.notify('Opublikowano');
       $modalInstance.close(content);
     }, function(reason) {
-      mvNotifier.error(reason);
+      kssNotifier.error(reason);
       $modalInstance.close(content);
     });    
   }
@@ -61,10 +61,10 @@ angular.module('app').controller('competitionsModalCtrl', function($scope, $moda
     angular.extend(clone, data);
 
     competitionsService.update(clone).then(function() {
-      mvNotifier.notify('Zaktualizowano');
+      kssNotifier.notify('Zaktualizowano');
       $modalInstance.close(clone);
     }, function(reason) {
-      mvNotifier.error(reason);
+      kssNotifier.error(reason);
       $modalInstance.close(clone);
     });    
   }

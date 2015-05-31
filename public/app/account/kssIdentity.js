@@ -1,4 +1,4 @@
-angular.module('app').factory('mvIdentity', function($window, kssUser) {
+angular.module('app').factory('kssIdentity', function($window, kssUser) {
   var currentUser;
   if(!!$window.bootstrappedUserObject) {
     currentUser = new kssUser();

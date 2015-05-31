@@ -1,6 +1,6 @@
-angular.module('app').controller('competitionsCtrl', function($scope, $modal, $log, $routeParams, cachedCompetitions, resultsResource, resultService, competitionsService, mvIdentity, mvNotifier, ConfirmService) {
+angular.module('app').controller('competitionsCtrl', function($scope, $modal, $log, $routeParams, cachedCompetitions, resultsResource, resultService, competitionsService, kssIdentity, kssNotifier, ConfirmService) {
   $scope.competitions = cachedCompetitions.query();
-  $scope.identity = mvIdentity;
+  $scope.identity = kssIdentity;
 
   cachedCompetitions.query().$promise.then(function(collection) {
     collection.forEach(function(comp) {
@@ -58,9 +58,9 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
       resultService.remove(result).then(function(res) {
         var index = $scope.results.indexOf(result);
         $scope.results.splice(index, 1);
-        mvNotifier.notify('Usunięto');
+        kssNotifier.notify('Usunięto');
       }, function(err){
-        mvNotifier.error(err);
+        kssNotifier.error(err);
         console.log(err);
       });
     }
@@ -102,9 +102,9 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
       competitionsService.remove(comp).then(function(res) {
         var index = $scope.competitions.indexOf(comp);
         $scope.competitions.splice(index, 1);
-        mvNotifier.notify('Usunięto');
+        kssNotifier.notify('Usunięto');
       }, function(err){
-        mvNotifier.error(err);
+        kssNotifier.error(err);
         console.log(err);
       });
     }

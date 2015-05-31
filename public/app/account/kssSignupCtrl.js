@@ -1,4 +1,4 @@
-angular.module('app').controller('mvSignupCtrl', function($scope, $modalInstance, kssUser, mvNotifier, mvAuth) {
+angular.module('app').controller('kssSignupCtrl', function($scope, $modalInstance, kssUser, kssNotifier, kssAuth) {
 
   $scope.signup = function() {
     var newUserData = {
@@ -8,10 +8,10 @@ angular.module('app').controller('mvSignupCtrl', function($scope, $modalInstance
       lastName: $scope.lname
     };
 
-    mvAuth.createUser(newUserData).then(function() {
-      mvNotifier.notify('Twoje konto zostało utworzone!');
+    kssAuth.createUser(newUserData).then(function() {
+      kssNotifier.notify('Twoje konto zostało utworzone!');
     }, function(reason) {
-      mvNotifier.error(reason);
+      kssNotifier.error(reason);
     });
     $modalInstance.dismiss('create user');
   }

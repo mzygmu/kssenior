@@ -1,6 +1,6 @@
-angular.module('app').controller('pageContentCtrl', function($scope, $modal, $log, $sce, cachedPageContent, pageContentService, mvIdentity, mvNotifier, ConfirmService) {
+angular.module('app').controller('pageContentCtrl', function($scope, $modal, $log, $sce, cachedPageContent, pageContentService, kssIdentity, kssNotifier, ConfirmService) {
   $scope.content = cachedPageContent.query();
-  $scope.identity = mvIdentity;
+  $scope.identity = kssIdentity;
 
   $scope.getLocation = function(section) {    
     return $sce.getTrustedResourceUrl(section.text);
@@ -119,9 +119,9 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
       pageContentService.remove(section).then(function(res) {
         var index = $scope.content.indexOf(section);
         $scope.content.splice(index, 1);
-        mvNotifier.notify('Usunięto');
+        kssNotifier.notify('Usunięto');
       }, function(err){
-        mvNotifier.error(err);
+        kssNotifier.error(err);
         console.log(err);
       });
     }
@@ -142,9 +142,9 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
         // $scope.content.splice(index, 1);
         $scope.content = cachedPageContent.query(true);
         console.log(res);
-        mvNotifier.notify('Przesunięto zawartość');
+        kssNotifier.notify('Przesunięto zawartość');
       }, function(err){
-        mvNotifier.error(err);
+        kssNotifier.error(err);
         console.log(err);
       });
 

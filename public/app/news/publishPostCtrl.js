@@ -1,4 +1,4 @@
-angular.module('app').controller('publishPostCtrl', function($scope, $modalInstance, mvNotifier, publishService, newsList, postData) {
+angular.module('app').controller('publishPostCtrl', function($scope, $modalInstance, kssNotifier, publishService, newsList, postData) {
 
   if (postData) {
     $scope.title = postData.title;
@@ -12,10 +12,10 @@ angular.module('app').controller('publishPostCtrl', function($scope, $modalInsta
     };
 
     publishService.publishNews(newsData).then(function() {
-      mvNotifier.notify('Opublikowano wiadomość');
+      kssNotifier.notify('Opublikowano wiadomość');
       $modalInstance.close(newsData);
     }, function(reason) {
-      mvNotifier.error(reason);
+      kssNotifier.error(reason);
       $modalInstance.close(newsData);
     });
     
@@ -31,10 +31,10 @@ angular.module('app').controller('publishPostCtrl', function($scope, $modalInsta
     angular.extend(clone, newsData);
 
     publishService.updateNews(clone).then(function() {
-      mvNotifier.notify('Ogłoszenie zostało zaktualizowane');
+      kssNotifier.notify('Ogłoszenie zostało zaktualizowane');
       $modalInstance.close(clone);
     }, function(reason) {
-      mvNotifier.error(reason);
+      kssNotifier.error(reason);
       $modalInstance.close(clone);
     });    
   }

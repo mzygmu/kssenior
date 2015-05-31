@@ -2,11 +2,11 @@ angular.module('app', ['ngResource', 'ngRoute', 'ui.bootstrap']);
 
 angular.module('app').config(function($routeProvider, $locationProvider, $sceDelegateProvider) {
   var routeRoleChecks = {
-    admin: {auth: function(mvAuth) {
-      return mvAuth.authorizeCurrentUserForRoute('admin')
+    admin: {auth: function(kssAuth) {
+      return kssAuth.authorizeCurrentUserForRoute('admin')
     }},
-    user: {auth: function(mvAuth) {
-      return mvAuth.authorizeAuthenticatedUserForRoute()
+    user: {auth: function(kssAuth) {
+      return kssAuth.authorizeAuthenticatedUserForRoute()
     }}
   }
 
@@ -29,7 +29,7 @@ angular.module('app').config(function($routeProvider, $locationProvider, $sceDel
         controller: 'kssUserListCtrl', resolve: routeRoleChecks.admin
       })
       .when('/profile', { templateUrl: '/partials/account/profile',
-        controller: 'mvProfileCtrl', resolve: routeRoleChecks.user
+        controller: 'kssProfileCtrl', resolve: routeRoleChecks.user
       })
       .when('/news', { templateUrl: '/partials/pages/news', 
         controller: 'newsListCtrl'

@@ -1,5 +1,5 @@
 angular.module('app').controller('resultModalCtrl', 
-  function($scope, $modalInstance, resultService, mvNotifier, result, competitionName, competitionId, resultsCount) {
+  function($scope, $modalInstance, resultService, kssNotifier, result, competitionName, competitionId, resultsCount) {
 
   $scope.competitionName = competitionName;
 
@@ -40,10 +40,10 @@ angular.module('app').controller('resultModalCtrl',
     };
 
     resultService.publish(content).then(function() {
-      mvNotifier.notify('Opublikowano');
+      kssNotifier.notify('Opublikowano');
       $modalInstance.close(content);
     }, function(reason) {
-      mvNotifier.error(reason);
+      kssNotifier.error(reason);
       $modalInstance.close(content);
     });
     
@@ -64,10 +64,10 @@ angular.module('app').controller('resultModalCtrl',
     angular.extend(clone, data);
 
     resultService.update(competitionName, clone).then(function() {
-      mvNotifier.notify('Zaktualizowano');
+      kssNotifier.notify('Zaktualizowano');
       $modalInstance.close(clone);
     }, function(reason) {
-      mvNotifier.error(reason);
+      kssNotifier.error(reason);
       $modalInstance.close(clone);
     });    
   }

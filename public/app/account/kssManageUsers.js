@@ -1,4 +1,4 @@
-angular.module('app').factory('mvManageUsers', function($http, mvIdentity, $q, kssUser) {
+angular.module('app').factory('kssManageUsers', function($http, kssIdentity, $q, kssUser) {
   return {
     isAdmin: function(user) {
       return user.roles.indexOf('admin') > -1;

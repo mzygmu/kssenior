@@ -1,21 +1,21 @@
-angular.module('app').value('mvToastr', toastr);
+angular.module('app').value('kssToastr', toastr);
 
-angular.module('app').factory('mvNotifier', function(mvToastr) {
+angular.module('app').factory('kssNotifier', function(kssToastr) {
   return {
     notify: function(msg) {
-      mvToastr.success(msg);
+      kssToastr.success(msg);
       console.log(msg);
     },
     error: function(msg) {
-      mvToastr.error(msg);
+      kssToastr.error(msg);
       console.log(msg);
     },
     info: function(msg) {
-      mvToastr.info(msg);
+      kssToastr.info(msg);
       console.log(msg);
     },
     warning: function(msg) {
-      mvToastr.warning(msg);
+      kssToastr.warning(msg);
       console.log(msg);
     }
   }

@@ -1,12 +1,12 @@
-angular.module('app').controller('mvNavBarLoginCtrl', function($scope, $http, mvIdentity, mvNotifier, mvAuth, $location, $modal, $log) {
+angular.module('app').controller('kssNavBarLoginCtrl', function($scope, $http, kssIdentity, kssNotifier, kssAuth, $location, $modal, $log) {
   
-  $scope.identity = mvIdentity;
+  $scope.identity = kssIdentity;
 
   $scope.signout = function() {
-    mvAuth.logoutUser().then(function() {
+    kssAuth.logoutUser().then(function() {
       $scope.username = "";
       $scope.password = "";
-      mvNotifier.notify('Wylogowanie się powiodło!');
+      kssNotifier.notify('Wylogowanie się powiodło!');
       $location.path('/');
     })
   }
@@ -30,7 +30,7 @@ angular.module('app').controller('mvNavBarLoginCtrl', function($scope, $http, mv
 
     var modalInstance = $modal.open({
       templateUrl: '/partials/account/signup',
-      controller: 'mvSignupCtrl'
+      controller: 'kssSignupCtrl'
     });
 
     modalInstance.result.then(function () {
