@@ -131,31 +131,34 @@ div.text-box.main-elem-text {
   z-index: auto;
 }
 #logo-button {
-  display: inline;
-  border: 2px solid rgb(51, 100, 175);
-  border-radius: 5px;
-  font: 28px 'Jockey One', sans-serif;
-  background-color: #ba2800;
   visibility: visible;
   right: 30px;
   top: 330px;
-  width: 280px;
-  height: 55px; 
   position: absolute;
   z-index: auto;
 }
-#logo-button:focus, #logo-button:hover {
-  transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
-  -webkit-transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
-  color: #3364af;
-  background-color: #000;
-  text-decoration: none;
-}
 #logo-button > a {
+  width: 280px;
+  height: 55px; 
+  display: inline;
+  text-align:center;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  font: 28px 'Jockey One', sans-serif;
+  background-color: #ba2800;
+
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 45px;
   padding-right: 45px;
+}
+#logo-button > a:focus, #logo-button > a:hover {
+  transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+  -webkit-transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+  border: 2px solid rgb(51, 100, 175);
+  color: #3364af;
+  background-color: #000;
+  text-decoration: none;
 }
 
 a {
