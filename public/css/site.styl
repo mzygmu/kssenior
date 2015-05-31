@@ -131,23 +131,30 @@ div.text-box.main-elem-text {
   z-index: auto;
 }
 #logo-button {
+  display: inline;
   border: 2px solid rgb(51, 100, 175);
   transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
   -webkit-transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
   border-radius: 5px;
 
-  font-size: 22px;
+  font: 28px 'Jockey One', sans-serif;
+  background-color: #000;
   visibility: visible;
-  right: 40px;
+  right: 30px;
   top: 330px;
-  width: 220px;
-  height: 55px;
+  width: 280px;
+  height: 55px;  
+  margin-left: 45px;
+  padding-top: 5px;
   position: absolute;
   z-index: auto;
 }
 #logo-button > a:focus, #logo-button > a:hover {
+  transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+  -webkit-transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
   color: #3364af;
-  background-color: transparent;
+  border: 2px solid rgb(51, 100, 175);
+  background-color: #000;
   text-decoration: none;
 }
 
