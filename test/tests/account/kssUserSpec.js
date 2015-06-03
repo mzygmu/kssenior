@@ -1,3 +1,5 @@
+'use strict';
+
 describe('kssUser', function() {
   beforeEach(module('app'));
 

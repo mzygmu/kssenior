@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').factory('kssAuth', function($http, kssIdentity, $q, kssUser) {
   return {
     authenticateUser: function(username, password) {

@@ -1,3 +1,4 @@
+'use strict';
 var auth = require('./auth'),
   users = require('../controllers/users'),
   news = require('../controllers/news'),

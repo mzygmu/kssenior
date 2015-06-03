@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').controller('pageContentCtrl', function($scope, $modal, $log, $sce, cachedPageContent, pageContentService, kssIdentity, kssNotifier, ConfirmService) {
   $scope.content = cachedPageContent.query();
   $scope.identity = kssIdentity;

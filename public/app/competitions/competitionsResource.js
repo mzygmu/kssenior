@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').factory('competitionsResource', function($resource) {
   var CompetitionsResource = $resource('/api/competitions/:_id', {_id: "@id"}, {
     update: {method:'PUT',isArray:false}

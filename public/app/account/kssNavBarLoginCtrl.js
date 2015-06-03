@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').controller('kssNavBarLoginCtrl', function($scope, $http, kssIdentity, kssNotifier, kssAuth, $location, $modal, $log) {
   
   $scope.identity = kssIdentity;

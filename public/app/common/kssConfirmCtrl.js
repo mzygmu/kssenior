@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').controller('kssConfirmCtrl', function ($scope, $modalInstance, ask) {
   $scope.confirmTitle = ask.title;
   $scope.confirmText = ask.text;

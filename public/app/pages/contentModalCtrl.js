@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').controller('contentModalCtrl', function($scope, $modalInstance, pageContentService, kssNotifier, pageId, modalTitle, content) {
 
   $scope.modalTitle = modalTitle;

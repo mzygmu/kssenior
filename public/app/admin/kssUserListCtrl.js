@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').controller('kssUserListCtrl', function($scope, kssUser, kssManageUsers, ConfirmService) {
   $scope.users = kssUser.query();
   $scope.setAdmin = function(user) {

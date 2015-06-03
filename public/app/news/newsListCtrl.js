@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').controller('newsListCtrl', function($scope, $modal, $log, newsList, kssIdentity, publishService, kssNotifier, ConfirmService) {
   $scope.news = newsList.query();
   $scope.identity = kssIdentity;

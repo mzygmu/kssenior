@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').controller('competitionsModalCtrl', function($scope, $modalInstance, competitionsService, kssNotifier, competitions, copy) {
 
   if (competitions) {

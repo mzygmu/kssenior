@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').controller('competitionsCtrl', function($scope, $modal, $log, $routeParams, cachedCompetitions, resultsResource, resultService, competitionsService, kssIdentity, kssNotifier, ConfirmService) {
   $scope.competitions = cachedCompetitions.query();
   $scope.identity = kssIdentity;

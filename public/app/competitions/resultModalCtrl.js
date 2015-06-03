@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').controller('resultModalCtrl', 
   function($scope, $modalInstance, resultService, kssNotifier, result, competitionName, competitionId, resultsCount) {
 

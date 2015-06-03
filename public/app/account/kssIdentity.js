@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').factory('kssIdentity', function($window, kssUser) {
   var currentUser;
   if(!!$window.bootstrappedUserObject) {

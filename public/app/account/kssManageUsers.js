@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').factory('kssManageUsers', function($http, kssIdentity, $q, kssUser) {
   return {
     isAdmin: function(user) {

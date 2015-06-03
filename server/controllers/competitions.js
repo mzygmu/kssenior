@@ -1,3 +1,4 @@
+'use strict';
 var Competitions = require('mongoose').model('Competitions');
 
 exports.getAll = function(req, res) {

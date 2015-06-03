@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').factory('competitionsService', function($http, $q, competitionsResource) {
   return {
 

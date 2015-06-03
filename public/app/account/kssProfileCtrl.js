@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').controller('kssProfileCtrl', function($scope, kssAuth, kssIdentity, kssNotifier) {
   $scope.email = kssIdentity.currentUser.username;
   $scope.fname = kssIdentity.currentUser.firstName;

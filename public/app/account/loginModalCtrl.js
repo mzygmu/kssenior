@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').controller('loginModalCtrl', function ($scope, $modalInstance, $log, kssAuth, kssNotifier) {
 
   $scope.signin = function(username, password) {

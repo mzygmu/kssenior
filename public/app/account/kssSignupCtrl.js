@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').controller('kssSignupCtrl', function($scope, $modalInstance, kssUser, kssNotifier, kssAuth) {
 
   $scope.signup = function() {

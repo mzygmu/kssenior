@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').value('kssToastr', toastr);
 
 angular.module('app').factory('kssNotifier', function(kssToastr) {

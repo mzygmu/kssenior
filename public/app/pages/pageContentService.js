@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').factory('pageContentService', function($http, $q, pageContentResource) {
   return {
 

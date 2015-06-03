@@ -1,3 +1,4 @@
+'use strict';
 var News = require('mongoose').model('News')
 
 exports.getAll = function(req, res) {

@@ -1,3 +1,4 @@
+'use strict';
 var PageContent = require('mongoose').model('PageContent');
 
 exports.getPageContent = function(req, res) {

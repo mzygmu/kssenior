@@ -1,3 +1,4 @@
+'use strict';
 var Results = require('mongoose').model('ParticipantResult');
 var Competitions = require('mongoose').model('Competitions');
 

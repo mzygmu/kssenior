@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').controller('publishPostCtrl', function($scope, $modalInstance, kssNotifier, publishService, newsList, postData) {
 
   if (postData) {

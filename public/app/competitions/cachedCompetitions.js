@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').factory('cachedCompetitions', function(competitionsResource) {
   var competitions;
 

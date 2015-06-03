@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').directive('ksNews', function() {
   return {
     restrict: 'E',

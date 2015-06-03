@@ -1,3 +1,4 @@
+'use strict';
 var Course = require('mongoose').model('Course');
 
 exports.getCourses = function(req, res) {

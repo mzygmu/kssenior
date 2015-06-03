@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').factory('newsResource', function($resource) {
   var NewsResource = $resource('/api/news/:id', {_id: "@id"}, {
     update: {method:'PUT',isArray:false}

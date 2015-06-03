@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app').factory('publishService', function($http, $q, newsResource) {
   return {
 

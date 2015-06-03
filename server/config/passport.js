@@ -1,3 +1,4 @@
+'use strict';
 var passport = require('passport'),
   mongoose = require('mongoose'),
   LocalStrategy = require('passport-local').Strategy,
