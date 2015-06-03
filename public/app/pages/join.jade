@@ -1,21 +1,20 @@
 .content.div-box
-  div
-    div.inline
-      h2 Jak zostać zawodnikiem Klubu:
+  div.inline
+    h2 Jak zostać zawodnikiem Klubu:
+  div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")
+    button.btn.btn-lg.btn-primary(ng-click='openJoinWindow()') 
+      span.glyphicon.glyphicon-plus Dodaj
+  section(ng-repeat="section in content | filter:'join' | orderBy:'-position'")
+    div.inline 
+      h4 {{section.sectionTitle}}
     div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")
-      button.btn.btn-lg.btn-primary(ng-click='openJoinWindow()') 
-        span.glyphicon.glyphicon-plus Dodaj
-    div(ng-repeat="section in content | filter:'join' | orderBy:'-position'")
-      div.inline 
-        h4 {{section.sectionTitle}}
-      div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")
-        button.btn.btn-xs.btn-primary(ng-click='move(section)', 
-              popover='Przesuń' popover-trigger='mouseenter', popover-placement='right')
-          span.glyphicon.glyphicon-arrow-up {{section.position}}
-        button.btn.btn-xs.btn-warning(ng-click='openJoinWindow(section)', 
-              popover='Edytuj' popover-trigger='mouseenter', popover-placement='right')
-          span.glyphicon.glyphicon-pencil
-        button.btn.btn-xs.btn-danger(ng-click='remove(section)', 
-              popover='Usuń' popover-trigger='mouseenter', popover-placement='right') 
-          span.glyphicon.glyphicon-remove
-      div.description {{section.text}}
+      button.btn.btn-xs.btn-primary(ng-click='move(section)', 
+            popover='Przesuń' popover-trigger='mouseenter', popover-placement='right')
+        span.glyphicon.glyphicon-arrow-up {{section.position}}
+      button.btn.btn-xs.btn-warning(ng-click='openJoinWindow(section)', 
+            popover='Edytuj' popover-trigger='mouseenter', popover-placement='right')
+        span.glyphicon.glyphicon-pencil
+      button.btn.btn-xs.btn-danger(ng-click='remove(section)', 
+            popover='Usuń' popover-trigger='mouseenter', popover-placement='right') 
+        span.glyphicon.glyphicon-remove
+    div.description {{section.text}}
