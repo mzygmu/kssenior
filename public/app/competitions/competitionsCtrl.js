@@ -18,6 +18,17 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
   }
   getResults();
 
+  $scope.setResult = function(comp) {
+    comp.resultsOn = !comp.resultsOn;
+
+    var clone = angular.copy(comp);
+    competitionsService.update(clone).then(function() {
+      kssNotifier.notify('Zaktualizowano');
+    }, function(reason) {
+      kssNotifier.error(reason);
+    }); 
+  }
+
   $scope.resultOnClass = function(comp) {
     return {'glyphicon-check': comp.resultsOn, 'glyphicon-unchecked': !comp.resultsOn};
   }
