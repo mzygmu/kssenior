@@ -19,7 +19,7 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
   getResults();
 
   $scope.resultOnClass = function(competition) {
-    return return {'glyphicon-check': competition.resultOn, 'glyphicon-unchecked': !competition.resultOn};
+    return {'glyphicon-check': competition.resultOn, 'glyphicon-unchecked': !competition.resultOn};
   }
 
   $scope.openResultWindow = function(c, result) {
