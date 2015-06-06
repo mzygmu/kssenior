@@ -25,7 +25,8 @@
         td 
           a(href="/events/{{c._id}}") {{ c.title }}
         td {{ c.competition.toString() }} 
-          span.glyphicon.glyphicon-list-alt(ng-show="c.resultsOn", popover='Komunikat' popover-trigger='mouseenter')
+          a(href="/events/{{c._id}}")
+            span.glyphicon.glyphicon-list-alt(ng-show="c.resultsOn", popover='Komunikat' popover-trigger='mouseenter')
         td 
           nobr {{ c.date | date:'dd-MM-yyyy' }}
         td {{ c.notes }}

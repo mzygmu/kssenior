@@ -4,6 +4,8 @@
       h2 {{ details.title + ' ' }}
         small {{ details.date | date:'dd-MM-yyyy' }}
     div.inline.actionPanel(ng-if="identity.currentUser.isAdmin()")      
+      button.btn.btn-primary(ng-click='setResult()') 
+        span.glyphicon(ng-class="resultOnClass(details)") Komunikat dostępny 
       button.btn.btn-warning(ng-click='openCompetitionsWindow(details)') 
         span.glyphicon.glyphicon-pencil Edytuj
       button.btn.btn-danger(ng-click='remove(details)') 
