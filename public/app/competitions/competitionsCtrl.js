@@ -34,7 +34,7 @@ angular.module('app').controller('competitionsCtrl', function($scope, $modal, $l
         },
         resultsCount: function () {
           var count = 0;
-          if ($scope.results) for (i in $scope.results) {
+          if ($scope.results) for (var i in $scope.results) {
             if ($scope.results[i].competition_name === c) {
               count += 1;
             }
