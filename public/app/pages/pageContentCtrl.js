@@ -23,6 +23,23 @@ angular.module('app').controller('pageContentCtrl', function($scope, $modal, $lo
         }
       }
     });
+    
+    $scope.openSponsoringWindow = function(section) {
+    var modalInstance = $modal.open({
+      templateUrl: '/partials/pages/contentModal',
+      controller: 'contentModalCtrl',
+      resolve: {
+      	pageId: function() {
+      		return 'sponsoring';
+      	},
+      	modalTitle: function() {
+      		return 'Sponsoring';
+      	},
+        content: function () {
+          return section;
+        }
+      }
+    });
      
     modalInstance.result.then(function (data) {
       if (section) {
