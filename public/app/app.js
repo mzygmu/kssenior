@@ -50,6 +50,9 @@ angular.module('app').config(function($routeProvider, $locationProvider, $sceDel
       .when('/about', { templateUrl: '/partials/pages/about',
         controller: 'pageContentCtrl'
       })
+      .when('/about', { templateUrl: '/partials/pages/sponsoring',
+        controller: 'pageContentCtrl'
+      })
 });
 
 angular.module('app').run(function($rootScope, $location) {
