@@ -39,6 +39,8 @@ function createDefaultPageContent() {
         text: '- przystąpić do egzaminu na PATENT STRZELECKI PZSS (test pisemny oraz praktyczny – strzelenie z pistoletu lub karabinka sportowego) wniosek o w/w Patent po wypełnieniu podpisuje lekarz medycyny sportowej. Koszt egzaminu wynosi 400,- zł.', position: 0});
       PageContent.create({pageId: 'join', sectionTitle: 'Licencja strzelecka PZSS', 
         text: '- po otrzymaniu Patentu wysyłamy kolejny wniosek do PZSS-u o Licencję strzelecką PZSS (koszt 50zł +/- opłata pocztowa). Na Wniosku należy również otrzymać podpis lekarza medycyny sportowej o zdolności uprawiania strzelectwa sportowego.\n- po otrzymaniu Licencji należy brać udział w treningach i zawodach strzeleckich.', position: 0});
+      PageContent.create({pageId: 'sponsoring', sectionTitle: 'Sponsoring', 
+          text: '--', position: 0});
     }
 
   });
