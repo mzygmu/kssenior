@@ -9,7 +9,7 @@
         h4 {{section.sectionTitle}}
       div.inline(ng-if="identity.currentUser.isAdmin()")
         button.btn.btn-xs.btn-primary(ng-click='move(section)', 
-              popover='Przsuń' popover-trigger='mouseenter', popover-placement='right')
+              popover='Przesuń' popover-trigger='mouseenter', popover-placement='right')
           span.glyphicon.glyphicon-arrow-up {{section.position}}
         button.btn.btn-xs.btn-warning(ng-click='openChargesWindow(section)', 
               popover='Edytuj' popover-trigger='mouseenter', popover-placement='right')
