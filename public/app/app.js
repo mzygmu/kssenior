@@ -50,7 +50,7 @@ angular.module('app').config(function($routeProvider, $locationProvider, $sceDel
       .when('/about', { templateUrl: '/partials/pages/about',
         controller: 'pageContentCtrl'
       })
-      .when('/about', { templateUrl: '/partials/pages/sponsoring',
+      .when('/sponsoring', { templateUrl: '/partials/pages/sponsoring',
         controller: 'pageContentCtrl'
       })
 });
